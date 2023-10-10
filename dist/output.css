@@ -533,3 +533,57 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+
+.h-full {
+  height: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.bg-blue-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
+}
+
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.from-orange-700\/20 {
+  --tw-gradient-from: rgb(194 65 12 / 0.2) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(194 65 12 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-amber-400\/20 {
+  --tw-gradient-to: rgb(251 191 36 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(251 191 36 / 0.2) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.via-20\% {
+  --tw-gradient-via-position: 20%;
+}
+
+.via-80\% {
+  --tw-gradient-via-position: 80%;
+}
+
+.to-lime-700\/20 {
+  --tw-gradient-to: rgb(77 124 15 / 0.2) var(--tw-gradient-to-position);
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.title-font {
+  font-family: 'TiltPrism';
+}
