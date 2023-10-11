@@ -1,15 +1,16 @@
----
----
 <!DOCTYPE html>
 <html lang="de" class="w-full h-full">
   <head>
-    <title>{{ page.title }}</title>
+    <title>{{page.title}}</title>
     <meta charset="utf-8" />
-    <link href="{{ site.baseurl }}/dist/output.css" rel="stylesheet">
-    <link href="{{ site.baseurl }}/src/fonts.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/dist/output.css" rel="stylesheet" />
+    <link href="{{ site.baseurl }}/src/fonts.css" rel="stylesheet" />
   </head>
 
-  <body class="w-full h-full bg-gradient-to-b from-orange-700/20 via-20% via-amber-400/20 via-80% to-lime-700/20">
-        {{ content }} 
+  <body
+    class="w-full h-full flex flex-col bg-gradient-to-b from-orange-700/20 via-20% via-amber-400/20 via-80% to-lime-700/20 base-font"
+  >
+    <span>{% include header.html %}</span>
+    {{content}}
   </body>
 </html>

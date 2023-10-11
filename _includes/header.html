@@ -1,1 +1,10 @@
-<div class="text-2xl title-font">{{page.title_text}}</div>
+<div
+  class="w-full shadow-lg text-lg lg:text-xl 2xl:text-2xl text-stone-800/70 p-8 bg-lime-100 flex justify-between fixed z-10 overflow-hidden"
+>
+  <span class="flex gap-x-24">
+    <a href="{%if page.nav_title.link%}{{page.nav_title.link}}{%endif%}" class="pr-32">{{page.nav_title.text}}</a>
+    {%for nav in page.navs%}
+    <a href="{%if nav.link%}{{nav.link}}{%endif%}" class="hover:cursor-pointer hover:text-stone-800 hover:underline appearance-none px-4">{{nav.text}}</a>
+    {%endfor%}
+  </span>
+</div>
