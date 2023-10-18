@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-.base-font {
+.header {
     font-family: 'TiltPrism';
+}
+
+.title {
+    font-family: 'Roboto-Black', sans-serif;
+}
+
+.title-italic {
+    font-family: 'Roboto-BlackItalic', sans-serif;
+}
+
+.normal {
+    font-family: 'Roboto-Light', sans-serif;
+}
+
+.normal-italic {
+    font-family: 'Roboto-LightItalic', sans-serif;
+}
+
+.thin {
+    font-family: 'Roboto-Thin', sans-serif;
+}
+
+.thin-italic {
+    font-family: 'Roboto-ThinItalic', sans-serif;
+}
+
+@layer components {
+    h1 {
+        @apply text-3xl title;
+    }
+
+    p {
+        @apply text-base normal font-black;
+    }
 }

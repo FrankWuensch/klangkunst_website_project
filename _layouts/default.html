@@ -9,7 +9,7 @@
   </head>
 
   <body
-    class="font-sans w-full h-full flex flex-col bg-gradient-to-b from-orange-700/20 via-20% via-amber-400/20 via-80% to-lime-700/20 relative"
+    class="normal w-full h-full flex flex-col bg-gradient-to-b from-orange-700/20 via-20% via-amber-400/20 via-80% to-lime-700/20 relative"
   >
     <!-- only shown in mobile version -->
     <span
@@ -31,12 +31,12 @@
     </span>
     <span>{% include header.html %}</span>
     <div
-      class="flex flex-col w-full h-full max-w-6xl 2xl:max-w-[1920px] overflow-y-auto"
+      class="flex flex-col w-full h-full max-w-6xl 2xl:max-w-[1920px] overflow-y-auto pb-8 lg:pb-16"
       id="content"
     >
       <span class="px-24 text-stone-800">
-        <h1 class="text-3xl pb-8 mt-24">{{page.title_info_1}}</h1>
-        <p class="text-xl" style="hyphens: auto">{{page.info_1}}</p>
+        <h1 class="title pb-8 mt-24">{{page.title_info_1}}</h1>
+        <p class="text-2xl" style="hyphens: auto">{{page.info_1}}</p>
       </span>
     </div>
     <script>
