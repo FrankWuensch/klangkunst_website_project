@@ -32,10 +32,14 @@
 
 @layer components {
     h1 {
-        @apply text-3xl title;
+        @apply text-xl lg:text-2xl title;
     }
 
     p {
-        @apply text-base normal font-black;
+        @apply text-sm lg:text-base normal font-black;
+    }
+
+    .header {
+        @apply text-2xl;
     }
 }
