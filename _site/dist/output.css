@@ -590,10 +590,6 @@ p {
   pointer-events: none;
 }
 
-.fixed {
-  position: fixed;
-}
-
 .absolute {
   position: absolute;
 }
@@ -616,6 +612,11 @@ p {
 
 .z-10 {
   z-index: 10;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mt-12 {
@@ -654,12 +655,16 @@ p {
   width: 100%;
 }
 
-.max-w-6xl {
-  max-width: 72rem;
-}
-
 .max-w-\[1920px\] {
   max-width: 1920px;
+}
+
+.max-w-5xl {
+  max-width: 64rem;
+}
+
+.max-w-6xl {
+  max-width: 72rem;
 }
 
 .flex-1 {
@@ -698,11 +703,6 @@ p {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.gap-x-24 {
-  -moz-column-gap: 6rem;
-       column-gap: 6rem;
 }
 
 .divide-y > :not([hidden]) ~ :not([hidden]) {
@@ -763,10 +763,6 @@ p {
 
 .via-20\% {
   --tw-gradient-via-position: 20%;
-}
-
-.via-80\% {
-  --tw-gradient-via-position: 80%;
 }
 
 .to-lime-700\/20 {
@@ -872,12 +868,12 @@ p {
   font-family: 'Roboto-ThinItalic', sans-serif;
 }
 
-.hover\:cursor-pointer:hover {
-  cursor: pointer;
-}
-
 .hover\:cursor-default:hover {
   cursor: default;
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
 }
 
 .hover\:text-stone-800:hover {
@@ -887,19 +883,6 @@ p {
 
 .hover\:underline:hover {
   text-decoration-line: underline;
-}
-
-.group:hover .group-hover\:cursor-pointer {
-  cursor: pointer;
-}
-
-.group:hover .group-hover\:cursor-default {
-  cursor: default;
-}
-
-.group:hover .group-hover\:text-stone-800 {
-  --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:underline {
@@ -932,11 +915,5 @@ p {
 
   .xl\:pb-16 {
     padding-bottom: 4rem;
-  }
-}
-
-@media (min-width: 1536px) {
-  .\32xl\:max-w-\[1920px\] {
-    max-width: 1920px;
   }
 }
