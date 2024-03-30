@@ -631,6 +631,10 @@ p {
   display: none;
 }
 
+.aspect-\[3\/5\] {
+  aspect-ratio: 3/5;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -647,20 +651,16 @@ p {
   width: 5rem;
 }
 
+.w-96 {
+  width: 24rem;
+}
+
 .w-\[50\%\] {
   width: 50%;
 }
 
 .w-full {
   width: 100%;
-}
-
-.max-w-\[1920px\] {
-  max-width: 1920px;
-}
-
-.max-w-5xl {
-  max-width: 64rem;
 }
 
 .max-w-6xl {
@@ -685,8 +685,16 @@ p {
           appearance: none;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-center {
@@ -703,6 +711,23 @@ p {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-x-8 {
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+
+.gap-y-12 {
+  row-gap: 3rem;
+}
+
+.gap-y-6 {
+  row-gap: 1.5rem;
+}
+
+.gap-y-4 {
+  row-gap: 1rem;
 }
 
 .divide-y > :not([hidden]) ~ :not([hidden]) {

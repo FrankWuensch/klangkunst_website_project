@@ -10,7 +10,32 @@ navs:
   - text: Über uns
     link: "index.html"
   - text: Geschichte
+    link: "geschichte.html"
   - text: Dirigent
     link: "dirigent.html"
   - text: Aktuelles
   - text: Galerie
+posters:
+  - src: "/src/plakate/Klangkunst Plakat 2017.pdf"
+    title: Projekt 1 - Ensemble Klangkunst - 2017
+  - src: "/src/plakate/Klangkunst Plakat 2018-I.pdf"
+    title: KlangkunstManufaktur Projekt I - 2018
+  - src: "/src/plakate/Klangkunst Plakat 2018-II.pdf"
+    title: KlangkunstManufaktur Projekt II - 2018
+  - src: "/src/plakate/Klangkunst Plakat 2019-I.pdf"
+    title: KlangkunstManufaktur Projekt I - 2019
+  - src: "/src/plakate/Klangkunst Plakat 2019-II.pdf"
+    title: KlangkunstManufaktur Projekt II - 2019
+  - src: "/src/plakate/Klangkunst Plakat 2020-II.pdf"
+    title: KlangkunstManufaktur Projekt II - 2020
+  - src: "/src/plakate/Klangkunst Plakat 2021-II.pdf"
+    title: KlangkunstManufaktur Projekt II - 2021
+  - src: "/src/plakate/Klangkunst Plakat 2022-I.pdf"
+    title: KlangkunstManufaktur Projekt I - 2022
+  - src: "/src/plakate/Klangkunst Plakat 2022-II.pdf"
+    title: KlangkunstManufaktur Projekt II - 2022
+  - src: "/src/plakate/Klangkunst Plakat 2023-I.pdf"
+    title: KlangkunstManufaktur Projekt I - 2023
+  - src: "/src/plakate/Klangkunst Plakat 2023-II.pdf"
+    title: KlangkunstManufaktur Projekt II - 2023
+  
