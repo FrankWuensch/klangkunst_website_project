@@ -4,18 +4,19 @@
     <title>Klangkunst Manufaktur e.V.</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="src/darkmode.js"></script>
     <link href="src/fonts.css" rel="stylesheet" />
     <link href="dist/output.css" rel="stylesheet" />
     <script src="src/iconify-min.js"></script>
   </head>
 
   <body
-    class="normal relative flex h-full w-full flex-col bg-gradient-to-b from-orange-700/20 via-amber-400/20 via-20% to-lime-700/20 to-80%"
+    class="normal relative flex h-full w-full flex-col bg-gradient-to-b from-orange-700/20 via-amber-400/20 via-20% to-lime-700/20 to-80% dark:from-orange-950 dark:via-amber-950 dark:to-lime-950 dark:backdrop-saturate-[.25]"
   >
     <!-- only shown in mobile version -->
     <span
       id="menu"
-      class="absolute right-0 top-16 z-10 flex hidden w-[50%] flex-col items-center justify-center divide-y divide-stone-400 rounded-bl-xl bg-stone-200 text-lg text-stone-800/70 shadow-xl shadow-stone-400/70 xl:hidden"
+      class="absolute right-0 top-16 z-10 flex hidden w-[50%] flex-col items-center justify-center divide-y divide-stone-400 rounded-bl-xl bg-stone-200 text-lg text-stone-800/70 shadow-xl shadow-stone-400/70 xl:hidden dark:divide-stone-600 dark:bg-stone-800 dark:text-stone-400/70 dark:shadow-stone-800/70"
     >
       
       <a
@@ -23,18 +24,18 @@
         class="group w-full flex justify-end px-8 py-4 text-right hover:cursor-pointer"
       >
         <div
-          class="hover:text-stone-800 group-hover:underline"
+          class="hover:text-stone-800 dark:group-hover:text-stone-400 group-hover:underline"
         >
           Über uns
         </div>
       </a>
       
       <a
-        href=""
-        class="group w-full flex justify-end px-8 py-4 text-right cursor-auto"
+        href="geschichte.html"
+        class="group w-full flex justify-end px-8 py-4 text-right hover:cursor-pointer"
       >
         <div
-          class=""
+          class="hover:text-stone-800 dark:group-hover:text-stone-400 group-hover:underline"
         >
           Geschichte
         </div>
@@ -45,7 +46,7 @@
         class="group w-full flex justify-end px-8 py-4 text-right hover:cursor-pointer"
       >
         <div
-          class="hover:text-stone-800 group-hover:underline"
+          class="hover:text-stone-800 dark:group-hover:text-stone-400 group-hover:underline"
         >
           Dirigent
         </div>
@@ -73,14 +74,25 @@
         </div>
       </a>
       
+      <span
+        class="mb-4 flex w-full flex-row items-center justify-end gap-x-4 divide-x-2 divide-stone-400 border-t-2 border-stone-400 pr-8 pt-4 dark:divide-stone-800 dark:border-stone-800"
+      >
+        <span id="light-mode"
+          class="icon-[ph--sun-thin] hover:cursor-pointer hover:text-black dark:hover:text-stone-400"
+        >
+        </span>
+        <span id="dark-mode"
+          class="icon-[ph--moon-thin] hover:cursor-pointer hover:text-black dark:hover:text-stone-400"
+        ></span>
+      </span>
     </span>
-    <span><div
-  class="relative z-10 flex h-16 w-full items-center justify-between overflow-hidden bg-lime-100 text-stone-800/70 shadow-lg xl:h-24"
+    <span class="relative"><div
+  class="fixed z-10 flex h-16 w-full items-center justify-between overflow-hidden bg-lime-100 shadow-lg xl:h-24 dark:bg-lime-950/70 dark:text-white/50 dark:grayscale"
 >
-  <span class="flex w-full max-w-6xl shrink items-center justify-between whitespace-nowrap">
+  <span class="mx-auto flex w-full max-w-6xl shrink items-center justify-between whitespace-nowrap">
     <!-- only shown in mobile version -->
     <div
-      class="absolute right-0 top-0 flex h-full max-h-full w-20 items-center justify-center bg-white/50 hover:cursor-pointer hover:text-stone-800 xl:hidden"
+      class="absolute right-0 top-0 flex h-full max-h-full w-20 items-center justify-center bg-white/50 hover:cursor-pointer hover:text-stone-800 xl:hidden dark:bg-black/10 dark:text-white/30 hover:dark:text-white/70"
       id="burger"
     >
       <iconify-icon
@@ -92,23 +104,23 @@
     <!-- only shown if screen >= xl:1280px -->
     <a
       href="index.html"
-      class="header px-8 h-16 xl:h-24 flex items-center justify-between whitespace-nowrap text-center bg-white/50 appearance-none hover:text-stone-800 hover:cursor-pointer"
+      class="header px-8 h-16 xl:h-24 flex items-center justify-between whitespace-nowrap hover:dark:text-white/70 text-center dark:bg-black/10 bg-white/50 appearance-none hover:text-stone-800 dark:hover:text-white/70 hover:cursor-pointer"
       >Klangkunst Manufaktur</a
     >
     
-    <a href="index.html" class="group flex h-16 flex-1 items-center xl:h-24 hover:cursor-pointer hover:text-stone-800 hover:underline">
+    <a href="index.html" class="group flex h-16 flex-1 items-center xl:h-24 hover:cursor-pointer hover:text-stone-800 hover:dark:text-white/70 hover:underline">
       <div class=" px-12 max-xl:hidden"
         >Über uns</a
       >
     </div>
     
-    <a href="" class="group flex h-16 flex-1 items-center xl:h-24  hover:cursor-default pointer-events-none">
+    <a href="geschichte.html" class="group flex h-16 flex-1 items-center xl:h-24 hover:cursor-pointer hover:text-stone-800 hover:dark:text-white/70 hover:underline">
       <div class=" px-12 max-xl:hidden"
         >Geschichte</a
       >
     </div>
     
-    <a href="dirigent.html" class="group flex h-16 flex-1 items-center xl:h-24 hover:cursor-pointer hover:text-stone-800 hover:underline">
+    <a href="dirigent.html" class="group flex h-16 flex-1 items-center xl:h-24 hover:cursor-pointer hover:text-stone-800 hover:dark:text-white/70 hover:underline">
       <div class=" px-12 max-xl:hidden"
         >Dirigent</a
       >
@@ -128,17 +140,47 @@
     
   </span>
 </div>
+<div class="absolute right-0 top-0 z-10 mt-20 flex h-12 w-48 flex-row items-center gap-x-4 rounded-bl-lg border-b border-l border-stone-400 bg-stone-200 pl-4 max-xl:hidden xl:mt-24 dark:border-black dark:bg-stone-700">
+<span id="light-mode-btn"
+  class="icon-[ph--sun-thin] hover:cursor-pointer hover:font-black hover:text-black hover:dark:text-white"
+>
 </span>
-    <div
-      class="flex h-full w-full max-w-6xl flex-col overflow-y-auto pb-12 xl:pb-16"
+<span id="dark-mode-btn"
+  class="icon-[ph--moon-thin] hover:cursor-pointer hover:font-black hover:text-black hover:dark:text-white"
+></span>
+</div>
+</span>
+    <span
+      class="flex h-full w-full flex-col px-8 py-32 xl:px-24"
       id="content"
     >
-      <span class="px-8 text-stone-800 xl:px-24">
-        <h1 class="title mt-12 pb-8 xl:mt-24">Über uns</h1>
+      <div class="max-w-6xl">
+        <h1 class="title pb-8 xl:mt-12">Über uns</h1>
         <p style="hyphens: auto">Die Klangkunst Manufaktur ist ein Orchester, das sich zweimal pro Jahr zu musikalischen Projekten  zusammenfindet um in intensiven Proben ein Konzertprogramm zu erarbeiten. Es besteht vor allem aus  musikbegeisterten Amateuren und einigen professionellen Musikern aus ganz Deutschland und teils aus  dem benachbarten Ausland. Die meisten Musiker verbindet die gemeinsame Arbeit mit dem Dirigenten  Bertram Schade, die in verschiedensten Ensembles zu unterschiedlichsten Zeiten teils über viele  Jahre gewachsen ist. In der Klangkunst Manufaktur treffen, zur großen Freude des Dirigenten, Musiker  aus diesen verschiedenen Lebens- und Arbeitsphasen zusammen, um gemeinsam zu musizieren und mit  diesem neuen Klang auch die alten Verbindungen wieder zu beleben.
 </p>
-      </span>
-    </div>
+      </div>
+      
+    </span>
+    <span><div class="fixed bottom-0 h-20 w-full bg-stone-700 bg-fixed">
+  <div
+    class="mx-auto flex h-full w-full max-w-6xl items-center justify-between px-8 text-center text-sm text-white"
+  >
+    
+    <a href="" class="flex h-full items-center px-8">
+      <div>Kontakt</div>
+    </a>
+    
+    <a href="" class="flex h-full items-center px-8">
+      <div>Impressum</div>
+    </a>
+    
+    <a href="" class="flex h-full items-center px-8">
+      <div>Datenschutz</div>
+    </a>
+    
+  </div>
+</div>
+</span>
     <script>
       const menu = document.getElementById("menu");
       const burger = document.getElementById("burger");

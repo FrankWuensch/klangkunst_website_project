@@ -1,0 +1,11 @@
+<div class="fixed bottom-0 h-20 w-full bg-stone-700 bg-fixed">
+  <div
+    class="mx-auto flex h-full w-full max-w-6xl items-center justify-between px-8 text-center text-sm text-white"
+  >
+    {%for element in site.footer_elements%}
+    <a href="{{element.ref}}" class="flex h-full items-center px-8">
+      <div>{{element.name}}</div>
+    </a>
+    {%endfor%}
+  </div>
+</div>

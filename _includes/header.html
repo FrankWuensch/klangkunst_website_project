@@ -1,10 +1,10 @@
 <div
-  class="relative z-10 flex h-16 w-full items-center justify-between overflow-hidden bg-lime-100 text-stone-800/70 shadow-lg xl:h-24"
+  class="fixed z-10 flex h-16 w-full items-center justify-between overflow-hidden bg-lime-100 shadow-lg xl:h-24 dark:bg-lime-950/70 dark:text-white/50 dark:grayscale"
 >
-  <span class="flex w-full max-w-6xl shrink items-center justify-between whitespace-nowrap">
+  <span class="mx-auto flex w-full max-w-6xl shrink items-center justify-between whitespace-nowrap">
     <!-- only shown in mobile version -->
     <div
-      class="absolute right-0 top-0 flex h-full max-h-full w-20 items-center justify-center bg-white/50 hover:cursor-pointer hover:text-stone-800 xl:hidden"
+      class="absolute right-0 top-0 flex h-full max-h-full w-20 items-center justify-center bg-white/50 hover:cursor-pointer hover:text-stone-800 xl:hidden dark:bg-black/10 dark:text-white/30 hover:dark:text-white/70"
       id="burger"
     >
       <iconify-icon
@@ -16,15 +16,24 @@
     <!-- only shown if screen >= xl:1280px -->
     <a
       href="{%if site.nav_title.link%}{{site.baseurl}}{{site.nav_title.link}}{%endif%}"
-      class="header px-8 h-16 xl:h-24 flex items-center justify-between whitespace-nowrap text-center bg-white/50 appearance-none {%if site.nav_title.link%}hover:text-stone-800 hover:cursor-pointer{%endif%}"
+      class="header px-8 h-16 xl:h-24 flex items-center justify-between whitespace-nowrap hover:dark:text-white/70 text-center dark:bg-black/10 bg-white/50 appearance-none {%if site.nav_title.link%}hover:text-stone-800 dark:hover:text-white/70 hover:cursor-pointer{%endif%}"
       >{{site.nav_title.text}}</a
     >
     {%for nav in site.navs%}
-    <a href="{%if nav.link%}{{site.baseurl}}{{nav.link}}{%endif%}" class="group flex h-16 flex-1 items-center xl:h-24 {%if nav.link%}hover:cursor-pointer hover:text-stone-800 hover:underline{%else%} hover:cursor-default pointer-events-none{%endif%}">
+    <a href="{%if nav.link%}{{site.baseurl}}{{nav.link}}{%endif%}" class="group flex h-16 flex-1 items-center xl:h-24 {%if nav.link%}hover:cursor-pointer hover:text-stone-800 hover:dark:text-white/70 hover:underline{%else%} hover:cursor-default pointer-events-none{%endif%}">
       <div class="{%if nav.link%}{%else%} {%endif%} px-12 max-xl:hidden"
         >{{nav.text}}</a
       >
     </div>
     {%endfor%}
   </span>
+</div>
+<div class="absolute right-0 top-0 z-10 mt-20 flex h-12 w-48 flex-row items-center gap-x-4 rounded-bl-lg border-b border-l border-stone-400 bg-stone-200 pl-4 max-xl:hidden xl:mt-24 dark:border-black dark:bg-stone-700">
+<span id="light-mode-btn"
+  class="icon-[ph--sun-thin] hover:cursor-pointer hover:font-black hover:text-black hover:dark:text-white"
+>
+</span>
+<span id="dark-mode-btn"
+  class="icon-[ph--moon-thin] hover:cursor-pointer hover:font-black hover:text-black hover:dark:text-white"
+></span>
 </div>
