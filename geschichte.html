@@ -9,7 +9,7 @@ title_info_1: Vergangene Konzerte
     {%for poster in site.posters reversed%}
     <div class="flex w-80 flex-col gap-y-4 whitespace-nowrap">
       <div>{{poster.title}}</div>
-      <object class="relative aspect-[2/3] w-full" data="{{site.baseurl}}{{poster.src}}"></object>
+      <img class="relative aspect-[2/3] w-full" src="{{site.baseurl}}{{poster.src}}">
     </div>
     {%endfor%}
   </div>
