@@ -4,16 +4,20 @@ layout: default
 title_info_1: Vergangene Konzerte
 ---
 
-<div class="flex flex-row flex-wrap gap-x-8 gap-y-12 overflow-hidden">
-  {%for poster in site.posters reversed%}
-  <div class="flex w-96 flex-col gap-y-4 whitespace-nowrap">
-    <div>{{poster.title}}</div>
-    <embed
-      src="{{ site.baseurl }}{{ poster.src }}"
-      class="relative aspect-[3/5] w-full"
-      frameborder="0"
-      loading="lazy"
-    />
+<div class="flex w-full overflow-y-auto">
+  <div class="flex w-full flex-row flex-wrap gap-x-8 gap-y-12">
+    {%for poster in site.posters reversed%}
+    <div class="flex w-80 flex-col gap-y-4 whitespace-nowrap">
+      <div>{{poster.title}}</div>
+      <embed
+        src="{{ site.baseurl }}{{ poster.src }}"
+        class="relative aspect-[3/5] w-full"
+        frameborder="0"
+        download="0"
+        loading="lazy"
+      />
+    </div>
+    {%endfor%}
   </div>
-  {%endfor%}
+  <div class="pb-12 xl:pb-24"></div>
 </div>

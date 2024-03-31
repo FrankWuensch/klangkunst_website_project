@@ -38,4 +38,8 @@ posters:
     title: KlangkunstManufaktur Projekt I - 2023
   - src: "/src/plakate/Klangkunst Plakat 2023-II.pdf"
     title: KlangkunstManufaktur Projekt II - 2023
+footer_elements:
+  - name: Kontakt
+  - name: Impressum
+  - name: Datenschutz
   
