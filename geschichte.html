@@ -9,13 +9,13 @@ title_info_1: Vergangene Konzerte
     {%for poster in site.posters reversed%}
     <div class="flex w-80 flex-col gap-y-4 whitespace-nowrap">
       <div>{{poster.title}}</div>
-      <embed
+      <iframe
         src="{{ site.baseurl }}{{ poster.src }}"
-        class="relative aspect-[3/5] w-full"
         frameborder="0"
-        download="0"
+        allowfullscreen
+        class="relative aspect-[3/5] w-full"
         loading="lazy"
-      />
+      ></iframe>
     </div>
     {%endfor%}
   </div>
