@@ -692,8 +692,8 @@ body:where(.dark, .dark *) {
   display: none;
 }
 
-.aspect-\[3\/5\] {
-  aspect-ratio: 3/5;
+.aspect-\[2\/3\] {
+  aspect-ratio: 2/3;
 }
 
 .h-12 {
@@ -706,6 +706,10 @@ body:where(.dark, .dark *) {
 
 .h-20 {
   height: 5rem;
+}
+
+.h-64 {
+  height: 16rem;
 }
 
 .h-full {
