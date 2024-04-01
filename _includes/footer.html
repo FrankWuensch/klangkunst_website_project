@@ -1,9 +1,9 @@
-<div class="fixed bottom-0 h-20 w-full bg-stone-700 bg-fixed">
+<div class="fixed bottom-0 h-12 w-full border-t-2 border-lime-300/70 bg-lime-100 bg-fixed text-xs text-stone-900/70 xl:h-20 xl:text-sm dark:border-stone-900/70 dark:bg-stone-800/70 dark:text-white/50">
   <div
-    class="mx-auto flex h-full w-full max-w-6xl items-center justify-between px-8 text-center text-sm text-white"
+    class="mx-auto flex h-full w-full max-w-6xl items-center justify-between px-8 text-center"
   >
     {%for element in site.footer_elements%}
-    <a href="{{element.ref}}" class="flex h-full items-center px-8">
+    <a href="{{element.ref}}" class="flex h-full items-center px-8 hover:text-black dark:hover:text-white/80">
       <div>{{element.name}}</div>
     </a>
     {%endfor%}

@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* For WebKit/Blink browsers */
+.dark ::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* For Firefox */
+.dark {
+    scrollbar-width: thin;
+    scrollbar-color: #333 #222; /* dark grey on black */
+}
+
+/* Track */
+.dark ::-webkit-scrollbar-track {
+    background: #222; /* same as background color */
+}
+
+/* Handle */
+.dark ::-webkit-scrollbar-thumb {
+    background-color: #333; /* grey */
+    border-radius: 10px;
+    border: 3px solid #222; /* same as track */
+}
+
+/* Handle on hover */
+.dark ::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* slightly lighter grey */
+}
+
 .header {
     font-family: 'TiltPrism';
 }

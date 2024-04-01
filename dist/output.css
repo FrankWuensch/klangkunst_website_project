@@ -704,10 +704,6 @@ body:where(.dark, .dark *) {
   height: 4rem;
 }
 
-.h-20 {
-  height: 5rem;
-}
-
 .h-full {
   height: 100%;
 }
@@ -738,6 +734,10 @@ body:where(.dark, .dark *) {
 
 .max-w-6xl {
   max-width: 72rem;
+}
+
+.max-w-7xl {
+  max-width: 80rem;
 }
 
 .flex-1 {
@@ -853,6 +853,15 @@ body:where(.dark, .dark *) {
   border-top-width: 2px;
 }
 
+.border-lime-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(190 242 100 / var(--tw-border-opacity));
+}
+
+.border-lime-300\/70 {
+  border-color: rgb(190 242 100 / 0.7);
+}
+
 .border-stone-400 {
   --tw-border-opacity: 1;
   border-color: rgb(168 162 158 / var(--tw-border-opacity));
@@ -863,14 +872,13 @@ body:where(.dark, .dark *) {
   background-color: rgb(236 252 203 / var(--tw-bg-opacity));
 }
 
+.bg-lime-200\/70 {
+  background-color: rgb(217 249 157 / 0.7);
+}
+
 .bg-stone-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(231 229 228 / var(--tw-bg-opacity));
-}
-
-.bg-stone-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(68 64 60 / var(--tw-bg-opacity));
 }
 
 .bg-white\/50 {
@@ -961,18 +969,17 @@ body:where(.dark, .dark *) {
   line-height: 1.75rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .text-stone-800\/70 {
   color: rgb(41 37 36 / 0.7);
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+.text-stone-900\/70 {
+  color: rgb(28 25 23 / 0.7);
 }
 
 .shadow-lg {
@@ -995,6 +1002,44 @@ body:where(.dark, .dark *) {
 .blur-sm {
   --tw-blur: blur(4px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+/* For WebKit/Blink browsers */
+
+.dark ::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* For Firefox */
+
+.dark {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #222;
+  /* dark grey on black */
+}
+
+/* Track */
+
+.dark ::-webkit-scrollbar-track {
+  background: #222;
+  /* same as background color */
+}
+
+/* Handle */
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #333;
+  /* grey */
+  border-radius: 10px;
+  border: 3px solid #222;
+  /* same as track */
+}
+
+/* Handle on hover */
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+  /* slightly lighter grey */
 }
 
 .header {
@@ -1062,6 +1107,11 @@ body:where(.dark, .dark *) {
 }
 
 @media (min-width: 1280px) {
+  .xl\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .xl\:mt-12 {
     margin-top: 3rem;
   }
@@ -1072,6 +1122,10 @@ body:where(.dark, .dark *) {
 
   .xl\:hidden {
     display: none;
+  }
+
+  .xl\:h-20 {
+    height: 5rem;
   }
 
   .xl\:h-24 {
@@ -1091,6 +1145,11 @@ body:where(.dark, .dark *) {
   .xl\:pb-24 {
     padding-bottom: 6rem;
   }
+
+  .xl\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
 }
 
 .dark\:divide-stone-600:where(.dark, .dark *) > :not([hidden]) ~ :not([hidden]) {
@@ -1103,14 +1162,18 @@ body:where(.dark, .dark *) {
   border-color: rgb(41 37 36 / var(--tw-divide-opacity));
 }
 
-.dark\:border-black:where(.dark, .dark *) {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-
 .dark\:border-stone-800:where(.dark, .dark *) {
   --tw-border-opacity: 1;
   border-color: rgb(41 37 36 / var(--tw-border-opacity));
+}
+
+.dark\:border-stone-900:where(.dark, .dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(28 25 23 / var(--tw-border-opacity));
+}
+
+.dark\:border-stone-900\/70:where(.dark, .dark *) {
+  border-color: rgb(28 25 23 / 0.7);
 }
 
 .dark\:bg-black\/10:where(.dark, .dark *) {
@@ -1121,14 +1184,13 @@ body:where(.dark, .dark *) {
   background-color: rgb(26 46 5 / 0.7);
 }
 
-.dark\:bg-stone-700:where(.dark, .dark *) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(68 64 60 / var(--tw-bg-opacity));
-}
-
 .dark\:bg-stone-800:where(.dark, .dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(41 37 36 / var(--tw-bg-opacity));
+}
+
+.dark\:bg-stone-800\/70:where(.dark, .dark *) {
+  background-color: rgb(41 37 36 / 0.7);
 }
 
 .dark\:from-orange-950:where(.dark, .dark *) {
@@ -1181,6 +1243,10 @@ body:where(.dark, .dark *) {
 
 .dark\:hover\:text-white\/70:hover:where(.dark, .dark *) {
   color: rgb(255 255 255 / 0.7);
+}
+
+.dark\:hover\:text-white\/80:hover:where(.dark, .dark *) {
+  color: rgb(255 255 255 / 0.8);
 }
 
 .hover\:dark\:text-white:where(.dark, .dark *):hover {
