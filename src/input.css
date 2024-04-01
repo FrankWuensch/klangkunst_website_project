@@ -67,6 +67,10 @@
         @apply normal text-sm font-black text-stone-800/70 xl:text-base dark:text-stone-400;
     }
 
+    strong {
+        @apply title;
+    }
+
     body {
         @apply text-stone-700 dark:text-white/80;
     }

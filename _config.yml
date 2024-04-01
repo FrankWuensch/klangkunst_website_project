@@ -41,5 +41,7 @@ posters:
 footer_elements:
   - name: Kontakt
   - name: Impressum
+    link: "impressum.html"
   - name: Datenschutz
+    link: "datenschutz.html"
   

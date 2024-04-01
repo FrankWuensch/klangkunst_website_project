@@ -621,6 +621,10 @@ p:where(.dark, .dark *) {
   color: rgb(168 162 158 / var(--tw-text-opacity));
 }
 
+strong {
+  font-family: 'Roboto-Black', sans-serif;
+}
+
 body {
   --tw-text-opacity: 1;
   color: rgb(68 64 60 / var(--tw-text-opacity));
@@ -684,6 +688,10 @@ body:where(.dark, .dark *) {
   margin-top: 5rem;
 }
 
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .flex {
   display: flex;
 }
@@ -730,6 +738,10 @@ body:where(.dark, .dark *) {
 
 .w-full {
   width: 100%;
+}
+
+.max-w-5xl {
+  max-width: 64rem;
 }
 
 .max-w-6xl {
@@ -956,6 +968,14 @@ body:where(.dark, .dark *) {
   padding-top: 1rem;
 }
 
+.pt-28 {
+  padding-top: 7rem;
+}
+
+.pb-16 {
+  padding-bottom: 4rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1120,6 +1140,10 @@ body:where(.dark, .dark *) {
     margin-top: 6rem;
   }
 
+  .xl\:mb-24 {
+    margin-bottom: 6rem;
+  }
+
   .xl\:hidden {
     display: none;
   }
@@ -1144,6 +1168,10 @@ body:where(.dark, .dark *) {
 
   .xl\:pb-24 {
     padding-bottom: 6rem;
+  }
+
+  .xl\:pt-32 {
+    padding-top: 8rem;
   }
 
   .xl\:text-sm {
