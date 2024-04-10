@@ -1,0 +1,18 @@
+h1 {
+  padding-bottom: 2rem;
+}
+p {
+  padding-bottom: 0.5rem;
+}
+strong {
+  padding-top: 1rem;
+}
+a {
+  color: #075985;
+}
+a:hover {
+  text-decoration-line: underline;
+}
+.dark ::a {
+  color: #0284c7;
+}
