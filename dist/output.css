@@ -933,11 +933,6 @@ body:where(.dark, .dark *) {
   padding-right: 2rem;
 }
 
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
 .py-28 {
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -964,16 +959,12 @@ body:where(.dark, .dark *) {
   padding-right: 2rem;
 }
 
-.pt-4 {
-  padding-top: 1rem;
-}
-
-.pt-12 {
-  padding-top: 3rem;
-}
-
 .pt-24 {
   padding-top: 6rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .text-center {
@@ -1161,11 +1152,6 @@ body:where(.dark, .dark *) {
     padding-right: 6rem;
   }
 
-  .xl\:py-24 {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-
   .xl\:py-32 {
     padding-top: 8rem;
     padding-bottom: 8rem;
@@ -1173,14 +1159,6 @@ body:where(.dark, .dark *) {
 
   .xl\:pb-24 {
     padding-bottom: 6rem;
-  }
-
-  .xl\:pt-24 {
-    padding-top: 6rem;
-  }
-
-  .xl\:pt-32 {
-    padding-top: 8rem;
   }
 
   .xl\:pt-40 {
@@ -1257,16 +1235,12 @@ body:where(.dark, .dark *) {
   color: rgb(255 255 255 / 0.3);
 }
 
-.dark\:text-white\/50:where(.dark, .dark *) {
-  color: rgb(255 255 255 / 0.5);
-}
-
-.dark\:text-white\/70:where(.dark, .dark *) {
-  color: rgb(255 255 255 / 0.7);
-}
-
 .dark\:text-white\/40:where(.dark, .dark *) {
   color: rgb(255 255 255 / 0.4);
+}
+
+.dark\:text-white\/50:where(.dark, .dark *) {
+  color: rgb(255 255 255 / 0.5);
 }
 
 .dark\:shadow-stone-800\/70:where(.dark, .dark *) {
@@ -1305,11 +1279,6 @@ body:where(.dark, .dark *) {
 
 .hover\:dark\:text-white\/70:where(.dark, .dark *):hover {
   color: rgb(255 255 255 / 0.7);
-}
-
-.dark\:hover\:text-white:hover:where(.dark, .dark *) {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .group:hover .dark\:group-hover\:text-stone-400:where(.dark, .dark *) {

@@ -43,7 +43,7 @@
         ></span>
       </span>
     </span>
-    <span class="relative">{% include header.html %}</span>
+    {% include header.html %}
     <span
       class="flex h-full flex-col px-8 py-28 xl:mx-auto xl:px-24 xl:py-32"
       id="content"
@@ -54,7 +54,7 @@
       </div>
       {{content}}
     </span>
-    <span>{%include footer.html%}</span>
+    {%include footer.html%}
     <script>
       const menu = document.getElementById("menu");
       const burger = document.getElementById("burger");
