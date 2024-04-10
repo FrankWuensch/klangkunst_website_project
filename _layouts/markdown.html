@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" class="mx-auto h-full w-full">
+<html lang="de" class="h-full w-full">
   <head>
     <title>{{page.title}}</title>
     <meta charset="utf-8" />
@@ -8,36 +8,17 @@
     <script src="{{site.baseurl}}src/darkmode.js"></script>
     <link href="{{site.baseurl}}src/fonts.css" rel="stylesheet" />
     <link href="{{site.baseurl}}dist/output.css" rel="stylesheet" />
+    <link href="{{site.baseurl}}src/markdown.css" rel="stylesheet" />
     <script src="{{site.baseurl}}src/iconify-min.js"></script>
-    <style>
-      h1 {
-        padding-bottom: 2rem;
-      }
-      p {
-        padding-bottom: 0.5rem;
-      }
-      strong {
-        padding-top: 1rem;
-      }
-      a {
-        color: #075985;
-      }
-      a:hover {
-        text-decoration-line: underline;
-      }
-      .dark ::a {
-        color: #0284c7;
-      }
-    </style>
   </head>
 
   <body
-    class="normal flex min-h-full w-full flex-col bg-gradient-to-b from-orange-700/20 via-amber-400/20 via-20% to-lime-700/20 to-80% bg-fixed dark:from-orange-950 dark:via-amber-950 dark:to-lime-950 dark:backdrop-saturate-[.25]"
+    class="normal mx-auto flex h-full w-full flex-col overflow-hidden bg-gradient-to-b from-orange-700/20 via-amber-400/20 via-20% to-lime-700/20 to-80% bg-fixed dark:from-orange-950 dark:via-amber-950 dark:to-lime-950 dark:backdrop-saturate-[.25]"
   >
     <!-- only shown in mobile version -->
     <span
       id="menu"
-      class="absolute right-0 top-16 z-10 flex hidden w-[50%] flex-col items-center justify-center divide-y divide-stone-400 rounded-bl-xl bg-stone-200 text-lg text-stone-800/70 shadow-xl shadow-stone-400/70 xl:hidden dark:divide-stone-600 dark:bg-stone-800 dark:text-stone-400/70 dark:shadow-stone-800/70"
+      class="absolute right-0 top-16 z-10 hidden w-[50%] flex-col items-center justify-center divide-y divide-stone-400 rounded-bl-xl bg-stone-200 text-lg text-stone-800/70 shadow-xl shadow-stone-400/70 xl:hidden dark:divide-stone-600 dark:bg-stone-800 dark:text-stone-400/70 dark:shadow-stone-800/70"
     >
       {%for nav in site.navs%}
       <a
@@ -66,22 +47,14 @@
       </span>
     </span>
     {% include header.html %}
-    <span
-      class="mx-auto flex h-full max-w-5xl flex-col hyphens-auto px-8 pb-12 pt-24 xl:px-24 xl:pb-24 xl:pt-40"
+    <main
+      class="mx-auto mt-16 h-full w-full flex-1 overflow-y-auto hyphens-auto xl:mt-24"
       id="content"
     >
-      {{content}}
-    </span>
-    <script>
-      const menu = document.getElementById("menu");
-      const burger = document.getElementById("burger");
-      const content = document.getElementById("content");
-      if (menu && burger) {
-        burger.addEventListener("click", function () {
-          menu.classList.toggle("hidden");
-          content.classList.toggle("blur-sm");
-        });
-      }
-    </script>
+      <div class="mx-auto w-full px-8 py-12 xl:mx-auto xl:max-w-6xl xl:py-24">
+        {{content}}
+      </div>
+    </main>
+    {% include menu.html %}
   </body>
 </html>
