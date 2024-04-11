@@ -15,7 +15,7 @@ Vorstandsvorsitzende(r): [Vor- und Nachname] \
 Stellvertretende(r) Vorsitzende(r): [Vor- und Nachname]
 
 **Kontakt** \
-Telefon: +49 (0)123 456789
+Telefon: +49 (0)123 456789 \
 E-Mail: info@klangkunstmanufaktur.de
 
 **Registereintrag** \
