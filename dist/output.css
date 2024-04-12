@@ -964,10 +964,6 @@ body:where(.dark, .dark *) {
   padding-top: 1.5rem;
 }
 
-.pt-16 {
-  padding-top: 4rem;
-}
-
 .text-center {
   text-align: center;
 }
@@ -1155,10 +1151,6 @@ body:where(.dark, .dark *) {
 
   .xl\:pt-20 {
     padding-top: 5rem;
-  }
-
-  .xl\:pt-24 {
-    padding-top: 6rem;
   }
 
   .xl\:text-sm {
