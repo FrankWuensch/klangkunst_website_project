@@ -23,10 +23,10 @@
       {%for nav in site.navs%}
       <a
         href="{%if nav.link%}{{site.baseurl}}{{nav.link}}{%endif%}"
-        class="group w-full flex justify-end px-8 py-4 text-right text-stone-800/70 dark:text-stone-400/70 {%if nav.link%}hover:cursor-pointer{%else%}cursor-auto{%endif%}"
+        class="group w-full flex justify-end px-8 py-4 text-right text-stone-800/70 dark:text-stone-400/70 {%if nav.link%}hover:cursor-pointer pointer-events-none{%else%}cursor-auto{%endif%}"
       >
         <div
-          class="{%if nav.link%}hover:text-stone-800 dark:group-hover:text-stone-400 group-hover:underline{%endif%}"
+          class="{%if nav.link%}hover:text-stone-800 dark:group-hover:text-stone-400 group-hover:underline{%else%}pointer-events-none{%endif%}"
         >
           {{nav.text}}
         </div>

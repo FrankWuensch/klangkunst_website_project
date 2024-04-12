@@ -3,7 +3,7 @@
     class="mx-auto flex h-full w-full max-w-6xl items-center justify-between px-8 text-center"
   >
     {%for element in site.footer_elements%}
-    <a href="{{element.link}}" class="flex h-full items-center px-8 hover:text-black dark:hover:text-white/80">
+    <a href="{%if element.link%}{{element.link}}{%endif%}" class="flex h-full items-center px-8 {%if element.link%}hover:text-black dark:hover:text-white/80{%else%}pointer-events-none{%endif%}">
       <div>{{element.name}}</div>
     </a>
     {%endfor%}
