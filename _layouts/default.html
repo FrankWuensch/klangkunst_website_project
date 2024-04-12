@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="{{site.baseurl}}favicon.ico" />
     <script src="{{site.baseurl}}src/darkmode.js"></script>
+    <script src="{{site.baseurl}}src/menu.js"></script>
+    <script src="{{site.baseurl}}src/active_elements.js"></script>
     <link href="{{site.baseurl}}src/fonts.css" rel="stylesheet" />
     <link href="{{site.baseurl}}dist/output.css" rel="stylesheet" />
     <script src="{{site.baseurl}}src/iconify-min.js"></script>
-    <script src="{{site.baseurl}}src/menu.js"></script>
-    <script src="{{site.baseurl}}src/active_elements.js"></script>
   </head>
 
   <body
     class="normal mx-auto flex h-full w-full overflow-hidden bg-gradient-to-b from-amber-400/30 via-40% to-lime-700/30 dark:from-amber-950 dark:to-lime-950 dark:backdrop-saturate-[.25]"
   >
-    {% include menu.html %}
+    {% include menu.html %} 
     {% include header.html %}
     <main
       class="mx-auto mb-12 mt-16 h-full w-full flex-1 overflow-y-auto hyphens-auto xl:mb-20 xl:mt-24"
