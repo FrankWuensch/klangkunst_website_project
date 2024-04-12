@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
       if (!menu.classList.contains("hidden")) {
         menu.classList.add("flex");
-        content.style.filter = "blur(0.5rem)";
+        content.style.filter = "blur(0.25rem)";
       } else {
         menu.classList.remove("flex");
         content.style.filter = "none"; // Reset the blur effect
