@@ -24,7 +24,7 @@
     {% for nav in site.navs %}
     <a
       href="{%if nav.link%}{{site.baseurl}}{{nav.link}}{%endif%}"
-      class="group flex h-16 flex-1 text-stone-800/70 dark:text-white/40 items-center xl:h-24 {%if nav.link%}hover:cursor-pointer hover:text-stone-800 hover:dark:text-white/70 hover:underline{%else%}pointer-events-none opacity-50{%endif%}"
+      class="group nav-link flex h-16 flex-1 text-stone-800/70 dark:text-white/40 items-center xl:h-24 {%if nav.link%}hover:cursor-pointer hover:text-stone-800 hover:dark:text-white/70 hover:underline{%else%}pointer-events-none opacity-50{%endif%}"
     >
       <div class="px-12 max-xl:hidden">{{nav.text}}</div>
     </a>

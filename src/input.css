@@ -78,4 +78,8 @@
     .header {
         @apply text-2xl;
     }
+
+    .active {
+        @apply text-black dark:text-white;
+    }
 }
