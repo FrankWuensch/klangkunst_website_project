@@ -3,17 +3,16 @@ email:
 description:
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-nav_title: 
-  text: Klangkunst Manufaktur
-  link: "index.html"
+nav_title_1: Klangkunst
+nav_title_2: Manufaktur
 navs:
   - text: Über uns
     link: "index.html"
+  - text: Aktuelles
   - text: Geschichte
     link: "geschichte.html"
   - text: Dirigent
     link: "dirigent.html"
-  - text: Aktuelles
   - text: Galerie
 posters:
   - src: "src/plakate/Klangkunst Plakat 2017.png"

@@ -5,7 +5,7 @@ layout: markdown
 
 # Impressum
 
-KlangkunstManufaktur e.V. \
+Klangkunst*Manufaktur* e.V. \
 Musterstraße 123 \
 12345 Musterstadt \
 Deutschland 
@@ -27,9 +27,9 @@ Gründungsdatum: 08.11.2018 *Quelle: [NORTHDATA](https://www.northdata.de/Klangk
 Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE 123456789
 
 **Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV** \
-[Vor- und Nachname] \
-Musterstraße 123 \
-12345 Musterstadt \
+Frank Wünsch \
+Zementstraße 1/1 \
+73230 Kirchheim u. Teck \
 Deutschland
 
 **Haftungshinweis** \

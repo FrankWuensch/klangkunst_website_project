@@ -12,7 +12,7 @@
   </head>
 
   <body
-    class="normal mx-auto flex h-full w-full overflow-hidden bg-gradient-to-b from-orange-700/20 via-amber-400/20 via-20% to-lime-700/20 to-80% dark:from-orange-950 dark:via-amber-950 dark:to-lime-950 dark:backdrop-saturate-[.25]"
+    class="normal mx-auto flex h-full w-full overflow-hidden bg-gradient-to-b from-amber-400/30 via-40% to-lime-700/30 dark:from-amber-950 dark:to-lime-950 dark:backdrop-saturate-[.25]"
   >
     <!-- only shown in mobile version -->
     <span
@@ -28,6 +28,17 @@
           class="hover:text-stone-800 dark:group-hover:text-stone-400 group-hover:underline"
         >
           Über uns
+        </div>
+      </a>
+      
+      <a
+        href=""
+        class="group w-full flex justify-end px-8 py-4 text-right pointer-events-none"
+      >
+        <div
+          class="opacity-50"
+        >
+          Aktuelles
         </div>
       </a>
       
@@ -55,21 +66,10 @@
       
       <a
         href=""
-        class="group w-full flex justify-end px-8 py-4 text-right cursor-auto"
+        class="group w-full flex justify-end px-8 py-4 text-right pointer-events-none"
       >
         <div
-          class=""
-        >
-          Aktuelles
-        </div>
-      </a>
-      
-      <a
-        href=""
-        class="group w-full flex justify-end px-8 py-4 text-right cursor-auto"
-      >
-        <div
-          class=""
+          class="opacity-50"
         >
           Galerie
         </div>
@@ -90,10 +90,10 @@
       </span>
     </span>
     <header
-  class="flex-0 fixed z-10 flex h-16 w-full items-center justify-between overflow-hidden bg-lime-100 shadow-lg xl:h-24 dark:bg-lime-950 dark:text-white/50 dark:grayscale"
+  class="flex-0 fixed z-10 flex h-16 w-full items-center justify-between overflow-hidden border-b-2 border-lime-200 bg-lime-100 xl:h-24 dark:border-stone-900 dark:bg-lime-950 dark:text-white/50 dark:grayscale"
 >
   <span
-    class="relative mx-auto flex w-full max-w-6xl shrink items-center justify-between whitespace-nowrap"
+    class="relative flex w-full shrink items-center justify-between whitespace-nowrap xl:mx-auto xl:max-w-6xl"
   >
     <!-- only shown in mobile version -->
     <div
@@ -107,71 +107,60 @@
       ></iconify-icon>
     </div>
     <!-- only shown if screen >= xl:1280px -->
-    <a
-      href="index.html"
-      class="header px-8 h-16 xl:h-24 flex items-center text-stone-800/70 dark:text-white/40 justify-between whitespace-nowrap hover:dark:text-white/70 text-center dark:bg-black/10 bg-white/50 appearance-none hover:text-stone-800 dark:hover:text-white/70 hover:cursor-pointer"
+    <div
+      class="header flex h-16 items-center justify-between whitespace-nowrap px-8 text-center text-stone-800/70 hover:cursor-default xl:h-24 dark:text-white/40"
     >
-      Klangkunst Manufaktur
-    </a>
+      Klangkunst<i>Manufaktur</i>
+    </div>
     
     <a
       href="index.html"
       class="group flex h-16 flex-1 text-stone-800/70 dark:text-white/40 items-center xl:h-24 hover:cursor-pointer hover:text-stone-800 hover:dark:text-white/70 hover:underline"
     >
-      <div class=" px-12 max-xl:hidden">
-        Über uns
-      </div>
+      <div class="px-12 max-xl:hidden">Über uns</div>
+    </a>
+    
+    <a
+      href=""
+      class="group flex h-16 flex-1 text-stone-800/70 dark:text-white/40 items-center xl:h-24 pointer-events-none opacity-50"
+    >
+      <div class="px-12 max-xl:hidden">Aktuelles</div>
     </a>
     
     <a
       href="geschichte.html"
       class="group flex h-16 flex-1 text-stone-800/70 dark:text-white/40 items-center xl:h-24 hover:cursor-pointer hover:text-stone-800 hover:dark:text-white/70 hover:underline"
     >
-      <div class=" px-12 max-xl:hidden">
-        Geschichte
-      </div>
+      <div class="px-12 max-xl:hidden">Geschichte</div>
     </a>
     
     <a
       href="dirigent.html"
       class="group flex h-16 flex-1 text-stone-800/70 dark:text-white/40 items-center xl:h-24 hover:cursor-pointer hover:text-stone-800 hover:dark:text-white/70 hover:underline"
     >
-      <div class=" px-12 max-xl:hidden">
-        Dirigent
-      </div>
+      <div class="px-12 max-xl:hidden">Dirigent</div>
     </a>
     
     <a
       href=""
-      class="group flex h-16 flex-1 text-stone-800/70 dark:text-white/40 items-center xl:h-24  hover:cursor-default pointer-events-none"
+      class="group flex h-16 flex-1 text-stone-800/70 dark:text-white/40 items-center xl:h-24 pointer-events-none opacity-50"
     >
-      <div class=" px-12 max-xl:hidden">
-        Aktuelles
-      </div>
-    </a>
-    
-    <a
-      href=""
-      class="group flex h-16 flex-1 text-stone-800/70 dark:text-white/40 items-center xl:h-24  hover:cursor-default pointer-events-none"
-    >
-      <div class=" px-12 max-xl:hidden">
-        Galerie
-      </div>
+      <div class="px-12 max-xl:hidden">Galerie</div>
     </a>
     
   </span>
 </header>
 
 <div
-  class="fixed right-0 top-0 z-10 flex h-12 w-48 flex-row items-center gap-x-4 rounded-bl-lg border-b border-l border-lime-300 bg-lime-200 pl-4 max-xl:hidden xl:mt-24 dark:border-stone-900 dark:bg-stone-800"
+  class="fixed right-0 top-0 z-10 flex h-12 w-48 flex-row items-center gap-x-4 rounded-bl-lg border-b border-l border-lime-400 bg-lime-200 pl-4 text-stone-700 max-xl:hidden xl:mt-24 dark:grayscale dark:invert"
 >
   <span
     id="light-mode-btn"
-    class="icon-[ph--sun-thin] hover:cursor-pointer hover:font-black hover:text-black hover:dark:text-white"
+    class="icon-[ph--sun-thin] hover:cursor-pointer hover:font-black hover:text-stone-900"
   ></span>
   <span
     id="dark-mode-btn"
-    class="icon-[ph--moon-thin] hover:cursor-pointer hover:font-black hover:text-black hover:dark:text-white"
+    class="icon-[ph--moon-thin] hover:cursor-pointer hover:font-black hover:text-stone-900"
   ></span>
 </div>
 
@@ -179,49 +168,33 @@
       class="mx-auto mb-12 mt-16 h-full w-full flex-1 overflow-y-auto hyphens-auto xl:mb-20 xl:mt-24"
       id="content"
     >
-      <div class="mx-auto flex w-full max-w-6xl flex-col px-8">
+      <div class="mx-auto w-full px-8 xl:mx-auto xl:max-w-6xl">
         <h1 class="title pb-8 pt-12 xl:pt-20">Über uns</h1>
         <p style="hyphens: auto">Die Klangkunst Manufaktur ist ein Orchester, das sich zweimal pro Jahr zu musikalischen Projekten  zusammenfindet um in intensiven Proben ein Konzertprogramm zu erarbeiten. Es besteht vor allem aus  musikbegeisterten Amateuren und einigen professionellen Musikern aus ganz Deutschland und teils aus  dem benachbarten Ausland. Die meisten Musiker verbindet die gemeinsame Arbeit mit dem Dirigenten  Bertram Schade, die in verschiedensten Ensembles zu unterschiedlichsten Zeiten teils über viele  Jahre gewachsen ist. In der Klangkunst Manufaktur treffen, zur großen Freude des Dirigenten, Musiker  aus diesen verschiedenen Lebens- und Arbeitsphasen zusammen, um gemeinsam zu musizieren und mit  diesem neuen Klang auch die alten Verbindungen wieder zu beleben.
 </p>
       </div>
       
     </main>
-    <footer class="flex-0 fixed bottom-0 h-12 w-full border-t-2 border-lime-300/70 bg-lime-100 bg-fixed text-xs text-stone-900/70 xl:h-20 xl:text-sm dark:border-stone-900/70 dark:bg-stone-800 dark:text-white/50">
+    <footer class="flex-0 fixed bottom-0 h-12 w-full border-t-2 border-lime-200 bg-lime-100 bg-fixed text-xs text-stone-900/70 xl:h-20 xl:text-sm dark:border-stone-900/70 dark:bg-lime-950 dark:text-white/50 dark:grayscale">
   <div
     class="mx-auto flex h-full w-full max-w-6xl items-center justify-between px-8 text-center"
   >
     
-    <a href="" class="flex h-full items-center px-8 hover:text-black dark:hover:text-white/80">
+    <a href="" class="flex shrink-0 whitespace-nowrap h-full items-center px-8 pointer-events-none opacity-50">
       <div>Kontakt</div>
     </a>
     
-    <a href="impressum.html" class="flex h-full items-center px-8 hover:text-black dark:hover:text-white/80">
+    <a href="impressum.html" class="flex shrink-0 whitespace-nowrap h-full items-center px-8 hover:text-black dark:hover:text-white/80">
       <div>Impressum</div>
     </a>
     
-    <a href="datenschutz.html" class="flex h-full items-center px-8 hover:text-black dark:hover:text-white/80">
+    <a href="datenschutz.html" class="flex shrink-0 whitespace-nowrap h-full items-center px-8 hover:text-black dark:hover:text-white/80">
       <div>Datenschutz</div>
     </a>
     
   </div>
 </footer>
- 
-    <script>
-  const menu = document.getElementById("menu");
-  const burger = document.getElementById("burger");
-  const content = document.getElementById("content");
-  if (menu && burger) {
-    burger.addEventListener("click", function () {
-      menu.classList.toggle("hidden");
-      content.classList.toggle("blur-sm");
-      if (!menu.classList.contains("hidden")) {
-        menu.classList.add("flex");
-      } else {
-        menu.classList.remove("flex");
-      }
-    });
-  }
-</script>
 
+    <script src="src/menu.js"></script>
   </body>
 </html>
