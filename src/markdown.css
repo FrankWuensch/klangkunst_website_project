@@ -13,6 +13,18 @@ a {
 a:hover {
   text-decoration-line: underline;
 }
-.dark ::a {
-  color: #0284c7;
+html.dark a {
+  color: #38bdf8;
+}
+#menu a {
+  color: rgb(41 37 36 / 0.7);
+}
+#menu a:hover {
+  color: rgb(41 37 36);
+}
+html.dark #menu a {
+  color: rgb(168 162 158 / 0.7);
+}
+html.dark #menu a:hover {
+  color: rgb(168 162 158);
 }
