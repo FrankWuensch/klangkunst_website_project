@@ -696,6 +696,14 @@ body:where(.dark, .dark *) {
   margin-top: 4rem;
 }
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.mt-24 {
+  margin-top: 6rem;
+}
+
 .flex {
   display: flex;
 }
@@ -964,6 +972,18 @@ body:where(.dark, .dark *) {
   padding-top: 1.5rem;
 }
 
+.pt-24 {
+  padding-top: 6rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1124,6 +1144,10 @@ body:where(.dark, .dark *) {
     margin-top: 6rem;
   }
 
+  .xl\:mt-20 {
+    margin-top: 5rem;
+  }
+
   .xl\:hidden {
     display: none;
   }
@@ -1151,6 +1175,14 @@ body:where(.dark, .dark *) {
 
   .xl\:pt-20 {
     padding-top: 5rem;
+  }
+
+  .xl\:pt-24 {
+    padding-top: 6rem;
+  }
+
+  .xl\:pb-24 {
+    padding-bottom: 6rem;
   }
 
   .xl\:text-sm {
