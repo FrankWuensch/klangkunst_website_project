@@ -12,7 +12,7 @@
   </head>
 
   <body
-    class="normal bg-fixed mx-auto flex h-full w-full overflow-hidden bg-gradient-to-b from-amber-400/30 via-40% to-lime-700/30 dark:from-amber-950 dark:to-lime-950 dark:backdrop-saturate-[.25]"
+    class="normal mx-auto flex h-full w-full overflow-hidden bg-gradient-to-b from-amber-400/30 via-40% to-lime-700/30 bg-fixed dark:from-amber-950 dark:to-lime-950 dark:backdrop-saturate-[.25]"
   >
     {% include menu.html %} 
     {% include header.html %}
@@ -23,8 +23,8 @@
       <div class="mx-auto w-full px-8 xl:mx-auto xl:max-w-6xl">
         <h1 class="title pb-8 pt-12 xl:pt-20">{{page.title_info_1}}</h1>
         <p style="hyphens: auto">{{page.info_1}}</p>
+        {{content}}
       </div>
-      {{content}}
     </main>
     {% include footer.html %}
     <script src="{{site.baseurl}}src/menu.js"></script>

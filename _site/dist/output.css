@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -211,8 +211,6 @@ textarea {
   /* 1 */
   line-height: inherit;
   /* 1 */
-  letter-spacing: inherit;
-  /* 1 */
   color: inherit;
   /* 1 */
   margin: 0;
@@ -236,9 +234,9 @@ select {
 */
 
 button,
-input:where([type='button']),
-input:where([type='reset']),
-input:where([type='submit']) {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
   /* 1 */
   background-color: transparent;
@@ -494,10 +492,6 @@ video {
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
 }
 
 ::backdrop {
@@ -548,10 +542,6 @@ video {
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
 }
 
 .icon-\[ph--moon-thin\] {
@@ -680,14 +670,6 @@ body:where(.dark, .dark *) {
   margin-right: auto;
 }
 
-.mb-12 {
-  margin-bottom: 3rem;
-}
-
-.mb-32 {
-  margin-bottom: 8rem;
-}
-
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -696,12 +678,8 @@ body:where(.dark, .dark *) {
   margin-top: 4rem;
 }
 
-.mt-12 {
-  margin-top: 3rem;
-}
-
-.mt-24 {
-  margin-top: 6rem;
+.mb-12 {
+  margin-bottom: 3rem;
 }
 
 .flex {
@@ -728,8 +706,16 @@ body:where(.dark, .dark *) {
   height: 100%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .max-h-full {
   max-height: 100%;
+}
+
+.min-h-full {
+  min-height: 100%;
 }
 
 .w-20 {
@@ -968,20 +954,12 @@ body:where(.dark, .dark *) {
   padding-top: 3rem;
 }
 
-.pt-6 {
-  padding-top: 1.5rem;
-}
-
-.pt-24 {
-  padding-top: 6rem;
-}
-
-.pb-20 {
-  padding-bottom: 5rem;
-}
-
 .pt-16 {
   padding-top: 4rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
 }
 
 .text-center {
@@ -1132,20 +1110,12 @@ body:where(.dark, .dark *) {
     margin-right: auto;
   }
 
-  .xl\:mb-20 {
-    margin-bottom: 5rem;
-  }
-
-  .xl\:mb-48 {
-    margin-bottom: 12rem;
-  }
-
   .xl\:mt-24 {
     margin-top: 6rem;
   }
 
-  .xl\:mt-20 {
-    margin-top: 5rem;
+  .xl\:mb-20 {
+    margin-bottom: 5rem;
   }
 
   .xl\:hidden {
@@ -1173,16 +1143,16 @@ body:where(.dark, .dark *) {
     padding-bottom: 5rem;
   }
 
+  .xl\:pb-24 {
+    padding-bottom: 6rem;
+  }
+
   .xl\:pt-20 {
     padding-top: 5rem;
   }
 
   .xl\:pt-24 {
     padding-top: 6rem;
-  }
-
-  .xl\:pb-24 {
-    padding-bottom: 6rem;
   }
 
   .xl\:text-sm {
