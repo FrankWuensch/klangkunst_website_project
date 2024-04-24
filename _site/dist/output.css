@@ -684,10 +684,6 @@ body:where(.dark, .dark *) {
   margin-bottom: 1.5rem;
 }
 
-.mb-12 {
-  margin-bottom: 3rem;
-}
-
 .flex {
   display: flex;
 }
@@ -712,16 +708,12 @@ body:where(.dark, .dark *) {
   height: 100%;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .max-h-full {
   max-height: 100%;
 }
 
-.min-h-full {
-  min-height: 100%;
+.w-1\/2 {
+  width: 50%;
 }
 
 .w-20 {
@@ -742,6 +734,14 @@ body:where(.dark, .dark *) {
 
 .w-full {
   width: 100%;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .max-w-6xl {
@@ -918,6 +918,11 @@ body:where(.dark, .dark *) {
 
 .bg-fixed {
   background-attachment: fixed;
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .px-12 {
@@ -1114,10 +1119,6 @@ body:where(.dark, .dark *) {
 
   .xl\:mt-24 {
     margin-top: 6rem;
-  }
-
-  .xl\:mb-20 {
-    margin-bottom: 5rem;
   }
 
   .xl\:hidden {
