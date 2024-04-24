@@ -1,0 +1,17 @@
+---
+title: Aktuelles
+layout: default
+title_info_1: Aktuelles / Nächstes Konzert
+---
+
+<div class="mx-auto h-screen min-h-full w-full max-w-6xl">
+  <div class="flex w-full flex-col gap-y-4 whitespace-nowrap">
+    <div>{{site.actual_poster.title}}</div>
+    <img
+      class="aspect-[2/3] w-full dark:bg-black dark:opacity-50"
+      src="{{site.baseurl}}{{site.actual_poster.src}}"
+      loading="lazy"
+    />
+  </div>
+  <div class="pb-12 xl:pb-20"></div>
+</div>
