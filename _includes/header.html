@@ -19,7 +19,7 @@
     <div
       class="header flex h-16 items-center justify-between whitespace-nowrap px-8 text-center text-stone-800/70 hover:cursor-default xl:h-24 dark:text-white/40"
     >
-      {{site.nav_title_1}}<i>{{site.nav_title_2}}</i>
+      <span class="text-xl">{{site.nav_title_1}}</span><i class="header pt-0.5 text-2xl italic">{{site.nav_title_2}}</i>
     </div>
     {% for nav in site.navs %}
     <a

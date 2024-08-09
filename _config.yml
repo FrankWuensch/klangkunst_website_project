@@ -9,7 +9,7 @@ navs:
   - text: Über uns
     link: "index.html"
   - text: Aktuelles
-    # link: "aktuelles.html"
+    link: "aktuelles.html"
   - text: Geschichte
     link: "geschichte.html"
   - text: Dirigent
@@ -41,8 +41,8 @@ posters:
   - src: "src/plakate/Klangkunst Plakat 2024-I.png"
     title: KlangkunstManufaktur Projekt I - 2024
 actual_poster:
-  # - src: "src/plakate/Klangkunst Plakat 2024-I.png"
-  # - title: KlangkunstManufaktur Projekt I - 2024
+  - src: "src/plakate/Klangkunst Plakat 2024-II.png"
+  - title: KlangkunstManufaktur Projekt II - 2024
 footer_elements:
   - name: Kontakt
   - name: Impressum

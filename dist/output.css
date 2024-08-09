@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -211,8 +211,6 @@ textarea {
   /* 1 */
   line-height: inherit;
   /* 1 */
-  letter-spacing: inherit;
-  /* 1 */
   color: inherit;
   /* 1 */
   margin: 0;
@@ -236,9 +234,9 @@ select {
 */
 
 button,
-input:where([type='button']),
-input:where([type='reset']),
-input:where([type='submit']) {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
   /* 1 */
   background-color: transparent;
@@ -494,10 +492,6 @@ video {
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
 }
 
 ::backdrop {
@@ -548,10 +542,6 @@ video {
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
 }
 
 .icon-\[ph--moon-thin\] {
@@ -712,10 +702,6 @@ body:where(.dark, .dark *) {
   max-height: 100%;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
 .w-20 {
   width: 5rem;
 }
@@ -734,14 +720,6 @@ body:where(.dark, .dark *) {
 
 .w-full {
   width: 100%;
-}
-
-.w-2\/3 {
-  width: 66.666667%;
-}
-
-.w-auto {
-  width: auto;
 }
 
 .max-w-6xl {
@@ -920,11 +898,6 @@ body:where(.dark, .dark *) {
   background-attachment: fixed;
 }
 
-.object-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
@@ -969,6 +942,22 @@ body:where(.dark, .dark *) {
   padding-top: 1.5rem;
 }
 
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
+}
+
+.pt-0 {
+  padding-top: 0px;
+}
+
+.pt-0\.5 {
+  padding-top: 0.125rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -985,6 +974,30 @@ body:where(.dark, .dark *) {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .text-stone-700 {
@@ -1043,7 +1056,11 @@ body:where(.dark, .dark *) {
 }
 
 .header {
-  font-family: 'TiltPrism';
+  font-family: 'lmromancaps10-regular';
+}
+
+.header .italic {
+  font-family: 'Gara';
 }
 
 .title {

@@ -1,9 +1,11 @@
 @font-face {
-    font-family: 'TiltPrism';
-    font-style: normal;
-    font-weight: normal;
-    font-display: swap;
-    src: url('../fonts/TiltPrism-Regular.ttf');
+    font-family: 'Gara';
+    src: url('../fonts/GARA.TTF');
+}
+
+@font-face {
+    font-family: 'lmromancaps10-regular';
+    src: url('../fonts/lmromancaps10-regular.otf');
 }
 
 @font-face {

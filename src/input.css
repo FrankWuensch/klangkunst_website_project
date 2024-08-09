@@ -31,7 +31,11 @@
 }
 
 .header {
-    font-family: 'TiltPrism';
+    font-family: 'lmromancaps10-regular';
+}
+
+.header .italic {
+    font-family: 'Gara';
 }
 
 .title {
