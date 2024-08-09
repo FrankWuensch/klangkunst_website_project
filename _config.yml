@@ -7,46 +7,46 @@ nav_title_1: Klangkunst
 nav_title_2: Manufaktur
 navs:
   - text: Über uns
-    link: "index.html"
+    link: "{{site.baseurl}}/index.html"
   - text: Aktuelles
-    link: "aktuelles.html"
+    link: "{{site.baseurl}}/aktuelles.html"
   - text: Geschichte
-    link: "geschichte.html"
+    link: "{{site.baseurl}}/geschichte.html"
   - text: Dirigent
-    link: "dirigent.html"
+    link: "{{site.baseurl}}/dirigent.html"
   - text: Galerie
 posters:
-  - src: "src/plakate/Klangkunst Plakat 2017.png"
+  - src: "{{site.baseurl}}/src/plakate/Klangkunst Plakat 2017.png"
     title: Projekt 1 - Ensemble Klangkunst - 2017
-  - src: "src/plakate/Klangkunst Plakat 2018-I.png"
+  - src: "{{site.baseurl}}/src/plakate/Klangkunst Plakat 2018-I.png"
     title: KlangkunstManufaktur Projekt I - 2018
-  - src: "src/plakate/Klangkunst Plakat 2018-II.png"
+  - src: "{{site.baseurl}}/src/plakate/Klangkunst Plakat 2018-II.png"
     title: KlangkunstManufaktur Projekt II - 2018
-  - src: "src/plakate/Klangkunst Plakat 2019-I.png"
+  - src: "{{site.baseurl}}/src/plakate/Klangkunst Plakat 2019-I.png"
     title: KlangkunstManufaktur Projekt I - 2019
-  - src: "src/plakate/Klangkunst Plakat 2019-II.png"
+  - src: "{{site.baseurl}}/src/plakate/Klangkunst Plakat 2019-II.png"
     title: KlangkunstManufaktur Projekt II - 2019
-  - src: "src/plakate/Klangkunst Plakat 2020-II.png"
+  - src: "{{site.baseurl}}/src/plakate/Klangkunst Plakat 2020-II.png"
     title: KlangkunstManufaktur Projekt II - 2020
-  - src: "src/plakate/Klangkunst Plakat 2021-II.png"
+  - src: "{{site.baseurl}}/src/plakate/Klangkunst Plakat 2021-II.png"
     title: KlangkunstManufaktur Projekt II - 2021
-  - src: "src/plakate/Klangkunst Plakat 2022-I.png"
+  - src: "{{site.baseurl}}/src/plakate/Klangkunst Plakat 2022-I.png"
     title: KlangkunstManufaktur Projekt I - 2022
-  - src: "src/plakate/Klangkunst Plakat 2022-II.png"
+  - src: "{{site.baseurl}}/src/plakate/Klangkunst Plakat 2022-II.png"
     title: KlangkunstManufaktur Projekt II - 2022
-  - src: "src/plakate/Klangkunst Plakat 2023-I.png"
+  - src: "{{site.baseurl}}/src/plakate/Klangkunst Plakat 2023-I.png"
     title: KlangkunstManufaktur Projekt I - 2023
-  - src: "src/plakate/Klangkunst Plakat 2023-II.png"
+  - src: "{{site.baseurl}}/src/plakate/Klangkunst Plakat 2023-II.png"
     title: KlangkunstManufaktur Projekt II - 2023
-  - src: "src/plakate/Klangkunst Plakat 2024-I.png"
+  - src: "{{site.baseurl}}/src/plakate/Klangkunst Plakat 2024-I.png"
     title: KlangkunstManufaktur Projekt I - 2024
 actual_poster:
-  - src: "src/plakate/Klangkunst Plakat 2024-II.png"
+  - src: "{{site.baseurl}}/src/plakate/Klangkunst Plakat 2024-II.png"
   - title: KlangkunstManufaktur Projekt II - 2024
 footer_elements:
   - name: Kontakt
   - name: Impressum
-    link: "impressum.html"
+    link: "{{site.baseurl}}/impressum.html"
   - name: Datenschutz
-    link: "datenschutz.html"
+    link: "{{site.baseurl}}/datenschutz.html"
   
