@@ -1,6 +1,6 @@
 <footer class="flex-0 fixed bottom-0 z-10 flex h-12 w-full border-t-2 border-lime-200 bg-lime-100 bg-fixed text-xs text-stone-900/70 xl:h-20 xl:text-sm dark:border-stone-900/70 dark:bg-lime-950 dark:text-white/50 dark:grayscale">
   <div
-    class="mx-auto flex h-full w-full max-w-6xl items-center justify-between px-8 text-center"
+    class="mx-auto flex h-full w-full max-w-6xl items-center justify-between text-center"
   >
     {%for element in site.footer_elements%}
     <a href="{%if element.link%}{{site.baseurl}}{{element.link}}{%endif%}" class="flex shrink-0 whitespace-nowrap h-full items-center px-8 {%if element.link%}hover:text-black dark:hover:text-white/80{%else%}pointer-events-none opacity-50{%endif%}">

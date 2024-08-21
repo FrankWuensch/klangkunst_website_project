@@ -1,5 +1,13 @@
 h1 {
   padding-bottom: 2rem;
+  font-family: 'Gara';
+  font-size: 1.25rem; /* tw-class text-xl */
+  line-height: 1.75rem;
+
+  @media (min-width: 1280px) {
+    font-size: 1.5rem; /* tw-class text-2xl */
+    line-height: 2rem;
+  }
 }
 p {
   padding-bottom: 0.5rem;

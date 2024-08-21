@@ -1,6 +1,8 @@
 ---
 title: Datenschutz
 layout: markdown
+block_index: true
+block_follow: true
 ---
 
 # Datenschutzerklärung

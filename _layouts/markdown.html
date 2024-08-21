@@ -4,6 +4,12 @@
     <title>{{page.title}}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {%if page.block_index or page.block_follow%}
+    <meta
+      name="robots"
+      content="{%if page.block_index and page.block_follow%}noindex, nofollow{%elsif page.block_index%}noindex{%elsif page.block_follow%}nofollow{%endif%}"
+    />
+    {%endif%}
     <link rel="icon" href="{{site.baseurl}}favicon.ico" />
     <script src="{{site.baseurl}}src/darkmode.js"></script>
     <link href="{{site.baseurl}}src/fonts.css" rel="stylesheet" />
@@ -15,8 +21,7 @@
   <body
     class="normal relative mx-auto flex h-full w-full overflow-hidden bg-gradient-to-b from-amber-400/30 via-40% to-lime-700/30 bg-fixed pt-16 xl:pt-24 dark:from-amber-950 dark:to-lime-950 dark:backdrop-saturate-[.25]"
   >
-    {% include menu.html %}
-    {% include header.html %}
+    {% include menu.html %} {% include header.html %}
     <main
       class="mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto"
       id="content"

@@ -44,7 +44,6 @@ actual_poster:
   - src: "src/plakate/Klangkunst Plakat 2024-II.png"
   - title: KlangkunstManufaktur Projekt II - 2024
 footer_elements:
-  - name: Kontakt
   - name: Impressum
     link: "impressum.html"
   - name: Datenschutz
