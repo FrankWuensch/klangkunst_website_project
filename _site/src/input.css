@@ -4,70 +4,86 @@
 
 /* For WebKit/Blink browsers */
 .dark ::-webkit-scrollbar {
-  width: 12px;
+    width: 12px;
 }
 
 /* For Firefox */
 .dark {
-  scrollbar-width: thin;
-  scrollbar-color: #333 #222; /* dark grey on black */
+    scrollbar-width: thin;
+    scrollbar-color: #333 #222; /* dark grey on black */
 }
 
 /* Track */
 .dark ::-webkit-scrollbar-track {
-  background: #222; /* same as background color */
+    background: #222; /* same as background color */
 }
 
 /* Handle */
 .dark ::-webkit-scrollbar-thumb {
-  background-color: #333; /* grey */
-  border-radius: 10px;
-  border: 3px solid #222; /* same as track */
+    background-color: #333; /* grey */
+    border-radius: 10px;
+    border: 3px solid #222; /* same as track */
 }
 
 /* Handle on hover */
 .dark ::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* slightly lighter grey */
+    background-color: #555; /* slightly lighter grey */
 }
 
 .header {
-  font-family: "lmromancaps10-regular";
+    font-family: 'lmromancaps10-regular';
 }
 
 .header-second {
-  font-family: "Gara";
+    font-family: 'Gara';
+}
+
+.title {
+    font-family: 'Roboto-Black', sans-serif;
+}
+
+.title-italic {
+    font-family: 'Roboto-BlackItalic', sans-serif;
 }
 
 .normal {
-  font-family: "Inter", sans-serif;
+    font-family: 'Roboto-Light', sans-serif;
 }
 
-i,
-em,
-.font-italic {
-  font-family: "InterItalic", sans-serif;
+.normal-italic {
+    font-family: 'Roboto-LightItalic', sans-serif;
 }
 
-h1 {
-  @apply normal text-xl font-black text-stone-800/70 xl:text-2xl dark:text-stone-400;
+.thin {
+    font-family: 'Roboto-Thin', sans-serif;
 }
 
-p {
-  @apply text-sm text-stone-800/70 xl:text-base dark:text-stone-400;
+.thin-italic {
+    font-family: 'Roboto-ThinItalic', sans-serif;
 }
 
-strong {
-  @apply normal font-black;
-}
+@layer components {
+    h1 {
+        @apply title text-xl text-stone-800/70 xl:text-2xl dark:text-stone-400;
+    }
 
-body {
-  @apply normal text-stone-700 dark:text-white/80;
-}
+    p {
+        @apply normal text-sm font-black text-stone-800/70 xl:text-base dark:text-stone-400;
+    }
 
-.header {
-  @apply text-2xl;
-}
+    strong {
+        @apply title;
+    }
 
-.active {
-  @apply text-black dark:text-white;
+    body {
+        @apply text-stone-700 dark:text-white/80;
+    }
+
+    .header {
+        @apply text-2xl;
+    }
+
+    .active {
+        @apply text-black dark:text-white;
+    }
 }
