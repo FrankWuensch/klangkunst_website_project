@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(function(navLink) {
         if (navLink.href === window.location.href) {
-            navLink.classList.add('active');
+            navLink.classList.add('active')
+            navLink.classList.remove('dark:text-white/40');
         }
     });
 });

@@ -944,6 +944,10 @@ video {
   color: rgb(28 25 23 / 0.7);
 }
 
+.text-black\/50 {
+  color: rgb(0 0 0 / 0.5);
+}
+
 .opacity-50 {
   opacity: 0.5;
 }
@@ -1246,6 +1250,10 @@ body:where(.dark, .dark *) {
   --tw-backdrop-saturate: saturate(.25);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.hover\:dark\:font-black:where(.dark, .dark *):hover {
+  font-weight: 900;
 }
 
 .dark\:hover\:text-stone-400:hover:where(.dark, .dark *) {
