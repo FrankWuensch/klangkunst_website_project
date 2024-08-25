@@ -7,7 +7,7 @@ nav_title_1: Klangkunst
 nav_title_2: Manufaktur
 navs:
   - text: Über uns
-    link: "/"
+    link: "index.html"
   - text: Aktuelles
     link: "aktuelles.html"
   - text: Geschichte
