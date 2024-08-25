@@ -2,70 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-/* For WebKit/Blink browsers */
-.dark ::-webkit-scrollbar {
-    width: 12px;
-}
-
-/* For Firefox */
-.dark {
-    scrollbar-width: thin;
-    scrollbar-color: #333 #222; /* dark grey on black */
-}
-
-/* Track */
-.dark ::-webkit-scrollbar-track {
-    background: #222; /* same as background color */
-}
-
-/* Handle */
-.dark ::-webkit-scrollbar-thumb {
-    background-color: #333; /* grey */
-    border-radius: 10px;
-    border: 3px solid #222; /* same as track */
-}
-
-/* Handle on hover */
-.dark ::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* slightly lighter grey */
+::-webkit-scrollbar {
+  visibility: hidden;
+  display: none;
 }
 
 .header {
-    font-family: 'lmromancaps10-regular';
+  font-family: "lmromancaps10-regular";
 }
 
 .header-second {
-    font-family: 'Gara';
+  font-family: "Gara";
 }
 
 .normal {
-    font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-i, em, .font-italic {
-    font-family: 'InterItalic', sans-serif;
+i,
+em,
+.font-italic {
+  font-family: "InterItalic", sans-serif;
 }
 
 h1 {
-    @apply text-xl text-stone-800/70 xl:text-2xl dark:text-stone-400;
+  @apply text-xl text-stone-800/70 xl:text-2xl dark:text-stone-400;
 }
 
 p {
-    @apply text-sm text-stone-800/70 xl:text-base dark:text-stone-400;
+  @apply text-sm text-stone-800/70 xl:text-base dark:text-stone-400;
 }
 
 strong {
-    @apply normal font-black;
+  @apply normal font-black;
 }
 
-body {
-    @apply normal text-stone-700 dark:text-white/80;
+main {
+  @apply normal text-stone-700 dark:text-white/80;
+}
+
+main a[href] {
+  @apply text-sky-600 hover:underline hover:underline-offset-4;
 }
 
 .header {
-    @apply text-2xl;
+  @apply text-2xl;
 }
 
 .active {
-    @apply text-black dark:text-white;
+  @apply text-stone-800 dark:text-white/80;
+}
+
+.inactive {
+  @apply text-stone-700/30 dark:text-white/30;
+}
+
+#mobile-menu .inactive {
+  @apply dark:text-white/20;
 }

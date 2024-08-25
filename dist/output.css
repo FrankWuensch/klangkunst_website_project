@@ -936,6 +936,10 @@ video {
   color: rgb(68 64 60 / var(--tw-text-opacity));
 }
 
+.text-stone-700\/70 {
+  color: rgb(68 64 60 / 0.7);
+}
+
 .text-stone-800\/70 {
   color: rgb(41 37 36 / 0.7);
 }
@@ -944,66 +948,31 @@ video {
   color: rgb(28 25 23 / 0.7);
 }
 
-.text-black\/50 {
-  color: rgb(0 0 0 / 0.5);
-}
-
 .opacity-50 {
   opacity: 0.5;
 }
 
-/* For WebKit/Blink browsers */
-
-.dark ::-webkit-scrollbar {
-  width: 12px;
-}
-
-/* For Firefox */
-
-.dark {
-  scrollbar-width: thin;
-  scrollbar-color: #333 #222;
-  /* dark grey on black */
-}
-
-/* Track */
-
-.dark ::-webkit-scrollbar-track {
-  background: #222;
-  /* same as background color */
-}
-
-/* Handle */
-
-.dark ::-webkit-scrollbar-thumb {
-  background-color: #333;
-  /* grey */
-  border-radius: 10px;
-  border: 3px solid #222;
-  /* same as track */
-}
-
-/* Handle on hover */
-
-.dark ::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
-  /* slightly lighter grey */
+::-webkit-scrollbar {
+  visibility: hidden;
+  display: none;
 }
 
 .header {
-  font-family: 'lmromancaps10-regular';
+  font-family: "lmromancaps10-regular";
 }
 
 .header-second {
-  font-family: 'Gara';
+  font-family: "Gara";
 }
 
 .normal {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-i, em, .font-italic {
-  font-family: 'InterItalic', sans-serif;
+i,
+em,
+.font-italic {
+  font-family: "InterItalic", sans-serif;
 }
 
 h1 {
@@ -1044,17 +1013,27 @@ p:where(.dark, .dark *) {
 
 strong {
   font-weight: 900;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-body {
+main {
   --tw-text-opacity: 1;
   color: rgb(68 64 60 / var(--tw-text-opacity));
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-body:where(.dark, .dark *) {
+main:where(.dark, .dark *) {
   color: rgb(255 255 255 / 0.8);
+}
+
+main a[href] {
+  --tw-text-opacity: 1;
+  color: rgb(2 132 199 / var(--tw-text-opacity));
+}
+
+main a[href]:hover {
+  text-decoration-line: underline;
+  text-underline-offset: 4px;
 }
 
 .header {
@@ -1064,12 +1043,23 @@ body:where(.dark, .dark *) {
 
 .active {
   --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+  color: rgb(41 37 36 / var(--tw-text-opacity));
 }
 
 .active:where(.dark, .dark *) {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(255 255 255 / 0.8);
+}
+
+.inactive {
+  color: rgb(68 64 60 / 0.3);
+}
+
+.inactive:where(.dark, .dark *) {
+  color: rgb(255 255 255 / 0.3);
+}
+
+#mobile-menu .inactive:where(.dark, .dark *) {
+  color: rgb(255 255 255 / 0.2);
 }
 
 .hover\:cursor-default:hover {
@@ -1250,10 +1240,6 @@ body:where(.dark, .dark *) {
   --tw-backdrop-saturate: saturate(.25);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-
-.hover\:dark\:font-black:where(.dark, .dark *):hover {
-  font-weight: 900;
 }
 
 .dark\:hover\:text-stone-400:hover:where(.dark, .dark *) {

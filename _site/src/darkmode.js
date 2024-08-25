@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const currentTheme = localStorage.theme;
 
-  const menu = document.getElementById("menu");
+  const menu = document.getElementById("mobile-menu");
   const btn_light = menu.querySelector("#light-mode");
   const btn_dark = menu.querySelector("#dark-mode");
   const light_switch = document.querySelector("#light-mode-btn");
@@ -41,14 +41,4 @@ document.addEventListener("DOMContentLoaded", function () {
       document.documentElement.classList.add("dark");
     });
   }
-
-  // const btn_respect_os = document.querySelector("#respect-os");
-
-  // if (btn_respect_os) {
-  //   btn_respect_os.addEventListener("click", () => {
-  //     localStorage.removeItem("theme");
-  //     document.documentElement.classList.remove("dark");
-  //     console.log("Respecting OS preference");
-  //   });
-  // }
 });

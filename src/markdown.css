@@ -1,47 +1,20 @@
 h1 {
   padding-bottom: 2rem;
   font-family: "Gara";
-  font-size: 1.25rem; /* tw-class text-xl */
+  font-size: 1.25rem;
   line-height: 1.75rem;
 
   @media (min-width: 1280px) {
-    font-size: 1.5rem; /* tw-class text-2xl */
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
     line-height: 2rem;
   }
 }
 
 p {
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 strong {
   padding-top: 1rem;
-}
-
-a {
-  color: #075985;
-}
-
-a:hover {
-  text-decoration-line: underline;
-}
-
-html.dark a {
-  color: #38bdf8;
-}
-
-#menu a {
-  color: rgb(41 37 36 / 0.7);
-}
-
-#menu a:hover {
-  color: rgb(41 37 36);
-}
-
-html.dark #menu a {
-  color: rgb(168 162 158 / 0.7);
-}
-
-html.dark #menu a:hover {
-  color: rgb(168 162 158);
 }
