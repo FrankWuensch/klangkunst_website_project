@@ -45,6 +45,14 @@ main a[href] {
   @apply text-sky-600 hover:underline hover:underline-offset-4;
 }
 
+ul {
+  @apply pb-4;
+}
+
+ul > li {
+  @apply list-inside list-disc text-sm text-stone-800/70 xl:text-base dark:text-stone-400;
+}
+
 .header {
   @apply text-2xl;
 }

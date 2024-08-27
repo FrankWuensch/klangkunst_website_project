@@ -7,32 +7,33 @@ block_follow: true
 
 # Impressum
 
-Klangkunst*Manufaktur* e.V. \
-Musterstraße 123 \
-12345 Musterstadt \
+KlangkunstManufaktur e.V. \
+Vogelsangstraße 87/1 \
+70197 Stuttgart \
 Deutschland 
 
-**Vertreten durch** \
-Vorstandsvorsitzende(r): [Vor- und Nachname] \
-Stellvertretende(r) Vorsitzende(r): [Vor- und Nachname]
+**Vertreten durch**
+
+- David Schmid
+- Alexander Feile
+- Marius Siegfarth
+- Alexandra Emmert
 
 **Kontakt** \
-Telefon: +49 (0)123 456789 \
-E-Mail: info@klangkunstmanufaktur.de
+E-Mail: <em><a href="mailto:klangkunstmanufaktur@gmail.com">klangkunstmanufaktur@gmail.com<a /><em />
 
 **Registereintrag** \
 Registergericht: Amtsgericht Stuttgart \
 Registernummer: VR 723800 \
-Gründungsdatum: 08.11.2018 *Quelle: [NORTHDATA](https://www.northdata.de/Klangkunst+Manufaktur+e.+V.,+Stuttgart/VR+723800)*
-
-**Umsatzsteuer-ID** \
-Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE 123456789
+Gründungsdatum: 08.11.2018
 
 **Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV** \
 Frank Wünsch \
 Zementstraße 1/1 \
 73230 Kirchheim u. Teck \
 Deutschland
+
+E-Mail: <em><a href="mailto:wuensch.frank@web.de?subject=Feedback%20zur%20KlangkunstManufaktur%20e.V.%20Website">wuensch.frank@web.de<a /><em />
 
 **Haftungshinweis** \
 Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.

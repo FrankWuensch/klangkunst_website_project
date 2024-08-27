@@ -1026,6 +1026,30 @@ main a[href]:hover {
   text-underline-offset: 4px;
 }
 
+ul {
+  padding-bottom: 1rem;
+}
+
+ul > li {
+  list-style-position: inside;
+  list-style-type: disc;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgb(41 37 36 / 0.7);
+}
+
+@media (min-width: 1280px) {
+  ul > li {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+ul > li:where(.dark, .dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(168 162 158 / var(--tw-text-opacity));
+}
+
 .header {
   font-size: 1.5rem;
   line-height: 2rem;

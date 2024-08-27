@@ -11,7 +11,12 @@ Die KlangkunstManufaktur e.V. (im Folgenden "wir", "uns", "unser") nimmt den Sch
 
 **1. Verantwortliche Stelle**
 
-Verantwortliche Stelle im Sinne der Datenschutzgesetze ist die KlangkunstManufaktur e.V., vertreten durch den Vorstand.
+Verantwortliche Stelle im Sinne der Datenschutzgesetze ist die KlangkunstManufaktur e.V., vertreten durch
+
+- David Schmid
+- Alexander Feile
+- Marius Siegfarth
+- Alexandra Emmert
 
 **2. Erhebung und Verwendung personenbezogener Daten**
 
@@ -38,10 +43,10 @@ Wir behalten uns das Recht vor, diese Datenschutzerklärung jederzeit zu ändern
 Für Fragen zur Verarbeitung Ihrer personenbezogenen Daten oder zur Ausübung Ihrer Rechte können Sie sich an folgende Kontaktadresse wenden:
 
 KlangkunstManufaktur e.V. \
-Musterstraße 123 \
-70173 Stuttgart \
-E-Mail: *datenschutz@klangkunstmanufaktur.de*
+Vogelsangstraße 87/1 \
+70197 Stuttgart \
+E-Mail: <em><a href="mailto:klangkunstmanufaktur@gmail.com">klangkunstmanufaktur@gmail.com<a /><em />
 
-Stand: April 2024
+Stand: August 2024
 
-Diese Datenschutzerklärung wurde zuletzt am 02.04.2024 aktualisiert.
+Diese Datenschutzerklärung wurde zuletzt am 27.08.2024 aktualisiert.
