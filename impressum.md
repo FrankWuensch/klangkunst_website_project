@@ -29,7 +29,6 @@ Gründungsdatum: 08.11.2018
 
 **Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV** \
 Frank Wünsch \
-Zementstraße 1/1 \
 73230 Kirchheim u. Teck \
 Deutschland
 
