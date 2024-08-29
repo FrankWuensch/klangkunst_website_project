@@ -64,7 +64,3 @@ ul > li {
 .inactive {
   @apply text-stone-700/30 dark:text-white/30;
 }
-
-#mobile-menu .inactive {
-  @apply dark:text-white/20;
-}
