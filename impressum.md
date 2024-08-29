@@ -32,7 +32,7 @@ Frank Wünsch \
 73230 Kirchheim u. Teck \
 Deutschland
 
-E-Mail: <em><a href="mailto:wuensch.frank@web.de?subject=Feedback%20zur%20KlangkunstManufaktur%20e.V.%20Website">wuensch.frank@web.de<a /><em />
+E-Mail: <em><a href="mailto:fwuensch@klangkunstmanufaktur.de?subject=Feedback%20zur%20KlangkunstManufaktur%20e.V.%20Website">fwuensch@klangkunstmanufaktur.de<a /><em />
 
 **Haftungshinweis** \
 Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
