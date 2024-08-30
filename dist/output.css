@@ -739,6 +739,12 @@ video {
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
 }
 
+.divide-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(2px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(2px * var(--tw-divide-y-reverse));
+}
+
 .divide-lime-300 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(190 242 100 / var(--tw-divide-opacity));
@@ -747,6 +753,15 @@ video {
 .divide-stone-400 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(168 162 158 / var(--tw-divide-opacity));
+}
+
+.divide-lime-200 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(217 249 157 / var(--tw-divide-opacity));
+}
+
+.divide-stone-700\/30 > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgb(68 64 60 / 0.3);
 }
 
 .overflow-hidden {
@@ -1166,6 +1181,15 @@ ul > li:where(.dark, .dark *) {
 .dark\:divide-stone-800:where(.dark, .dark *) > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(41 37 36 / var(--tw-divide-opacity));
+}
+
+.dark\:divide-stone-900:where(.dark, .dark *) > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(28 25 23 / var(--tw-divide-opacity));
+}
+
+.dark\:divide-white\/30:where(.dark, .dark *) > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgb(255 255 255 / 0.3);
 }
 
 .dark\:border-stone-800:where(.dark, .dark *) {
