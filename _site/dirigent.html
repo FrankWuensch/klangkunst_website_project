@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="de" class="h-full w-full">
-  <head>
-    <title>Dirigent</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="referrer" content="no-referrer" />
-    
-    <link rel="icon" href="favicon.ico" />
-    <script src="src/darkmode.js"></script>
-    <link href="src/fonts.css" rel="stylesheet" />
-    <link href="dist/output.css" rel="stylesheet" />
-    <script src="src/iconify-min.js"></script>
-  </head>
 
-  <body
-    class="normal relative mx-auto flex h-full w-full overflow-hidden bg-gradient-to-b from-amber-400/30 via-40% to-lime-700/30 bg-fixed pb-12 pt-16 xl:pb-20 xl:pt-24 dark:from-amber-950 dark:to-lime-950 dark:backdrop-saturate-[.25]"
-  >
-    <!-- only shown in mobile version -->
+<head>
+  <title>Dirigent</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="no-referrer" />
+  
+  <link rel="icon" href="favicon.ico" />
+  <script src="src/darkmode.js"></script>
+  <link href="src/fonts.css" rel="stylesheet" />
+  <link href="dist/output.css" rel="stylesheet" />
+  <script src="src/iconify-min.js"></script>
+</head>
+
+<body
+  class="normal relative mx-auto flex h-full w-full overflow-hidden bg-gradient-to-b from-amber-400/30 via-40% to-lime-700/30 bg-fixed pb-12 pt-16 xl:pb-20 xl:pt-24 dark:from-amber-950 dark:to-lime-950 dark:backdrop-saturate-[.25]">
+  <!-- only shown in mobile version -->
 <span
   id="mobile-menu"
   class="absolute right-0 top-16 z-10 hidden w-[50%] flex-col items-center justify-center divide-y divide-stone-700/30 rounded-bl-xl border-b border-l border-lime-200 bg-lime-100 text-lg text-stone-700/70 xl:hidden dark:divide-white/30 dark:border-stone-900 dark:bg-lime-950 dark:text-white/50 dark:grayscale"
@@ -166,48 +166,46 @@
   ></span>
 </div>
 
-    <main
-      class="mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-12 xl:py-20"
-      id="content"
-    >
-      <div class="mx-auto w-full px-8 xl:max-w-6xl">
-        <h1 class="header-second pb-8">Bertram Schade</h1>
-        <p style="hyphens: auto">Bertram Schade studierte Violine an der Hochschule für Musik in Stuttgart bei Prof. W. Melcher und Prof. I. Turban.  1995 war er 2. Konzertmeister am städt. Theater Trier. Als Mitglied des Turina-Trios wurde er 1998 1. Preisträger  des Internationalen Wettbewerbs „Carlo Soliva" in Casale Monferrato (Italien). Von 1996 bis 1999 war er Stipendiat  der „Stiftung Podium junger Musiker“ Stuttgart. 2006 erhielt er den Solistenpreis der Stadt Gmunden. Als Dirigent leitet er u.a. das Kammerorchester Plochingen, das Hochschulorchester Pforzheim und die KlangkunstManufaktur. Er unterrichtete als Dozent u.a. bei den “internationalen Musiktagen Salzburg" und dem "internationalen Arbeitskreis für Musik" an den  Landesmusikakademien Ochsenhausen und Hammelburg. Das Musizieren in verschiedenen Kammermusikensembles,  Ensembles für Neue Musik und für historische Aufführungspraxis sowie zahlreichen Orchestern führte zu internationaler  Konzerttätigkeit, Auftritten bei international renommierten Festivals, sowie TV- und CD-Aufnahmen (u.a. als Mitglied des  Bachcollegiums der internationalen Bachakademie Stuttgart, Boccherini-Sextett, Ilios-Trio).
+  <main class="mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-12 xl:py-20" id="content">
+    <div class="mx-auto w-full px-8 xl:max-w-6xl">
+      <h1 class="header-second pb-8">Bertram Schade</h1>
+      <p style="hyphens: auto">Bertram Schade studierte Violine an der Hochschule für Musik in Stuttgart bei Prof. W. Melcher und Prof. I. Turban.  1995 war er 2. Konzertmeister am städt. Theater Trier. Als Mitglied des Turina-Trios wurde er 1998 1. Preisträger  des Internationalen Wettbewerbs „Carlo Soliva" in Casale Monferrato (Italien). Von 1996 bis 1999 war er Stipendiat  der „Stiftung Podium junger Musiker“ Stuttgart. 2006 erhielt er den Solistenpreis der Stadt Gmunden. Als Dirigent leitet er u.a. das Kammerorchester Plochingen, das Hochschulorchester Pforzheim und die KlangkunstManufaktur. Er unterrichtete als Dozent u.a. bei den “internationalen Musiktagen Salzburg" und dem "internationalen Arbeitskreis für Musik" an den  Landesmusikakademien Ochsenhausen und Hammelburg. Das Musizieren in verschiedenen Kammermusikensembles,  Ensembles für Neue Musik und für historische Aufführungspraxis sowie zahlreichen Orchestern führte zu internationaler  Konzerttätigkeit, Auftritten bei international renommierten Festivals, sowie TV- und CD-Aufnahmen (u.a. als Mitglied des  Bachcollegiums der internationalen Bachakademie Stuttgart, Boccherini-Sextett, Ilios-Trio).
 </p>
-        
-      </div>
-      <div class="absolute inset-0 flex items-center justify-center">
-        <div
-          class="hidden aspect-[2/3] h-[80vh] bg-blue-100 object-cover dark:bg-black dark:opacity-50"
-          id="large-image-wrapper"
-        >
-          <img id="large-image" class="h-full w-full" />
-          <script>
-            document.addEventListener("DOMContentLoaded", () => {
-              const largeImage = document.querySelector("#large-image");
-              const largeImageWrapper = document.querySelector(
-                "#large-image-wrapper"
-              );
-              const clickableImages = document.querySelector(".clickable");
-              console.log(clickableImages);
-              for (let img of clickableImages) {
-                img.addEventListener("click", (evt) => {
-                  if (
-                    evt.target === largeImageWrapper &&
-                    largeImageWrapper.classList.contains("hidden")
-                  ) {
-                    largeImageWrapper.classList.remove("hidden");
-                  } else {
-                    largeImageWrapper.classList.add("hidden");
-                  }
-                });
+      
+    </div>
+  </main>
+  <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
+    <div class="relative aspect-[2/3] h-[75vh] bg-blue-100 object-cover opacity-0 duration-300 ease-in-out" id="large-image-wrapper">
+      <img id="large-image" class="h-full w-full" />
+      <div class="absolute left-0 top-0 h-full w-full dark:bg-black dark:opacity-50"></div>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const largeImage = document.querySelector("#large-image");
+          const largeImageWrapper = document.querySelector(
+            "#large-image-wrapper"
+          );
+          const clickableImages = document.querySelectorAll(".clickable");
+          for (let img of clickableImages) {
+            img.addEventListener("click", (evt) => {
+              if (
+                largeImageWrapper.classList.contains("opacity-0")
+              ) {
+                largeImageWrapper.classList.remove("opacity-0");
+                largeImageWrapper.classList.add("opacity-100");
+                largeImage.setAttribute("src", img.getAttribute("src"));
+                content.style.filter = "blur(0.5rem)";
+              } else {
+                largeImageWrapper.classList.remove("opacity-100");
+                largeImageWrapper.classList.add("opacity-0");
+                content.style.filter = "none"; // Reset the blur effect
               }
             });
-          </script>
-        </div>
-      </div>
-    </main>
-    <footer class="flex-0 fixed bottom-0 z-10 flex h-12 w-full border-t-2 border-lime-200 bg-lime-100 bg-fixed text-xs text-stone-900/70 xl:h-20 xl:text-sm dark:border-stone-900/70 dark:bg-lime-950 dark:text-white/50 dark:grayscale">
+          }
+        });
+      </script>
+    </div>
+  </div>
+  <footer class="flex-0 fixed bottom-0 z-10 flex h-12 w-full border-t-2 border-lime-200 bg-lime-100 bg-fixed text-xs text-stone-900/70 xl:h-20 xl:text-sm dark:border-stone-900/70 dark:bg-lime-950 dark:text-white/50 dark:grayscale">
   <div
     class="mx-auto flex h-full w-full max-w-6xl items-center justify-between text-center"
   >
@@ -223,7 +221,8 @@
   </div>
 </footer>
 
-    <script src="src/menu.js"></script>
-    <script src="src/active_elements.js"></script>
-  </body>
+  <script src="src/menu.js"></script>
+  <script src="src/active_elements.js"></script>
+</body>
+
 </html>
