@@ -4,7 +4,7 @@
     <title>Aktuelles</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="referrer" content="no-referrer">
+    <meta name="referrer" content="no-referrer" />
     
     <link rel="icon" href="favicon.ico" />
     <script src="src/darkmode.js"></script>
@@ -174,20 +174,48 @@
         <h1 class="header-second pb-8">Nächstes Konzert</h1>
         <p style="hyphens: auto"></p>
         <div class="flex h-full w-full max-w-6xl">
-  <div
-    class="flex w-full flex-row flex-wrap gap-x-8 gap-y-12"
-  >
+  <div class="flex w-full flex-row flex-wrap gap-x-8 gap-y-12">
     <div class="flex w-80 flex-col gap-y-4">
       <div class="whitespace-nowrap">KlangkunstManufaktur Projekt II - 2024</div>
-      <img
-        class="aspect-[2/3] w-full object-cover dark:bg-black dark:opacity-50"
-        src="src/plakate/Klangkunst Plakat 2024-II.png"
-        loading="lazy"
-      />
+        <img
+          class="clickable aspect-[2/3] w-full object-cover dark:bg-black dark:opacity-50"
+          src="src/plakate/Klangkunst Plakat 2024-II.png"
+          loading="lazy"
+        />
     </div>
   </div>
 </div>
 
+      </div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div
+          class="hidden aspect-[2/3] h-[80vh] bg-blue-100 object-cover dark:bg-black dark:opacity-50"
+          id="large-image-wrapper"
+        >
+          <img id="large-image" class="h-full w-full" />
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              const largeImage = document.querySelector("#large-image");
+              const largeImageWrapper = document.querySelector(
+                "#large-image-wrapper"
+              );
+              const clickableImages = document.querySelector(".clickable");
+              console.log(clickableImages);
+              for (let img of clickableImages) {
+                img.addEventListener("click", (evt) => {
+                  if (
+                    evt.target === largeImageWrapper &&
+                    largeImageWrapper.classList.contains("hidden")
+                  ) {
+                    largeImageWrapper.classList.remove("hidden");
+                  } else {
+                    largeImageWrapper.classList.add("hidden");
+                  }
+                });
+              }
+            });
+          </script>
+        </div>
       </div>
     </main>
     <footer class="flex-0 fixed bottom-0 z-10 flex h-12 w-full border-t-2 border-lime-200 bg-lime-100 bg-fixed text-xs text-stone-900/70 xl:h-20 xl:text-sm dark:border-stone-900/70 dark:bg-lime-950 dark:text-white/50 dark:grayscale">

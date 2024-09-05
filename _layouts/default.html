@@ -4,7 +4,7 @@
     <title>{{page.title}}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="referrer" content="no-referrer">
+    <meta name="referrer" content="no-referrer" />
     {%if page.block_index or page.block_follow%}
     <meta
       name="robots"
@@ -30,6 +30,36 @@
         <h1 class="header-second pb-8">{{page.title_info_1}}</h1>
         <p style="hyphens: auto">{{page.info_1}}</p>
         {{content}}
+      </div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div
+          class="hidden aspect-[2/3] h-[80vh] bg-blue-100 object-cover dark:bg-black dark:opacity-50"
+          id="large-image-wrapper"
+        >
+          <img id="large-image" class="h-full w-full" />
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              const largeImage = document.querySelector("#large-image");
+              const largeImageWrapper = document.querySelector(
+                "#large-image-wrapper"
+              );
+              const clickableImages = document.querySelector(".clickable");
+              console.log(clickableImages);
+              for (let img of clickableImages) {
+                img.addEventListener("click", (evt) => {
+                  if (
+                    evt.target === largeImageWrapper &&
+                    largeImageWrapper.classList.contains("hidden")
+                  ) {
+                    largeImageWrapper.classList.remove("hidden");
+                  } else {
+                    largeImageWrapper.classList.add("hidden");
+                  }
+                });
+              }
+            });
+          </script>
+        </div>
       </div>
     </main>
     {% include footer.html %}

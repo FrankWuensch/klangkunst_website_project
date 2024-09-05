@@ -5,16 +5,14 @@ title_info_1: Nächstes Konzert
 ---
 
 <div class="flex h-full w-full max-w-6xl">
-  <div
-    class="flex w-full flex-row flex-wrap gap-x-8 gap-y-12"
-  >
+  <div class="flex w-full flex-row flex-wrap gap-x-8 gap-y-12">
     <div class="flex w-80 flex-col gap-y-4">
       <div class="whitespace-nowrap">{{site.actual_poster[0].title}}</div>
-      <img
-        class="aspect-[2/3] w-full object-cover dark:bg-black dark:opacity-50"
-        src="{{site.baseurl}}{{site.actual_poster[0].src}}"
-        loading="lazy"
-      />
+        <img
+          class="clickable aspect-[2/3] w-full object-cover dark:bg-black dark:opacity-50"
+          src="{{site.baseurl}}{{site.actual_poster[0].src}}"
+          loading="lazy"
+        />
     </div>
   </div>
 </div>
