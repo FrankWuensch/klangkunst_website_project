@@ -1,39 +1,66 @@
 <!DOCTYPE html>
 <html lang="de" class="h-full w-full">
-  <head>
-    <title>{{page.title}}</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="referrer" content="no-referrer">
-    {%if page.block_index or page.block_follow%}
-    <meta
-      name="robots"
-      content="{%if page.block_index and page.block_follow%}noindex, nofollow{%elsif page.block_index%}noindex{%elsif page.block_follow%}nofollow{%endif%}"
-    />
-    {%endif%}
-    <link rel="icon" href="{{site.baseurl}}favicon.ico" />
-    <script src="{{site.baseurl}}src/darkmode.js"></script>
-    <link href="{{site.baseurl}}src/fonts.css" rel="stylesheet" />
-    <link href="{{site.baseurl}}dist/output.css" rel="stylesheet" />
-    <script src="{{site.baseurl}}src/iconify-min.js"></script>
-  </head>
 
-  <body
-    class="normal relative mx-auto flex h-full w-full overflow-hidden bg-gradient-to-b from-amber-400/30 via-40% to-lime-700/30 bg-fixed pb-12 pt-16 xl:pb-20 xl:pt-24 dark:from-amber-950 dark:to-lime-950 dark:backdrop-saturate-[.25]"
-  >
-    {% include menu.html %} {% include header.html %}
-    <main
-      class="mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-12 xl:py-20"
-      id="content"
-    >
-      <div class="mx-auto w-full px-8 xl:max-w-6xl">
-        <h1 class="header-second pb-8">{{page.title_info_1}}</h1>
-        <p style="hyphens: auto">{{page.info_1}}</p>
-        {{content}}
-      </div>
-    </main>
-    {% include footer.html %}
-    <script src="{{site.baseurl}}src/menu.js"></script>
-    <script src="{{site.baseurl}}src/active_elements.js"></script>
-  </body>
+<head>
+  <title>{{page.title}}</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="no-referrer" />
+  {%if page.block_index or page.block_follow%}
+  <meta name="robots"
+    content="{%if page.block_index and page.block_follow%}noindex, nofollow{%elsif page.block_index%}noindex{%elsif page.block_follow%}nofollow{%endif%}" />
+  {%endif%}
+  <link rel="icon" href="{{site.baseurl}}favicon.ico" />
+  <script src="{{site.baseurl}}src/darkmode.js"></script>
+  <link href="{{site.baseurl}}src/fonts.css" rel="stylesheet" />
+  <link href="{{site.baseurl}}dist/output.css" rel="stylesheet" />
+  <script src="{{site.baseurl}}src/iconify-min.js"></script>
+</head>
+
+<body
+  class="normal relative mx-auto flex h-full w-full overflow-hidden bg-gradient-to-b from-amber-400/30 via-40% to-lime-700/30 bg-fixed pb-12 pt-16 xl:pb-20 xl:pt-24 dark:from-amber-950 dark:to-lime-950 dark:backdrop-saturate-[.25]">
+  {% include menu.html %} {% include header.html %}
+  <main class="mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-12 xl:py-20" id="content">
+    <div class="mx-auto w-full px-8 xl:max-w-6xl">
+      <h1 class="header-second pb-8">{{page.title_info_1}}</h1>
+      <p style="hyphens: auto">{{page.info_1}}</p>
+      {{content}}
+    </div>
+  </main>
+  <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
+    <div class="relative aspect-[2/3] h-[75vh] bg-blue-100 object-cover opacity-0 duration-300 ease-in-out" id="large-image-wrapper">
+      <img id="large-image" class="h-full w-full" />
+      <div class="absolute left-0 top-0 h-full w-full dark:bg-black dark:opacity-50"></div>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const largeImage = document.querySelector("#large-image");
+          const largeImageWrapper = document.querySelector(
+            "#large-image-wrapper"
+          );
+          const clickableImages = document.querySelectorAll(".clickable");
+          for (let img of clickableImages) {
+            img.addEventListener("click", (evt) => {
+              if (
+                largeImageWrapper.classList.contains("opacity-0")
+              ) {
+                largeImageWrapper.classList.remove("opacity-0");
+                largeImageWrapper.classList.add("opacity-100");
+                largeImage.setAttribute("src", img.getAttribute("src"));
+                content.style.filter = "blur(0.5rem)";
+              } else {
+                largeImageWrapper.classList.remove("opacity-100");
+                largeImageWrapper.classList.add("opacity-0");
+                content.style.filter = "none"; // Reset the blur effect
+              }
+            });
+          }
+        });
+      </script>
+    </div>
+  </div>
+  {% include footer.html %}
+  <script src="{{site.baseurl}}src/menu.js"></script>
+  <script src="{{site.baseurl}}src/active_elements.js"></script>
+</body>
+
 </html>

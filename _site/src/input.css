@@ -64,3 +64,7 @@ ul > li {
 .inactive {
   @apply text-stone-700/30 dark:text-white/30;
 }
+
+.clickable {
+  @apply hover:cursor-pointer;
+}
