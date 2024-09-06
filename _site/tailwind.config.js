@@ -5,7 +5,13 @@ module.exports = {
   darkMode: "selector",
   content: ["./**/*.html"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        neutral: {
+          750: "#393939",
+        }
+      }
+    },
   },
   plugins: [
     // Iconify plugin
