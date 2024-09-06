@@ -1,7 +1,7 @@
 <!-- only shown in mobile version -->
 <span
   id="mobile-menu"
-  class="absolute right-0 top-16 z-10 hidden w-[50%] flex-col items-center justify-center divide-y divide-stone-700/30 rounded-bl-xl border-b border-l border-lime-200 bg-lime-100 text-lg text-stone-700/70 xl:hidden dark:divide-white/30 dark:border-stone-900 dark:bg-lime-950 dark:text-white/50 dark:grayscale"
+  class="absolute right-0 top-16 z-20 w-[50%] flex-col items-center justify-center divide-y divide-stone-700/30 rounded-bl-xl border-b border-l border-stone-400 bg-neutral-100 text-lg text-stone-700/70 opacity-0 duration-700 ease-in-out xl:pointer-events-none xl:hidden dark:divide-white/30 dark:border-white/30 dark:bg-neutral-750 dark:text-white/50"
 >
   {%for nav in site.navs%}
   <a
@@ -16,7 +16,7 @@
   </a>
   {%endfor%}
   <span
-    class="mb-6 flex w-full flex-row items-center justify-end gap-x-4 divide-x-2 divide-stone-400 border-t-2 border-stone-400 pr-8 pt-6 dark:divide-stone-800 dark:border-stone-800"
+    class="mb-6 flex w-full flex-row items-center justify-end gap-x-4 divide-x-2 divide-stone-400 pr-8 pt-6 dark:divide-stone-800"
   >
     <span
       id="light-mode"

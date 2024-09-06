@@ -19,30 +19,33 @@
   </head>
 
   <body
-    class="normal relative mx-auto flex h-full w-full overflow-hidden bg-gradient-to-b from-amber-400/30 via-40% to-lime-700/30 bg-fixed pb-12 pt-16 xl:pb-20 xl:pt-24 dark:from-amber-950 dark:to-lime-950 dark:backdrop-saturate-[.25]"
+    class="normal relative mx-auto flex h-full w-full overflow-hidden pb-12 pt-16 xl:pb-20 xl:pt-24 dark:bg-neutral-700"
   >
     {% include menu.html %} {% include header.html %}
     <main
-      class="mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-12 xl:py-20"
+      class="mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20"
       id="content"
     >
       <div class="mx-auto w-full px-8 xl:max-w-6xl">
-        <h1 class="header-second pb-8">{{page.title_info_1}}</h1>
+        <h1 class="header-second pb-4 xl:pb-8">{{page.title_info_1}}</h1>
+        {%if page.image%}
+        <div class="flex h-full flex-col gap-x-12 gap-x-4 pb-4 xl:flex-row xl:pb-12">
+          <img src="{{site.baseurl}}{{page.image}}" />
+        </div>
+        {%endif%}
         <p style="hyphens: auto">{{page.info_1}}</p>
         {{content}}
       </div>
     </main>
     <div
-      class="pointer-events-none absolute inset-0 flex items-center justify-center" id="wrapper"
+      class="pointer-events-none absolute inset-0 flex items-center justify-center"
+      id="wrapper"
     >
       <div
-        class="relative z-10 aspect-[2/3] h-[75vh] max-w-full opacity-0 duration-700 ease-in-out"
+        class="relative z-10 opacity-0 duration-700 ease-in-out"
         id="large-image-wrapper"
       >
-        <img
-          id="large-image"
-          class="aspect-[2/3] max-h-full max-w-full object-cover"
-        />
+        <img id="large-image" class="object-fit aspect-[2/3] h-[75vh]" />
         <div
           class="absolute left-0 top-0 h-full w-full hover:cursor-pointer dark:bg-black dark:opacity-50"
         ></div>
@@ -76,6 +79,7 @@
             } else {
               closeLargeImage(img);
             }
+            10;
           });
         }
         const openLargeImage = (img) => {
