@@ -26,7 +26,7 @@ em,
 }
 
 h1 {
-  @apply text-xl xl:text-2xl;
+  @apply header-second pb-4 text-xl xl:pb-8 xl:text-2xl;
 }
 
 p {
