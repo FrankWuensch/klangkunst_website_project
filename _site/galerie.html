@@ -14,8 +14,7 @@
   <script src="src/iconify-min.js"></script>
 </head>
 
-<body
-  class="normal relative mx-auto flex h-full w-full overflow-hidden pb-12 pt-16 duration-700 ease-in-out xl:pb-20 xl:pt-24 dark:bg-neutral-700">
+<body class="normal relative mx-auto flex h-full w-full overflow-hidden pb-12 pt-16 duration-700 ease-in-out xl:pb-20 xl:pt-24 dark:bg-neutral-700">
   <!-- only shown in mobile version -->
 <span
   id="mobile-menu"
@@ -80,7 +79,8 @@
     ></span>
   </span>
 </span>
- <header
+ 
+  <header
   class="flex-0 fixed top-0 z-10 flex h-16 w-full items-center justify-between overflow-hidden border-b-2 border-lime-200 bg-neutral-100 text-stone-700/70 xl:h-24 dark:border-stone-900 dark:bg-neutral-750 dark:text-white/50"
 >
   <span
@@ -148,16 +148,15 @@
   ></span>
 </div>
 
-  <main class="mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20">
-    <div class="mx-auto w-full px-8 xl:max-w-6xl" id="content">
-      
-    </div>
-    <div class="pointer-events-none absolute inset-0 flex items-center justify-center" id="wrapper">
-      <div class="relative z-10 opacity-0 duration-700 ease-in-out" id="large-image-wrapper">
-        <img id="large-image" class="object-fit aspect-[2/3] h-[75vh]" />
-        <div class="absolute left-0 top-0 h-full w-full hover:cursor-pointer dark:bg-black dark:opacity-50"></div>
+  <main class="relative mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20">
+      <div class="mx-auto w-full px-8 xl:max-w-6xl" id="content">
+          
       </div>
-    </div>
+      <div class="pointer-events-none fixed inset-0 z-50 flex items-center justify-center" id="wrapper">
+          <div class="relative flex max-h-[90%] max-w-[90%] items-center justify-center opacity-0 duration-700 ease-in-out" id="large-image-wrapper">
+              <img id="large-image" class="max-h-full max-w-full cursor-pointer object-contain" />
+          </div>
+      </div>
   </main>
   <footer class="flex-0 fixed bottom-0 z-10 flex h-12 w-full border-t-2 border-lime-200 bg-neutral-100 text-xs text-stone-900/70 xl:h-20 xl:text-sm dark:border-stone-900/70 dark:bg-neutral-750 dark:text-white/50 dark:grayscale">
   <div
@@ -178,45 +177,44 @@
   <script src="src/menu.js"></script>
   <script src="src/active_elements.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const wrapper = document.querySelector("#wrapper");
-      const largeImage = document.querySelector("#large-image");
-      const largeImageWrapper = document.querySelector(
-        "#large-image-wrapper"
-      );
-      const clickableImages = document.querySelectorAll(".clickable");
-      for (let img of clickableImages) {
-        img.addEventListener("click", (evt) => {
-          if (largeImageWrapper.classList.contains("opacity-0")) {
-            openLargeImage(img);
-            if (largeImageWrapper.classList.contains("opacity-100")) {
-              if (wrapper.classList.contains("pointer-events-none")) {
-                wrapper.classList.remove("pointer-events-none");
-              }
-              largeImageWrapper.addEventListener("click", (evt) => {
-                console.log(evt.target);
-                closeLargeImage(img);
-                wrapper.classList.add("pointer-events-none");
+      document.addEventListener("DOMContentLoaded", () => {
+          const wrapper = document.querySelector("#wrapper");
+          const largeImage = document.querySelector("#large-image");
+          const largeImageWrapper = document.querySelector("#large-image-wrapper");
+          const content = document.querySelector("#content");
+          const clickableImages = document.querySelectorAll(".clickable");
+          
+          for (let img of clickableImages) {
+              img.addEventListener("click", () => {
+                  openLargeImage(img);
               });
-            }
-          } else {
-            closeLargeImage(img);
           }
-          10;
-        });
-      }
-      const openLargeImage = (img) => {
-        largeImageWrapper.classList.remove("opacity-0");
-        largeImageWrapper.classList.add("opacity-100");
-        largeImage.setAttribute("src", img.getAttribute("src"));
-        content.style.filter = "blur(0.5rem)";
-      };
-      const closeLargeImage = (img) => {
-        largeImageWrapper.classList.remove("opacity-100");
-        largeImageWrapper.classList.add("opacity-0");
-        content.style.filter = "none"; // Reset the blur effect
-      };
-    });
+          
+          wrapper.addEventListener("click", (event) => {
+              if (event.target === wrapper || event.target === largeImageWrapper || event.target === largeImage) {
+                  closeLargeImage();
+              }
+          });
+          
+          const openLargeImage = (img) => {
+              largeImage.setAttribute("src", img.getAttribute("src"));
+              wrapper.classList.remove("pointer-events-none");
+              setTimeout(() => {
+                  largeImageWrapper.classList.remove("opacity-0");
+                  largeImageWrapper.classList.add("opacity-100");
+                  content.style.filter = "blur(0.5rem)";
+              }, 50);
+          };
+          
+          const closeLargeImage = () => {
+              largeImageWrapper.classList.remove("opacity-100");
+              largeImageWrapper.classList.add("opacity-0");
+              content.style.filter = "none";
+              setTimeout(() => {
+                  wrapper.classList.add("pointer-events-none");
+              }, 700);
+          };
+      });
   </script>
 </body>
 
