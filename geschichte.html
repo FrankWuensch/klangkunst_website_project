@@ -4,13 +4,14 @@ layout: default
 title_info_1: Bisherige Konzerte
 ---
 
-<div class="flex h-full w-full max-w-6xl">
+<div class="h-full w-full max-w-6xl">
+  <h1>{{page.title_info_1}}</h1>
   <div
     class="flex w-full flex-row flex-wrap gap-x-8 gap-y-12"
   >
     {%for poster in site.posters reversed%}
     <div class="flex w-80 flex-col gap-y-4">
-      <div class="whitespace-nowrap">{{poster.title}}</div>
+        <div class="whitespace-nowrap">{{poster.title}}</div>
       <img
         class="clickable aspect-[2/3] w-full object-cover dark:bg-black dark:opacity-50"
         src="{{site.baseurl}}{{poster.src}}"
