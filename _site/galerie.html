@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html class="h-full w-full" lang="de">
-  <head>
-    <title>Galerie</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="referrer" content="no-referrer" />
-    
-    <link href="favicon.ico" rel="icon" />
-    <script src="src/darkmode.js"></script>
-    <link href="src/fonts.css" rel="stylesheet" />
-    <link href="dist/output.css" rel="stylesheet" />
-    <script src="src/iconify-min.js"></script>
-  </head>
 
-  <body
-    class="normal relative mx-auto flex h-full w-full overflow-hidden bg-amber-50 pb-12 pt-16 duration-700 ease-in-out xl:pb-20 xl:pt-24 dark:bg-zinc-900"
-  >
-    <!-- only shown in mobile version -->
+<head>
+  <title>Galerie</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="no-referrer" />
+  
+  <link href="favicon.ico" rel="icon" />
+  <script src="src/darkmode.js"></script>
+  <link href="src/fonts.css" rel="stylesheet" />
+  <link href="dist/output.css" rel="stylesheet" />
+  <script src="src/iconify-min.js"></script>
+</head>
+
+<body
+  class="normal relative mx-auto flex h-full w-full overflow-hidden bg-amber-50 pb-12 pt-16 duration-700 ease-in-out xl:pb-20 xl:pt-24 dark:bg-zinc-900">
+  <!-- only shown in mobile version -->
 <span
   id="mobile-menu"
   class="dark:bg-grayscale-50 pointer-events-none absolute right-0 top-16 z-20 w-[50%] flex-col items-center justify-center divide-y divide-stone-700/30 rounded-bl-xl border-b border-l border-stone-400 bg-stone-50 text-lg text-stone-700/70 opacity-0 duration-700 ease-in-out xl:pointer-events-none xl:hidden dark:divide-white/30 dark:border-white/30 dark:bg-neutral-750 dark:text-white/50"
@@ -150,27 +150,19 @@
   ></span>
 </div>
 
-    <main
-      id="main-container"
-      class="relative mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20"
-    >
-      <div id="content" class="mx-auto w-full px-8 xl:max-w-6xl">
-        
+  <main id="main-container" class="relative mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20">
+    <div id="content" class="mx-auto w-full px-8 xl:max-w-6xl">
+      
+    </div>
+    <div id="wrapper" class="pointer-events-none fixed inset-0 z-50 flex items-center justify-center">
+      <div id="large-image-wrapper"
+        class="relative flex items-center justify-center opacity-0 duration-700 ease-in-out">
+        <img id="large-image" class="cursor-pointer object-cover" />
+        <div class="pointer-events-none absolute left-0 top-0 h-full w-full dark:bg-black/40"></div>
       </div>
-      <div
-        id="wrapper"
-        class="pointer-events-none fixed inset-0 z-50 flex items-center justify-center"
-      >
-        <div
-          id="large-image-wrapper"
-          class="relative flex items-center justify-center opacity-0 duration-700 ease-in-out"
-        >
-          <img id="large-image" class="cursor-pointer object-cover" />
-          <div class="pointer-events-none absolute left-0 top-0 h-full w-full dark:bg-black/40"></div>
-        </div>
-      </div>
-    </main>
-    <footer
+    </div>
+  </main>
+  <footer
   class="flex-0 fixed bottom-0 z-10 flex h-12 w-full border-t-[3px] border-lime-200 bg-lime-50 text-xs text-stone-900/70 xl:h-20 xl:text-sm dark:border-slate-500 dark:bg-zinc-800 dark:text-white/50"
 >
   <div
@@ -194,80 +186,86 @@
   </div>
 </footer>
 
-    <script src="src/menu.js"></script>
-    <script src="src/active_elements.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const wrapper = document.querySelector("#wrapper");
-        const largeImage = document.querySelector("#large-image");
-        const largeImageWrapper = document.querySelector(
-          "#large-image-wrapper"
-        );
-        const content = document.querySelector("#content");
-        const mainContainer = document.querySelector("#main-container");
-        const clickableImages = document.querySelectorAll(".clickable");
+  <script src="src/menu.js"></script>
+  <script src="src/active_elements.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const wrapper = document.querySelector("#wrapper");
+      const largeImage = document.querySelector("#large-image");
+      const largeImageWrapper = document.querySelector(
+        "#large-image-wrapper"
+      );
+      const content = document.querySelector("#content");
+      const mainContainer = document.querySelector("#main-container");
+      const clickableImages = document.querySelectorAll(".clickable");
 
-        let isImageOpen = false;
+      let isImageOpen = false;
 
-        for (let img of clickableImages) {
-          img.addEventListener("click", () => {
-            openLargeImage(img);
-          });
-        }
-
-        wrapper.addEventListener("click", (event) => {
-          if (
-            event.target === wrapper ||
-            event.target === largeImageWrapper ||
-            event.target === largeImage
-          ) {
-            closeLargeImage();
+      for (let img of clickableImages) {
+        img.addEventListener("click", () => {
+          openLargeImage(img);
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") {
+            closeLargeImage(img);
           }
         });
+      }
 
-        const updateImageSize = () => {
-          if (!isImageOpen) return;
-
-          const maxHeight = Math.min(
-            mainContainer.clientHeight * 0.95,
-            window.innerHeight * 0.95
-          );
-          const maxWidth = Math.min(
-            (maxHeight * 2) / 3,
-            window.innerWidth * 0.9
-          );
-
-          largeImage.style.maxHeight = `${maxHeight}px`;
-          largeImage.style.maxWidth = `${maxWidth}px`;
-        };
-
-        const openLargeImage = (img) => {
-          largeImage.setAttribute("src", img.getAttribute("src"));
-          wrapper.classList.remove("pointer-events-none");
-          isImageOpen = true;
-
-          updateImageSize();
-
-          setTimeout(() => {
-            largeImageWrapper.classList.remove("opacity-0");
-            largeImageWrapper.classList.add("opacity-100");
-            content.style.filter = "blur(0.5rem)";
-          }, 50);
-        };
-
-        const closeLargeImage = () => {
-          largeImageWrapper.classList.remove("opacity-100");
-          largeImageWrapper.classList.add("opacity-0");
-          content.style.filter = "none";
-          isImageOpen = false;
-          setTimeout(() => {
-            wrapper.classList.add("pointer-events-none");
-          }, 700);
-        };
-
-        // Füge einen Event Listener für das Resize-Event hinzu
-        window.addEventListener("resize", updateImageSize);
+      wrapper.addEventListener("click", (event) => {
+        if (
+          event.target === wrapper ||
+          event.target === largeImageWrapper ||
+          event.target === largeImage
+        ) {
+          closeLargeImage();
+        }
       });
-    </script>
-  </body>
+
+      const updateImageSize = () => {
+        if (!isImageOpen) return;
+
+        const maxHeight = Math.min(
+          mainContainer.clientHeight * 0.95,
+          window.innerHeight * 0.95
+        );
+        const maxWidth = Math.min(
+          (maxHeight * 2) / 3,
+          window.innerWidth * 0.9
+        );
+
+        largeImage.style.maxHeight = `${maxHeight}px`;
+        largeImage.style.maxWidth = `${maxWidth}px`;
+      };
+
+      const openLargeImage = (img) => {
+        largeImage.setAttribute("src", img.getAttribute("src"));
+        wrapper.classList.remove("pointer-events-none");
+        isImageOpen = true;
+
+        updateImageSize();
+
+        setTimeout(() => {
+          largeImageWrapper.classList.remove("opacity-0");
+          largeImageWrapper.classList.add("opacity-100");
+          content.style.filter = "blur(0.5rem)";
+        }, 50);
+      };
+
+      const closeLargeImage = () => {
+        largeImageWrapper.classList.remove("opacity-100");
+        largeImageWrapper.classList.add("opacity-0");
+        content.style.filter = "none";
+        isImageOpen = false;
+        setTimeout(() => {
+          wrapper.classList.add("pointer-events-none");
+        }, 700);
+      };
+
+      // Füge einen Event Listener für das Resize-Event hinzu
+      window.addEventListener("resize", updateImageSize);
+    });
+  </script>
+</body>
+
 </html>
