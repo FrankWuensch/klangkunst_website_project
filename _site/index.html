@@ -155,21 +155,44 @@
       class="relative mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20"
     >
       <div id="content" class="mx-auto w-full px-8 xl:max-w-6xl">
-        <div class="h-full w-full max-w-6xl">
+        <!-- only shown in mobile version -->
+<div class="h-full w-full max-w-6xl xl:hidden">
   <h1>Nächstes Konzert</h1>
-  <div class="flex w-full flex-row flex-wrap gap-x-8 gap-y-12">
+  <div class="mb-4 flex w-full flex-row flex-wrap gap-x-8 gap-y-12">
     <div class="flex w-80 flex-col gap-y-4">
       <p>KlangkunstManufaktur Projekt II - 2024</p>
       <img
-        class="clickable mb-6 aspect-[2/3] w-full object-cover xl:mb-10 dark:bg-black dark:opacity-50"
+        class="clickable aspect-[2/3] w-full object-cover xl:mb-10 dark:bg-black dark:opacity-50"
         src="src/plakate/Klangkunst Plakat 2024-II.png"
         loading="lazy"
       />
     </div>
   </div>
   <h1>Wer wir sind</h1>
-  <p style="hyphens: auto">Die KlangkunstManufaktur ist ein Orchester, das sich zweimal pro Jahr zu musikalischen Projekten  zusammenfindet, um in intensiven Proben ein Konzertprogramm zu erarbeiten. Es besteht vor allem aus  musikbegeisterten Amateuren und einigen professionellen Musikern aus ganz Deutschland und teils aus  dem benachbarten Ausland. Die meisten Musiker verbindet die gemeinsame Arbeit mit dem Dirigenten  Bertram Schade, die in verschiedenen Ensembles zu unterschiedlichen Zeiten teils über viele  Jahre gewachsen ist. In der KlangkunstManufaktur treffen Musiker aus diesen verschiedenen Lebens- und  Arbeitsphasen zusammen, um gemeinsam zu musizieren und mit diesem neuen Klang auch die alten Verbindungen  wieder zu beleben.
+  <p>Wir - die KlangkunstManufaktur Stuttgart e.V. - sind ein Projektorchester, das pro Jahr in zwei Projekten zu jeweils zwei Arbeitsphasen zusammenkommt, um ein Konzertprogramm zu erarbeiten. Die Arbeitsphasen je Projekt finden dabei im Abstand von zwei Wochen statt. Trotz der intensiven und konzentrierten Probenarbeit kommt der Spaß nicht zu kurz.<br /><br />
+Wir bestehen aus einer bunten Mischung von musikbegeisterten Amateurmusikern und teils auch professionellen Musikern in unterschiedlichem Alter und in verschiedenen Lebenslagen. Dabei kommen wir nicht nur aus der Region, sondern aus ganz Deutschland und teilweise sind sogar befreundete Musiker aus dem benachbarten Ausland dabei. Die Meisten von uns verbindet die langjährige, gemeinsame Arbeit mit unserem Dirigenten Bertram Schade, nicht nur in der KlangkunstManufaktur sondern auch in diversen anderen Orchestern in der Region. Während der Probenphasen legen wir nicht nur Wert auf das gemeinsame Musizieren, sondern lassen auch alte Verbindungen wieder aufleben und knüpfen neue Kontakte.<br /><br />
+Am Ende des jeweiligen Projektes gibt es ein Konzert. Wir freuen uns, wenn wir Sie bald als Zuhörer:in begrüßen dürfen.<br /><br />
 </p>
+</div>
+
+<!-- only shown if screen >= xl:1280px -->
+<div class="h-full w-full max-w-6xl max-xl:hidden">
+  <h1>Wer wir sind</h1>
+  <p class="mb-8">Wir - die KlangkunstManufaktur Stuttgart e.V. - sind ein Projektorchester, das pro Jahr in zwei Projekten zu jeweils zwei Arbeitsphasen zusammenkommt, um ein Konzertprogramm zu erarbeiten. Die Arbeitsphasen je Projekt finden dabei im Abstand von zwei Wochen statt. Trotz der intensiven und konzentrierten Probenarbeit kommt der Spaß nicht zu kurz.<br /><br />
+Wir bestehen aus einer bunten Mischung von musikbegeisterten Amateurmusikern und teils auch professionellen Musikern in unterschiedlichem Alter und in verschiedenen Lebenslagen. Dabei kommen wir nicht nur aus der Region, sondern aus ganz Deutschland und teilweise sind sogar befreundete Musiker aus dem benachbarten Ausland dabei. Die Meisten von uns verbindet die langjährige, gemeinsame Arbeit mit unserem Dirigenten Bertram Schade, nicht nur in der KlangkunstManufaktur sondern auch in diversen anderen Orchestern in der Region. Während der Probenphasen legen wir nicht nur Wert auf das gemeinsame Musizieren, sondern lassen auch alte Verbindungen wieder aufleben und knüpfen neue Kontakte.<br /><br />
+Am Ende des jeweiligen Projektes gibt es ein Konzert. Wir freuen uns, wenn wir Sie bald als Zuhörer:in begrüßen dürfen.<br /><br />
+</p>
+  <h1>Nächstes Konzert</h1>
+  <div class="flex w-full flex-row flex-wrap gap-x-8 gap-y-12">
+    <div class="flex w-80 flex-col gap-y-4">
+      <p>KlangkunstManufaktur Projekt II - 2024</p>
+      <img
+        class="clickable aspect-[2/3] w-full object-cover xl:mb-10 dark:bg-black dark:opacity-50"
+        src="src/plakate/Klangkunst Plakat 2024-II.png"
+        loading="lazy"
+      />
+    </div>
+  </div>
 </div>
 
       </div>
@@ -181,7 +204,7 @@
           id="large-image-wrapper"
           class="relative flex items-center justify-center opacity-0 duration-700 ease-in-out"
         >
-          <img id="large-image" class="cursor-pointer object-contain" />
+          <img id="large-image" class="cursor-pointer object-cover" />
           <div class="pointer-events-none absolute left-0 top-0 h-full w-full dark:bg-black/40"></div>
         </div>
       </div>
