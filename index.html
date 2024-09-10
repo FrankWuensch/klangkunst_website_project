@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="h-full w-full" lang="de">
+  <head>
+    <title>Klangkunst Manufaktur e.V.</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    
+    <link href="favicon.ico" rel="icon" />
+    <script src="src/darkmode.js"></script>
+    <link href="src/fonts.css" rel="stylesheet" />
+    <link href="dist/output.css" rel="stylesheet" />
+    <script src="src/iconify-min.js"></script>
+  </head>
+
+  <body
+    class="normal relative mx-auto flex h-full w-full overflow-hidden bg-amber-50 pb-12 pt-16 duration-700 ease-in-out xl:pb-20 xl:pt-24 dark:bg-zinc-900"
+  >
+    <!-- only shown in mobile version -->
+<span
+  id="mobile-menu"
+  class="dark:bg-grayscale-50 pointer-events-none absolute right-0 top-16 z-20 w-[50%] flex-col items-center justify-center divide-y divide-stone-700/30 rounded-bl-xl border-b border-l border-stone-400 bg-stone-50 text-lg text-stone-700/70 opacity-0 duration-700 ease-in-out xl:pointer-events-none xl:hidden dark:divide-white/30 dark:border-white/30 dark:bg-neutral-750 dark:text-white/50"
+>
+  
+  <a
+    class="group w-full nav-link flex justify-end px-8 py-4 text-right hover:cursor-pointer"
+    href="index.html"
+  >
+    <div
+      class="hover:text-stone-800 dark:group-hover:text-stone-400 group-hover:underline"
+    >
+      Aktuelles
+    </div>
+  </a>
+  
+  <a
+    class="group w-full nav-link flex justify-end px-8 py-4 text-right hover:cursor-pointer"
+    href="geschichte.html"
+  >
+    <div
+      class="hover:text-stone-800 dark:group-hover:text-stone-400 group-hover:underline"
+    >
+      Geschichte
+    </div>
+  </a>
+  
+  <a
+    class="group w-full nav-link flex justify-end px-8 py-4 text-right hover:cursor-pointer"
+    href="dirigent.html"
+  >
+    <div
+      class="hover:text-stone-800 dark:group-hover:text-stone-400 group-hover:underline"
+    >
+      Dirigent
+    </div>
+  </a>
+  
+  <a
+    class="group w-full nav-link flex justify-end px-8 py-4 text-right pointer-events-none inactive"
+    href=""
+  >
+    <div
+      class="inactive"
+    >
+      Galerie
+    </div>
+  </a>
+  
+  <span
+    class="mb-6 flex w-full flex-row items-center justify-end gap-x-4 divide-x-2 divide-stone-400 pr-8 pt-6 dark:divide-stone-800"
+  >
+    <span
+      id="light-mode"
+      class="icon-[ph--sun-thin] hover:cursor-pointer hover:text-black dark:hover:text-stone-400"
+    >
+    </span>
+    <span
+      id="dark-mode"
+      class="icon-[ph--moon-thin] hover:cursor-pointer hover:text-black dark:hover:text-stone-400"
+    ></span>
+  </span>
+</span>
+ <header
+  class="flex-0 fixed top-0 z-10 flex h-16 w-full items-center justify-between overflow-hidden border-b-4 border-lime-200 bg-lime-50 text-stone-700/70 xl:h-24 dark:border-slate-500 dark:bg-zinc-800 dark:text-white/50"
+>
+  <span
+    class="relative flex w-full shrink items-center justify-between whitespace-nowrap xl:mx-auto xl:max-w-6xl"
+  >
+    <!-- only shown in mobile version -->
+    <div
+      id="burger"
+      class="absolute right-0 top-0 flex h-full max-h-full w-20 items-center justify-center bg-white/50 hover:cursor-pointer hover:text-stone-800 xl:hidden dark:bg-black/10 dark:text-white/30 hover:dark:text-white/70"
+    >
+      <iconify-icon
+        class="pointer-events-none"
+        icon="iconamoon:menu-burger-horizontal-light"
+        width="50"
+        height="50"
+      ></iconify-icon>
+    </div>
+    <!-- only shown if screen >= xl:1280px -->
+    <div
+      class="header flex h-16 items-center justify-between whitespace-nowrap px-8 text-center text-stone-800/70 hover:cursor-default xl:h-24 dark:text-white/40"
+    >
+      <span class="text-xl">Klangkunst</span
+      ><i class="header-second pt-0.5 text-2xl">Manufaktur</i>
+    </div>
+    
+    <a
+      class="group nav-link flex h-16 flex-1 items-center xl:h-24 max-xl:pointer-events-none hover:cursor-pointer hover:text-stone-800 hover:dark:text-white/70 hover:underline"
+      href="index.html"
+    >
+      <div class="px-12 max-xl:hidden">Aktuelles</div>
+    </a>
+    
+    <a
+      class="group nav-link flex h-16 flex-1 items-center xl:h-24 max-xl:pointer-events-none hover:cursor-pointer hover:text-stone-800 hover:dark:text-white/70 hover:underline"
+      href="geschichte.html"
+    >
+      <div class="px-12 max-xl:hidden">Geschichte</div>
+    </a>
+    
+    <a
+      class="group nav-link flex h-16 flex-1 items-center xl:h-24 max-xl:pointer-events-none hover:cursor-pointer hover:text-stone-800 hover:dark:text-white/70 hover:underline"
+      href="dirigent.html"
+    >
+      <div class="px-12 max-xl:hidden">Dirigent</div>
+    </a>
+    
+    <a
+      class="group nav-link flex h-16 flex-1 items-center xl:h-24 max-xl:pointer-events-none pointer-events-none inactive"
+      href=""
+    >
+      <div class="px-12 max-xl:hidden">Galerie</div>
+    </a>
+    
+  </span>
+</header>
+
+<div
+  class="fixed right-0 top-0 z-10 flex h-12 w-48 flex-row items-center gap-x-4 rounded-bl-lg bg-lime-200 pl-4 text-stone-700 max-xl:hidden xl:mt-24 dark:bg-slate-500"
+>
+  <span
+    id="light-mode-btn"
+    class="icon-[ph--sun-thin] hover:cursor-pointer hover:font-black hover:text-stone-900 dark:text-white/80 dark:hover:text-white"
+  ></span>
+  <span
+    id="dark-mode-btn"
+    class="icon-[ph--moon-thin] hover:cursor-pointer hover:font-black hover:text-stone-900 dark:text-white/80 dark:hover:text-white"
+  ></span>
+</div>
+
+    <main
+      id="main-container"
+      class="relative mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20"
+    >
+      <div id="content" class="mx-auto w-full px-8 xl:max-w-6xl">
+        <!-- only shown in mobile version -->
+<div class="h-full w-full max-w-6xl xl:hidden">
+  <h1>Nächstes Konzert</h1>
+  <div class="mb-4 flex w-full flex-row flex-wrap gap-x-8 gap-y-12">
+    <div class="flex w-80 flex-col gap-y-4">
+      <p>KlangkunstManufaktur Projekt II - 2024</p>
+      <img
+        class="clickable aspect-[2/3] w-full object-cover xl:mb-10 dark:bg-black dark:opacity-50"
+        src="src/plakate/Klangkunst Plakat 2024-II.png"
+        loading="lazy"
+      />
+    </div>
+  </div>
+  <h1>Wer wir sind</h1>
+  <p>Wir - die KlangkunstManufaktur Stuttgart e.V. - sind ein Projektorchester, das pro Jahr in zwei Projekten zu jeweils zwei Arbeitsphasen zusammenkommt, um ein Konzertprogramm zu erarbeiten. Die Arbeitsphasen je Projekt finden dabei im Abstand von zwei Wochen statt. Trotz der intensiven und konzentrierten Probenarbeit kommt der Spaß nicht zu kurz.<br /><br />
+Wir bestehen aus einer bunten Mischung von musikbegeisterten Amateurmusikern und teils auch professionellen Musikern in unterschiedlichem Alter und in verschiedenen Lebenslagen. Dabei kommen wir nicht nur aus der Region, sondern aus ganz Deutschland und teilweise sind sogar befreundete Musiker aus dem benachbarten Ausland dabei. Die Meisten von uns verbindet die langjährige, gemeinsame Arbeit mit unserem Dirigenten Bertram Schade, nicht nur in der KlangkunstManufaktur sondern auch in diversen anderen Orchestern in der Region. Während der Probenphasen legen wir nicht nur Wert auf das gemeinsame Musizieren, sondern lassen auch alte Verbindungen wieder aufleben und knüpfen neue Kontakte.<br /><br />
+Am Ende des jeweiligen Projektes gibt es ein Konzert. Wir freuen uns, wenn wir Sie bald als Zuhörer:in begrüßen dürfen.<br /><br />
+</p>
+</div>
+
+<!-- only shown if screen >= xl:1280px -->
+<div class="h-full w-full max-w-6xl max-xl:hidden">
+  <h1>Wer wir sind</h1>
+  <p class="mb-8">Wir - die KlangkunstManufaktur Stuttgart e.V. - sind ein Projektorchester, das pro Jahr in zwei Projekten zu jeweils zwei Arbeitsphasen zusammenkommt, um ein Konzertprogramm zu erarbeiten. Die Arbeitsphasen je Projekt finden dabei im Abstand von zwei Wochen statt. Trotz der intensiven und konzentrierten Probenarbeit kommt der Spaß nicht zu kurz.<br /><br />
+Wir bestehen aus einer bunten Mischung von musikbegeisterten Amateurmusikern und teils auch professionellen Musikern in unterschiedlichem Alter und in verschiedenen Lebenslagen. Dabei kommen wir nicht nur aus der Region, sondern aus ganz Deutschland und teilweise sind sogar befreundete Musiker aus dem benachbarten Ausland dabei. Die Meisten von uns verbindet die langjährige, gemeinsame Arbeit mit unserem Dirigenten Bertram Schade, nicht nur in der KlangkunstManufaktur sondern auch in diversen anderen Orchestern in der Region. Während der Probenphasen legen wir nicht nur Wert auf das gemeinsame Musizieren, sondern lassen auch alte Verbindungen wieder aufleben und knüpfen neue Kontakte.<br /><br />
+Am Ende des jeweiligen Projektes gibt es ein Konzert. Wir freuen uns, wenn wir Sie bald als Zuhörer:in begrüßen dürfen.<br /><br />
+</p>
+  <h1>Nächstes Konzert</h1>
+  <div class="flex w-full flex-row flex-wrap gap-x-8 gap-y-12">
+    <div class="flex w-80 flex-col gap-y-4">
+      <p>KlangkunstManufaktur Projekt II - 2024</p>
+      <img
+        class="clickable aspect-[2/3] w-full object-cover xl:mb-10 dark:bg-black dark:opacity-50"
+        src="src/plakate/Klangkunst Plakat 2024-II.png"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</div>
+
+      </div>
+      <div
+        id="wrapper"
+        class="pointer-events-none fixed inset-0 z-50 flex items-center justify-center"
+      >
+        <div
+          id="large-image-wrapper"
+          class="relative flex items-center justify-center opacity-0 duration-700 ease-in-out"
+        >
+          <img id="large-image" class="cursor-pointer object-cover" />
+          <div class="pointer-events-none absolute left-0 top-0 h-full w-full dark:bg-black/40"></div>
+        </div>
+      </div>
+    </main>
+    <footer
+  class="flex-0 fixed bottom-0 z-10 flex h-12 w-full border-t-[3px] border-lime-200 bg-lime-50 text-xs text-stone-900/70 xl:h-20 xl:text-sm dark:border-slate-500 dark:bg-zinc-800 dark:text-white/50"
+>
+  <div
+    class="mx-auto flex h-full w-full max-w-6xl items-center justify-between text-center"
+  >
+    
+    <a
+      class="flex shrink-0 whitespace-nowrap h-full items-center px-8 hover:text-black dark:hover:text-white/80"
+      href="impressum.html"
+    >
+      <div>Impressum</div>
+    </a>
+    
+    <a
+      class="flex shrink-0 whitespace-nowrap h-full items-center px-8 hover:text-black dark:hover:text-white/80"
+      href="datenschutz.html"
+    >
+      <div>Datenschutz</div>
+    </a>
+    
+  </div>
+</footer>
+
+    <script src="src/menu.js"></script>
+    <script src="src/active_elements.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const wrapper = document.querySelector("#wrapper");
+        const largeImage = document.querySelector("#large-image");
+        const largeImageWrapper = document.querySelector(
+          "#large-image-wrapper"
+        );
+        const content = document.querySelector("#content");
+        const mainContainer = document.querySelector("#main-container");
+        const clickableImages = document.querySelectorAll(".clickable");
+
+        let isImageOpen = false;
+
+        for (let img of clickableImages) {
+          img.addEventListener("click", () => {
+            openLargeImage(img);
+          });
+        }
+
+        wrapper.addEventListener("click", (event) => {
+          if (
+            event.target === wrapper ||
+            event.target === largeImageWrapper ||
+            event.target === largeImage
+          ) {
+            closeLargeImage();
+          }
+        });
+
+        const updateImageSize = () => {
+          if (!isImageOpen) return;
+
+          const maxHeight = Math.min(
+            mainContainer.clientHeight * 0.95,
+            window.innerHeight * 0.95
+          );
+          const maxWidth = Math.min(
+            (maxHeight * 2) / 3,
+            window.innerWidth * 0.9
+          );
+
+          largeImage.style.maxHeight = `${maxHeight}px`;
+          largeImage.style.maxWidth = `${maxWidth}px`;
+        };
+
+        const openLargeImage = (img) => {
+          largeImage.setAttribute("src", img.getAttribute("src"));
+          wrapper.classList.remove("pointer-events-none");
+          isImageOpen = true;
+
+          updateImageSize();
+
+          setTimeout(() => {
+            largeImageWrapper.classList.remove("opacity-0");
+            largeImageWrapper.classList.add("opacity-100");
+            content.style.filter = "blur(0.5rem)";
+          }, 50);
+        };
+
+        const closeLargeImage = () => {
+          largeImageWrapper.classList.remove("opacity-100");
+          largeImageWrapper.classList.add("opacity-0");
+          content.style.filter = "none";
+          isImageOpen = false;
+          setTimeout(() => {
+            wrapper.classList.add("pointer-events-none");
+          }, 700);
+        };
+
+        // Füge einen Event Listener für das Resize-Event hinzu
+        window.addEventListener("resize", updateImageSize);
+      });
+    </script>
+  </body>
+</html>

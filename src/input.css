@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  visibility: hidden;
+  display: none;
+}
+
+.header {
+  font-family: "lmromancaps10-regular";
+}
+
+.header-second {
+  font-family: "Gara";
+}
+
+.normal {
+  font-family: "Inter", sans-serif;
+}
+
+i,
+em,
+.font-italic {
+  font-family: "InterItalic", sans-serif;
+}
+
+h1 {
+  @apply header-second pb-4 text-xl xl:pb-8 xl:text-2xl;
+}
+
+p {
+  @apply text-sm xl:text-base;
+}
+
+strong {
+  @apply normal font-black;
+}
+
+main {
+  @apply normal text-neutral-800 dark:text-neutral-300;
+}
+
+main a[href] {
+  @apply text-sky-600 hover:underline hover:underline-offset-4;
+}
+
+ul {
+  @apply pb-4;
+}
+
+ul > li {
+  @apply list-inside list-disc text-sm xl:text-base;
+}
+
+.header {
+  @apply text-2xl;
+}
+
+.active {
+  @apply text-stone-800 dark:text-white/80;
+}
+
+.inactive {
+  @apply text-stone-700/20 dark:text-white/20;
+}
+
+.clickable {
+  @apply hover:cursor-pointer;
+}

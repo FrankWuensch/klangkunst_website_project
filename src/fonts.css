@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Gara';
+    src: url('../fonts/GARA.TTF');
+}
+
+@font-face {
+    font-family: 'lmromancaps10-regular';
+    src: url('../fonts/lmromancaps10-regular.otf');
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/InterVariable.ttf')
+}
+
+@font-face {
+    font-family: 'InterItalic';
+    src: url('../fonts/InterVariable-Italic.ttf');
+}
