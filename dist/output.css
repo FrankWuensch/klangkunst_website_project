@@ -1294,6 +1294,11 @@ ul > li {
   background-color: rgb(38 38 38 / var(--tw-bg-opacity));
 }
 
+.dark\:bg-slate-500:where(.dark, .dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
+
 .dark\:text-white\/30:where(.dark, .dark *) {
   color: rgb(255 255 255 / 0.3);
 }
@@ -1304,6 +1309,14 @@ ul > li {
 
 .dark\:text-white\/50:where(.dark, .dark *) {
   color: rgb(255 255 255 / 0.5);
+}
+
+.dark\:text-white\/70:where(.dark, .dark *) {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.dark\:text-white\/80:where(.dark, .dark *) {
+  color: rgb(255 255 255 / 0.8);
 }
 
 .dark\:opacity-50:where(.dark, .dark *) {
@@ -1331,6 +1344,11 @@ ul > li {
 
 .hover\:dark\:text-white\/70:where(.dark, .dark *):hover {
   color: rgb(255 255 255 / 0.7);
+}
+
+.dark\:hover\:text-white:hover:where(.dark, .dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .group:hover .dark\:group-hover\:text-stone-400:where(.dark, .dark *) {
