@@ -1,11 +1,11 @@
 h1 {
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   font-family: "Gara";
   font-size: 1.25rem;
   line-height: 1.75rem;
 
   @media (min-width: 1280px) {
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     font-size: 1.5rem;
     line-height: 2rem;
   }

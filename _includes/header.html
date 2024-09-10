@@ -6,10 +6,11 @@
   >
     <!-- only shown in mobile version -->
     <div
-      class="absolute right-0 top-0 flex h-full max-h-full w-20 items-center justify-center bg-white/50 hover:cursor-pointer hover:text-stone-800 xl:hidden dark:bg-black/10 dark:text-white/30 hover:dark:text-white/70"
       id="burger"
+      class="absolute right-0 top-0 flex h-full max-h-full w-20 items-center justify-center bg-white/50 hover:cursor-pointer hover:text-stone-800 xl:hidden dark:bg-black/10 dark:text-white/30 hover:dark:text-white/70"
     >
       <iconify-icon
+        class="pointer-events-none"
         icon="iconamoon:menu-burger-horizontal-light"
         width="50"
         height="50"
@@ -19,12 +20,13 @@
     <div
       class="header flex h-16 items-center justify-between whitespace-nowrap px-8 text-center text-stone-800/70 hover:cursor-default xl:h-24 dark:text-white/40"
     >
-      <span class="text-xl">{{site.nav_title_1}}</span><i class="header-second pt-0.5 text-2xl">{{site.nav_title_2}}</i>
+      <span class="text-xl">{{site.nav_title_1}}</span
+      ><i class="header-second pt-0.5 text-2xl">{{site.nav_title_2}}</i>
     </div>
     {% for nav in site.navs %}
     <a
+      class="group nav-link flex h-16 flex-1 items-center xl:h-24 max-xl:pointer-events-none {%if nav.link%}hover:cursor-pointer hover:text-stone-800 hover:dark:text-white/70 hover:underline{%else%}pointer-events-none inactive{%endif%}"
       href="{%if nav.link%}{{site.baseurl}}{{nav.link}}{%endif%}"
-      class="group nav-link flex h-16 flex-1 items-center xl:h-24 {%if nav.link%}hover:cursor-pointer hover:text-stone-800 hover:dark:text-white/70 hover:underline{%else%}pointer-events-none inactive{%endif%}"
     >
       <div class="px-12 max-xl:hidden">{{nav.text}}</div>
     </a>

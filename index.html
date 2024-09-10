@@ -18,12 +18,12 @@ title_info_2: Wer wir sind
   <h1>{{page.title_info_1}}</h1>
   <div class="flex w-full flex-row flex-wrap gap-x-8 gap-y-12">
     <div class="flex w-80 flex-col gap-y-4">
-      <div class="whitespace-nowrap">{{site.actual_poster[0].title}}</div>
-        <img
-          class="clickable mb-6 aspect-[2/3] w-full object-cover xl:mb-10 dark:bg-black dark:opacity-50"
-          src="{{site.baseurl}}{{site.actual_poster[0].src}}"
-          loading="lazy"
-        />
+      <p>{{site.actual_poster[0].title}}</p>
+      <img
+        class="clickable mb-6 aspect-[2/3] w-full object-cover xl:mb-10 dark:bg-black dark:opacity-50"
+        src="{{site.baseurl}}{{site.actual_poster[0].src}}"
+        loading="lazy"
+      />
     </div>
   </div>
   <h1>{{page.title_info_2}}</h1>
