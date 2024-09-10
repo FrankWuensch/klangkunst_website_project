@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const menu = document.getElementById("mobile-menu");
   const burger = document.getElementById("burger");
   const content = document.getElementById("content");
-  const navLinks = menu.querySelectorAll(".nav-link");
   if (menu && burger && content) {
     burger.addEventListener("click", function (evt) {
       if (menu.classList.contains("opacity-0")) {

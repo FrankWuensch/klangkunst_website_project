@@ -19,7 +19,7 @@
   </head>
 
   <body
-    class="normal relative mx-auto flex h-full w-full overflow-hidden bg-amber-50 pb-12 pt-16 duration-700 ease-in-out xl:pb-20 xl:pt-24 dark:bg-neutral-700 dark:grayscale"
+    class="normal relative mx-auto flex h-full w-full overflow-hidden bg-amber-50 pb-12 pt-16 duration-700 ease-in-out xl:pb-20 xl:pt-24 dark:bg-zinc-900"
   >
     {% include menu.html %} {% include header.html %}
     <main
@@ -38,6 +38,7 @@
           class="relative flex items-center justify-center opacity-0 duration-700 ease-in-out"
         >
           <img id="large-image" class="cursor-pointer object-contain" />
+          <div class="pointer-events-none absolute left-0 top-0 h-full w-full dark:bg-black/40"></div>
         </div>
       </div>
     </main>
