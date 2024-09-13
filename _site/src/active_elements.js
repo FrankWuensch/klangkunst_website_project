@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             navLink.classList.remove("active");
         }
-        console.log(`${actualLink} vs ${homeLink}`);
         if (actualLink === homeLink) {
             home.classList.add('active');
             home.classList.remove('dark:text-white/40');
