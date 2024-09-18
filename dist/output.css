@@ -629,10 +629,6 @@ video {
   margin-right: auto;
 }
 
-.mb-12 {
-  margin-bottom: 3rem;
-}
-
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -830,11 +826,6 @@ video {
 .bg-amber-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(251 191 36 / var(--tw-bg-opacity));
-}
-
-.bg-amber-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 251 235 / var(--tw-bg-opacity));
 }
 
 .bg-orange-250 {
@@ -1180,10 +1171,6 @@ ul > li {
 
   .xl\:mb-10 {
     margin-bottom: 2.5rem;
-  }
-
-  .xl\:mb-20 {
-    margin-bottom: 5rem;
   }
 
   .xl\:mt-24 {
