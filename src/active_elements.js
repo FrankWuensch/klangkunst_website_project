@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const navLinks = document.querySelectorAll('.nav-link');
     const home = navLinks[0];
-    const homeLink = home.href.toString().replace('index.html', '');
+    const homeLink = home.href.toString();
     let actualLink = window.location.href.toString();
     navLinks.forEach(function(navLink) {
         if (navLink.href === actualLink) {
