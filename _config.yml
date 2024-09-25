@@ -8,7 +8,7 @@ nav_title_1: Klangkunst
 nav_title_2: Manufaktur
 img: "background.png"
 navs:
-  - text: Aktuelles
+  - text: Über uns
     link: "index.html"
   - text: Geschichte
     link: "geschichte.html"
@@ -38,9 +38,11 @@ posters:
     title: KlangkunstManufaktur Projekt II - 2023
   - src: "src/plakate/Klangkunst Plakat 2024-I.png"
     title: KlangkunstManufaktur Projekt I - 2024
-actual_poster:
   - src: "src/plakate/Klangkunst Plakat 2024-II.png"
     title: KlangkunstManufaktur Projekt II - 2024
+actual_poster:
+  # - src: "src/plakate/Klangkunst Plakat 2024-II.png"
+  #   title: KlangkunstManufaktur Projekt II - 2024
 footer_elements:
   - name: Impressum
     link: "impressum.html"
