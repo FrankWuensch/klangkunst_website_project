@@ -5,8 +5,7 @@ RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 # Redirect all requests to the canonical https://www.klangkunstmanufaktur.de
-RewriteCond %{HTTP_HOST} ^klangkunstmanufaktur\.de$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.klangkunstmanufaktur\.de$ [NC]
+RewriteCond %{HTTP_HOST} ^(www\.)?klangkunstmanufaktur\.de(/index\.html)?$ [NC]
 RewriteRule ^index\.html$ https://www.klangkunstmanufaktur.de/ [R=301,L]
 
 # Redirect all non-www to www version (for non index.html requests)
