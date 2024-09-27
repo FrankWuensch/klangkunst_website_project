@@ -278,7 +278,7 @@
   
   <tr class="mb-4">
     <th
-      class="place flex items-start pr-8 hover:cursor-pointer"
+      class="place flex items-start pr-24 hover:cursor-pointer"
       data-id="0"
       data-lat="48.77324753293309"
       data-long="9.164622299829663"
@@ -301,7 +301,7 @@
   
   <tr class="mb-4">
     <th
-      class="place flex items-start pr-8 hover:cursor-pointer"
+      class="place flex items-start pr-24 hover:cursor-pointer"
       data-id="1"
       data-lat="48.82699699258068"
       data-long="9.125444727108853"
@@ -330,7 +330,7 @@
   
   <tr class="mb-4">
     <th
-      class="place flex items-start pr-8 hover:cursor-pointer"
+      class="place flex items-start pr-24 hover:cursor-pointer"
       data-id="2"
       data-lat="48.804760798576275"
       data-long="9.08217660197371"
@@ -353,7 +353,7 @@
   
   <tr class="mb-4">
     <th
-      class="place flex items-start pr-8 hover:cursor-pointer"
+      class="place flex items-start pr-24 hover:cursor-pointer"
       data-id="3"
       data-lat="48.738969160776165"
       data-long="9.12396964244967"
@@ -374,7 +374,7 @@
   
   <tr class="mb-4">
     <th
-      class="place flex items-start pr-8 hover:cursor-pointer"
+      class="place flex items-start pr-24 hover:cursor-pointer"
       data-id="4"
       data-lat="48.724059883124454"
       data-long="9.205431560633574"
@@ -395,7 +395,7 @@
   
   <tr class="mb-4">
     <th
-      class="place flex items-start pr-8 hover:cursor-pointer"
+      class="place flex items-start pr-24 hover:cursor-pointer"
       data-id="5"
       data-lat="48.76921193644937"
       data-long="8.851121211979958"
@@ -430,20 +430,22 @@
 
   places.forEach((place) => {
     const dataId = place.getAttribute("data-id");
-
-    place.addEventListener("click", (evt) => {
-      console.log(evt.target.getAttribute("id"));
-    });
-
-    // Assuming you're fetching latitude and longitude dynamically or have a placeholder for them
     const lat = place.getAttribute("data-lat");
     const long = place.getAttribute("data-long");
     const name = place.getAttribute("data-name");
     const plz = place.getAttribute("data-plz");
 
-    // Create a unique marker and store it in the markers object using the dataId
+    // create a unique marker and store it in the markers object using the dataId
     markers[dataId] = L.marker([lat, long]).addTo(map);
     markers[dataId].bindPopup(name + "<br/>" + plz).addTo(map);
+
+    place.addEventListener("click", (evt) => {
+      map.setView([lat, long], 18);
+      markers[dataId].openPopup();
+      setTimeout(() => {
+        markers[dataId].closePopup();
+      }, 5000);
+    });
   });
 </script>
 

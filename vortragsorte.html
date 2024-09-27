@@ -89,7 +89,7 @@ places:
   {%for place in page.places%}
   <tr class="mb-4">
     <th
-      class="place flex items-start pr-8 hover:cursor-pointer"
+      class="place flex items-start pr-24 hover:cursor-pointer"
       data-id="{{place.id}}"
       data-lat="{{place.positions[0]}}"
       data-long="{{place.positions[1]}}"
@@ -124,19 +124,21 @@ places:
 
   places.forEach((place) => {
     const dataId = place.getAttribute("data-id");
-
-    place.addEventListener("click", (evt) => {
-      console.log(evt.target.getAttribute("id"));
-    });
-
-    // Assuming you're fetching latitude and longitude dynamically or have a placeholder for them
     const lat = place.getAttribute("data-lat");
     const long = place.getAttribute("data-long");
     const name = place.getAttribute("data-name");
     const plz = place.getAttribute("data-plz");
 
-    // Create a unique marker and store it in the markers object using the dataId
+    // create a unique marker and store it in the markers object using the dataId
     markers[dataId] = L.marker([lat, long]).addTo(map);
     markers[dataId].bindPopup(name + "<br/>" + plz).addTo(map);
+
+    place.addEventListener("click", (evt) => {
+      map.setView([lat, long], 18);
+      markers[dataId].openPopup();
+      setTimeout(() => {
+        markers[dataId].closePopup();
+      }, 5000);
+    });
   });
 </script>
