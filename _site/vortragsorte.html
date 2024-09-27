@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="h-full w-full" lang="de">
   <head>
-    <title>Dirigent</title>
+    <title>Vortragsorte</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="referrer" content="no-referrer" />
@@ -186,14 +186,52 @@
       class="relative mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20"
     >
       <div id="content" class="mx-auto w-full px-8 xl:max-w-6xl">
-        <h1>Unser Dirigent</h1>
-<p>Bertram Schade studierte an der Hochschule für Musik in Stuttgart bei Professor W. Melcher und Professor I. Turban. 1995 war er 2. Konzertmeister am städtischen Theater Trier. Als Mitglied des Turina-Trios wurde er 1998 1. Preisträger des Internationalen Wettbewerbs "Carlo Solivia" in Casale Monferrato (Italien).<br /><br />
-Von 1996 bis 1999 war er Stipendiat der "Stiftung Podium junger Musiker" Stuttgart. 2006 erhielt er den Solistenpreis der Stadt Gmunden. Das Musizieren in verschiedenen Ensembles für Kammermusik und Neue Musik, sowie für historische Aufführungspraxis und in zahlreichen anderen Orchestern, führte zu einer internationalen Konzerttätigkeit.<br /><br />
-Ebenso hatte er Auftritte bei international renommierten Festivals, sowie TV- und CD-Aufnahmen (u.A. als Mitglied des Bachcollegiums der Internationalen Bachakademie Stuttgart, des Boccerini-Sextett und des Ilios-Trio). Beim Label "audite" erschien eine mit dem Turina-Trio eingespielte CD mit Werken von Turina, Zilcher und Dvořák.<br /><br />
-Er unterrichtete als Dozent u.A. bei den Internationalen Musiktagen Salzburg und dem Internationalen Arbeitskreis für Musik (IAM) an den Landesmusikakademien Ochsenhausen und Hammelburg. Seit 2007 ist er Dozent verschiedener Kammermusikkurse.<br /><br />
-Als Dirigent leitet er neben weiteren Orchestern das Kammerorchester Plochingen, das AKO Karlsruhe, sowie seit 2017 die KlangkunstManufaktur.
-</p>
+        <h1>Übersicht Vortragsorte</h1>
+<div id="map" style="height: 520px"></div>
 
+<!-- script for leaflet and osm -->
+<script>
+  let map = L.map("map").setView([48.776238517806114, 9.004865488854207], 11);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+  let markerBirkach = L.marker([48.724059883124454, 9.205431560633574]).addTo(
+    map
+  );
+  markerBirkach
+    .bindPopup("Nikolaus-Cusanus-Haus<br/>70599 Stuttgart-Birkach")
+    .addTo(map);
+  let markerKorntal = L.marker([48.82699699258068, 9.125444727108853]).addTo(
+    map
+  );
+  markerKorntal
+    .bindPopup("Kath. Kirche St. Johannes<br/>70825 Korntal")
+    .addTo(map);
+  let markerMichaelBauerSchule = L.marker([
+    48.738969160776165, 9.12396964244967,
+  ]).addTo(map);
+  markerMichaelBauerSchule
+    .bindPopup("Michael Bauer Schule<br/>70563 Stuttgart")
+    .addTo(map);
+  let markerFeuersee = L.marker([48.77353515754155, 9.164516775525668]).addTo(
+    map
+  );
+  markerFeuersee
+    .bindPopup("Johanneskirche am Feuersee<br/>70176 Stuttgart")
+    .addTo(map);
+  let markerMerklingen = L.marker([
+    48.769162729483035, 8.851901700322031,
+  ]).addTo(map);
+  markerMerklingen
+    .bindPopup("Remigiuskirche<br/>71263 Weil der Stadt (Merklingen)")
+    .addTo(map);
+  let markerGerlingen = L.marker([48.804760798576275, 9.08217660197371]).addTo(
+    map
+  );
+  markerGerlingen.bindPopup("Lukaskirche<br/>70839 Gerlingen").addTo(map);
+</script>
 
       </div>
       <div

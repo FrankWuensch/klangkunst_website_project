@@ -1,118 +1,141 @@
 <!DOCTYPE html>
 <html class="h-full w-full" lang="de">
+  <head>
+    <title>{{page.title}}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    {%if page.block_index or page.block_follow%}
+    <meta
+      name="robots"
+      content="{%if page.block_index and page.block_follow%}noindex, nofollow{%elsif page.block_index%}noindex{%elsif page.block_follow%}nofollow{%endif%}"
+    />
+    {%endif%}
+    <link href="{{site.baseurl}}favicon.ico" rel="icon" />
+    <script src="{{site.baseurl}}src/darkmode.js"></script>
+    <link href="{{site.baseurl}}src/fonts.css" rel="stylesheet" />
+    <link href="{{site.baseurl}}dist/output.css" rel="stylesheet" />
+    <script src="{{site.baseurl}}src/iconify-min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </head>
 
-<head>
-  <title>{{page.title}}</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="referrer" content="no-referrer" />
-  {%if page.block_index or page.block_follow%}
-  <meta name="robots"
-    content="{%if page.block_index and page.block_follow%}noindex, nofollow{%elsif page.block_index%}noindex{%elsif page.block_follow%}nofollow{%endif%}" />
-  {%endif%}
-  <link href="{{site.baseurl}}favicon.ico" rel="icon" />
-  <script src="{{site.baseurl}}src/darkmode.js"></script>
-  <link href="{{site.baseurl}}src/fonts.css" rel="stylesheet" />
-  <link href="{{site.baseurl}}dist/output.css" rel="stylesheet" />
-  <script src="{{site.baseurl}}src/iconify-min.js"></script>
-</head>
-
-<body
-  class="normal relative mx-auto flex h-full w-full overflow-hidden bg-[url('{{site.baseurl}}{{site.img}}')] bg-no-repeat bg-cover bg-fixed pb-12 pt-16 duration-700 ease-in-out xl:pb-20 xl:pt-24 dark:bg-zinc-900">
-  {% include menu.html %} {% include header.html %}
-  <main id="main-container" class="relative mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20">
-    <div id="content" class="mx-auto w-full px-8 xl:max-w-6xl">
-      {{content}}
-    </div>
-    <div id="wrapper" class="pointer-events-none fixed inset-0 z-50 flex items-center justify-center">
-      <div id="large-image-wrapper"
-        class="relative flex items-center justify-center opacity-0 duration-700 ease-in-out">
-        <img id="large-image" class="cursor-pointer object-cover" />
-        <div class="pointer-events-none absolute left-0 top-0 h-full w-full dark:bg-black/40"></div>
+  <body
+    class="normal relative mx-auto flex h-full w-full overflow-hidden bg-[url('{{site.baseurl}}{{site.img}}')] bg-no-repeat bg-cover bg-fixed pb-12 pt-16 duration-700 ease-in-out xl:pb-20 xl:pt-24 dark:bg-zinc-900"
+  >
+    {% include menu.html %} {% include header.html %}
+    <main
+      id="main-container"
+      class="relative mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20"
+    >
+      <div id="content" class="mx-auto w-full px-8 xl:max-w-6xl">
+        {{content}}
       </div>
-    </div>
-  </main>
-  {% include footer.html %}
-  <script src="{{site.baseurl}}src/menu.js"></script>
-  <script src="{{site.baseurl}}src/active_elements.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const wrapper = document.querySelector("#wrapper");
-      const largeImage = document.querySelector("#large-image");
-      const largeImageWrapper = document.querySelector(
-        "#large-image-wrapper"
-      );
-      const content = document.querySelector("#content");
-      const mainContainer = document.querySelector("#main-container");
-      const clickableImages = document.querySelectorAll(".clickable");
+      <div
+        id="wrapper"
+        class="pointer-events-none fixed inset-0 z-50 flex items-center justify-center"
+      >
+        <div
+          id="large-image-wrapper"
+          class="relative flex items-center justify-center opacity-0 duration-700 ease-in-out"
+        >
+          <img id="large-image" class="cursor-pointer object-cover" />
+          <div
+            class="pointer-events-none absolute left-0 top-0 h-full w-full dark:bg-black/40"
+          ></div>
+        </div>
+      </div>
+    </main>
+    {% include footer.html %}
+    <script src="{{site.baseurl}}src/menu.js"></script>
+    <script src="{{site.baseurl}}src/active_elements.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const wrapper = document.querySelector("#wrapper");
+        const largeImage = document.querySelector("#large-image");
+        const largeImageWrapper = document.querySelector(
+          "#large-image-wrapper"
+        );
+        const content = document.querySelector("#content");
+        const mainContainer = document.querySelector("#main-container");
+        const clickableImages = document.querySelectorAll(".clickable");
 
-      let isImageOpen = false;
+        let isImageOpen = false;
 
-      for (let img of clickableImages) {
-        img.addEventListener("click", () => {
-          openLargeImage(img);
-        });
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape") {
-            closeLargeImage(img);
+        for (let img of clickableImages) {
+          img.addEventListener("click", () => {
+            openLargeImage(img);
+          });
+          document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") {
+              closeLargeImage(img);
+            }
+          });
+        }
+
+        wrapper.addEventListener("click", (event) => {
+          if (
+            event.target === wrapper ||
+            event.target === largeImageWrapper ||
+            event.target === largeImage
+          ) {
+            closeLargeImage();
           }
         });
-      }
 
-      wrapper.addEventListener("click", (event) => {
-        if (
-          event.target === wrapper ||
-          event.target === largeImageWrapper ||
-          event.target === largeImage
-        ) {
-          closeLargeImage();
-        }
+        const updateImageSize = () => {
+          if (!isImageOpen) return;
+
+          const maxHeight = Math.min(
+            mainContainer.clientHeight * 0.95,
+            window.innerHeight * 0.95
+          );
+          const maxWidth = Math.min(
+            (maxHeight * 2) / 3,
+            window.innerWidth * 0.9
+          );
+
+          largeImage.style.maxHeight = `${maxHeight}px`;
+          largeImage.style.maxWidth = `${maxWidth}px`;
+        };
+
+        const openLargeImage = (img) => {
+          largeImage.setAttribute("src", img.getAttribute("src"));
+          wrapper.classList.remove("pointer-events-none");
+          isImageOpen = true;
+
+          updateImageSize();
+
+          setTimeout(() => {
+            largeImageWrapper.classList.remove("opacity-0");
+            largeImageWrapper.classList.add("opacity-100");
+            content.style.filter = "blur(0.5rem)";
+          }, 50);
+        };
+
+        const closeLargeImage = () => {
+          largeImageWrapper.classList.remove("opacity-100");
+          largeImageWrapper.classList.add("opacity-0");
+          content.style.filter = "none";
+          isImageOpen = false;
+          setTimeout(() => {
+            wrapper.classList.add("pointer-events-none");
+          }, 700);
+        };
+
+        // Füge einen Event Listener für das Resize-Event hinzu
+        window.addEventListener("resize", updateImageSize);
       });
-
-      const updateImageSize = () => {
-        if (!isImageOpen) return;
-
-        const maxHeight = Math.min(
-          mainContainer.clientHeight * 0.95,
-          window.innerHeight * 0.95
-        );
-        const maxWidth = Math.min(
-          (maxHeight * 2) / 3,
-          window.innerWidth * 0.9
-        );
-
-        largeImage.style.maxHeight = `${maxHeight}px`;
-        largeImage.style.maxWidth = `${maxWidth}px`;
-      };
-
-      const openLargeImage = (img) => {
-        largeImage.setAttribute("src", img.getAttribute("src"));
-        wrapper.classList.remove("pointer-events-none");
-        isImageOpen = true;
-
-        updateImageSize();
-
-        setTimeout(() => {
-          largeImageWrapper.classList.remove("opacity-0");
-          largeImageWrapper.classList.add("opacity-100");
-          content.style.filter = "blur(0.5rem)";
-        }, 50);
-      };
-
-      const closeLargeImage = () => {
-        largeImageWrapper.classList.remove("opacity-100");
-        largeImageWrapper.classList.add("opacity-0");
-        content.style.filter = "none";
-        isImageOpen = false;
-        setTimeout(() => {
-          wrapper.classList.add("pointer-events-none");
-        }, 700);
-      };
-
-      // Füge einen Event Listener für das Resize-Event hinzu
-      window.addEventListener("resize", updateImageSize);
-    });
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

@@ -1,0 +1,52 @@
+---
+title: Vortragsorte
+layout: default
+title_info_1: Übersicht Vortragsorte
+---
+
+<h1>{{page.title_info_1}}</h1>
+<div id="map" style="height: 520px"></div>
+
+<!-- script for leaflet and osm -->
+<script>
+  let map = L.map("map").setView([48.776238517806114, 9.004865488854207], 11);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+  let markerBirkach = L.marker([48.724059883124454, 9.205431560633574]).addTo(
+    map
+  );
+  markerBirkach
+    .bindPopup("Nikolaus-Cusanus-Haus<br/>70599 Stuttgart-Birkach")
+    .addTo(map);
+  let markerKorntal = L.marker([48.82699699258068, 9.125444727108853]).addTo(
+    map
+  );
+  markerKorntal
+    .bindPopup("Kath. Kirche St. Johannes<br/>70825 Korntal")
+    .addTo(map);
+  let markerMichaelBauerSchule = L.marker([
+    48.738969160776165, 9.12396964244967,
+  ]).addTo(map);
+  markerMichaelBauerSchule
+    .bindPopup("Michael Bauer Schule<br/>70563 Stuttgart")
+    .addTo(map);
+  let markerFeuersee = L.marker([48.77353515754155, 9.164516775525668]).addTo(
+    map
+  );
+  markerFeuersee
+    .bindPopup("Johanneskirche am Feuersee<br/>70176 Stuttgart")
+    .addTo(map);
+  let markerMerklingen = L.marker([
+    48.769162729483035, 8.851901700322031,
+  ]).addTo(map);
+  markerMerklingen
+    .bindPopup("Remigiuskirche<br/>71263 Weil der Stadt (Merklingen)")
+    .addTo(map);
+  let markerGerlingen = L.marker([48.804760798576275, 9.08217660197371]).addTo(
+    map
+  );
+  markerGerlingen.bindPopup("Lukaskirche<br/>70839 Gerlingen").addTo(map);
+</script>
