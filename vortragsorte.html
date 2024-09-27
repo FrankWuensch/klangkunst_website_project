@@ -2,10 +2,113 @@
 title: Vortragsorte
 layout: default
 title_info_1: Übersicht Vortragsorte
+places:
+  - name: Johanneskirche am Feuersee
+    id: 0
+    positions:
+      - 48.77324753293309
+      - 9.164622299829663
+    plz: 70176 Stuttgart
+    projects:
+      - KlangkunstManufaktur Projekt II - 2022
+      - KlangkunstManufaktur Projekt II - 2020
+
+  - name: Kath. Kirche St. Johannes
+    id: 1
+    positions:
+      - 48.82699699258068
+      - 9.125444727108853
+    plz: 70825 Korntal
+    projects:
+      - KlangkunstManufaktur Projekt I - 2024
+      - KlangkunstManufaktur Projekt I - 2023
+      - KlangkunstManufaktur Projekt I - 2022
+      - KlangkunstManufaktur Projekt I - 2019
+      - KlangkunstManufaktur Projekt I - 2018
+
+  - name: Lukaskirche
+    id: 2
+    positions:
+      - 48.804760798576275
+      - 9.08217660197371
+    plz: 70839 Gerlingen
+    projects:
+      - KlangkunstManufaktur Projekt II - 2019
+      - KlangkunstManufaktur Projekt II - 2018
+
+  - name: Michael Bauer Schule
+    id: 3
+    positions:
+      - 48.738969160776165
+      - 9.12396964244967
+    plz: 70563 Stuttgart
+    projects:
+      - KlangkunstManufaktur Projekt II - 2023
+
+  - name: Nikolaus-Cusanus-Haus
+    id: 4
+    positions:
+      - 48.724059883124454
+      - 9.205431560633574
+    plz: 70599 Stuttgart-Birkach
+    projects:
+      - KlangkunstManufaktur Projekt II - 2024
+
+  - name: Remigiuskirche
+    id: 5
+    positions:
+      - 48.76921193644937
+      - 8.851121211979958
+    plz: 71263 Weil der Stadt (Merklingen)
+    projects:
+      - KlangkunstManufaktur Projekt II - 2021
 ---
 
 <h1>{{page.title_info_1}}</h1>
 <div id="map" style="height: 520px"></div>
+<!-- only shown in mobile version -->
+<div class="xl:hidden">
+  {%for place in page.places%}
+  <summary>
+    {{place.name}} ({{place.plz}})
+    <details>
+      <ul class="flex list-none flex-col p-0">
+        {%for project in place.projects%}
+        <li class="list-none">{{project}}</li>
+        {%endfor%}
+      </ul>
+    </details>
+  </summary>
+  {%endfor%}
+</div>
+<!-- only shown if screen >= xl:1280px -->
+<p class="mt-12 max-xl:hidden">
+  Auf den Vortragsort klicken, um ihn auf der Karte anzuzeigen.
+</p>
+<table class="mt-8 table-fixed text-nowrap text-left max-xl:hidden">
+  {%for place in page.places%}
+  <tr class="mb-4">
+    <th
+      class="place flex items-start pr-8 hover:cursor-pointer"
+      data-id="{{place.id}}"
+      data-ltd="{{place.positions[0]}}"
+      data-lat="{{place.positions[1]}}"
+      data-name="{{place.name}}"
+      data-plz="{{place.plz}}"
+      id="{{place.id}}"
+    >
+      {{place.name}} ({{place.plz}})
+    </th>
+    <td>
+      <ul class="flex list-none flex-col p-0">
+        {%for project in place.projects%}
+        <li class="list-none">{{project}}</li>
+        {%endfor%}
+      </ul>
+    </td>
+  </tr>
+  {%endfor%}
+</table>
 
 <!-- script for leaflet and osm -->
 <script>
@@ -15,38 +118,25 @@ title_info_1: Übersicht Vortragsorte
     attribution:
       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map);
-  let markerBirkach = L.marker([48.724059883124454, 9.205431560633574]).addTo(
-    map
-  );
-  markerBirkach
-    .bindPopup("Nikolaus-Cusanus-Haus<br/>70599 Stuttgart-Birkach")
-    .addTo(map);
-  let markerKorntal = L.marker([48.82699699258068, 9.125444727108853]).addTo(
-    map
-  );
-  markerKorntal
-    .bindPopup("Kath. Kirche St. Johannes<br/>70825 Korntal")
-    .addTo(map);
-  let markerMichaelBauerSchule = L.marker([
-    48.738969160776165, 9.12396964244967,
-  ]).addTo(map);
-  markerMichaelBauerSchule
-    .bindPopup("Michael Bauer Schule<br/>70563 Stuttgart")
-    .addTo(map);
-  let markerFeuersee = L.marker([48.77353515754155, 9.164516775525668]).addTo(
-    map
-  );
-  markerFeuersee
-    .bindPopup("Johanneskirche am Feuersee<br/>70176 Stuttgart")
-    .addTo(map);
-  let markerMerklingen = L.marker([
-    48.769162729483035, 8.851901700322031,
-  ]).addTo(map);
-  markerMerklingen
-    .bindPopup("Remigiuskirche<br/>71263 Weil der Stadt (Merklingen)")
-    .addTo(map);
-  let markerGerlingen = L.marker([48.804760798576275, 9.08217660197371]).addTo(
-    map
-  );
-  markerGerlingen.bindPopup("Lukaskirche<br/>70839 Gerlingen").addTo(map);
+
+  const places = document.querySelectorAll(".place");
+  const markers = {};
+
+  places.forEach((place) => {
+    const dataId = place.getAttribute("data-id");
+
+    place.addEventListener("click", (evt) => {
+      console.log(evt.target.getAttribute("id"));
+    });
+
+    // Assuming you're fetching latitude and longitude dynamically or have a placeholder for them
+    const ltd = place.getAttribute("data-ltd");
+    const lat = place.getAttribute("data-lat");
+    const name = place.getAttribute("data-name");
+    const plz = place.getAttribute("data-plz");
+
+    // Create a unique marker and store it in the markers object using the dataId
+    markers[dataId] = L.marker([ltd, lat]).addTo(map);
+    markers[dataId].bindPopup(name + "<br/>" + plz).addTo(map);
+  });
 </script>
