@@ -91,8 +91,8 @@ places:
     <th
       class="place flex items-start pr-8 hover:cursor-pointer"
       data-id="{{place.id}}"
-      data-ltd="{{place.positions[0]}}"
-      data-lat="{{place.positions[1]}}"
+      data-lat="{{place.positions[0]}}"
+      data-long="{{place.positions[1]}}"
       data-name="{{place.name}}"
       data-plz="{{place.plz}}"
       id="{{place.id}}"
@@ -130,13 +130,13 @@ places:
     });
 
     // Assuming you're fetching latitude and longitude dynamically or have a placeholder for them
-    const ltd = place.getAttribute("data-ltd");
     const lat = place.getAttribute("data-lat");
+    const long = place.getAttribute("data-long");
     const name = place.getAttribute("data-name");
     const plz = place.getAttribute("data-plz");
 
     // Create a unique marker and store it in the markers object using the dataId
-    markers[dataId] = L.marker([ltd, lat]).addTo(map);
+    markers[dataId] = L.marker([lat, long]).addTo(map);
     markers[dataId].bindPopup(name + "<br/>" + plz).addTo(map);
   });
 </script>
