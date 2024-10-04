@@ -1,8 +1,8 @@
 title: Klangkunst Manufaktur e.V.
 email: 
 description:
-baseurl: "https://www.klangkunstmanufaktur.de/"  # !use only for production / deploy
-# baseurl: ""  # !use only for development
+# baseurl: "https://www.klangkunstmanufaktur.de/"  # !use only for production / deploy
+baseurl: ""  # !use only for development
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 nav_title_1: Klangkunst
 nav_title_2: Manufaktur
