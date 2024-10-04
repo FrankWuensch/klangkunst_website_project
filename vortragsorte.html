@@ -69,16 +69,12 @@ places:
 <!-- only shown in mobile version -->
 <div class="xl:hidden">
   {%for place in page.places%}
-  <summary>
-    {{place.name}} ({{place.plz}})
-    <details>
-      <ul class="flex list-none flex-col p-0">
-        {%for project in place.projects%}
-        <li class="list-none">{{project}}</li>
-        {%endfor%}
-      </ul>
-    </details>
-  </summary>
+  <details>
+    <summary>{{place.name}} ({{place.plz}})</summary>
+    {%for project in place.projects%}
+    {{project}}
+    {%endfor%}
+  </details>
   {%endfor%}
 </div>
 <!-- only shown if screen >= xl:1280px -->
@@ -88,15 +84,9 @@ places:
 <table class="mt-8 table-fixed text-nowrap text-left max-xl:hidden">
   {%for place in page.places%}
   <tr class="mb-4">
-    <th
-      class="place flex items-start pr-24 hover:cursor-pointer"
-      data-id="{{place.id}}"
-      data-lat="{{place.positions[0]}}"
-      data-long="{{place.positions[1]}}"
-      data-name="{{place.name}}"
-      data-plz="{{place.plz}}"
-      id="{{place.id}}"
-    >
+    <th class="place flex items-start pr-24 hover:cursor-pointer" data-id="{{place.id}}"
+      data-lat="{{place.positions[0]}}" data-long="{{place.positions[1]}}" data-name="{{place.name}}"
+      data-plz="{{place.plz}}" id="{{place.id}}">
       {{place.name}} ({{place.plz}})
     </th>
     <td>
