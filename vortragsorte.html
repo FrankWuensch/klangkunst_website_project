@@ -59,21 +59,30 @@ places:
     positions:
       - 48.76921193644937
       - 8.851121211979958
-    plz: 71263 Weil der Stadt (Merklingen)
+    plz: 71263 Weil der Stadt / Merklingen
     projects:
       - KlangkunstManufaktur Projekt II - 2021
 ---
 
 <h1>{{page.title_info_1}}</h1>
-<div id="map" style="height: 520px"></div>
+<div id="map-small" class="xl:hidden" style="height: 250px;"></div>
+<div id="map-big" class="max-xl:hidden" style="height: 520px;"></div>
 <!-- only shown in mobile version -->
-<div class="xl:hidden">
+<p class="mt-8 text-sm xl:hidden">
+  Auf den Vortragsort klicken, um ihn auf der Karte anzuzeigen.
+</p>
+<div class="mt-4 text-sm xl:hidden">
   {%for place in page.places%}
-  <details>
-    <summary>{{place.name}} ({{place.plz}})</summary>
-    {%for project in place.projects%}
-    {{project}}
-    {%endfor%}
+  <details class="mb-3">
+    <summary class="place" data-id="{{place.id}}"
+      data-lat="{{place.positions[0]}}" data-long="{{place.positions[1]}}" data-name="{{place.name}}"
+      data-plz="{{place.plz}}" id="{{place.id}}">{{place.name}} ({{place.plz}})
+    </summary>
+    <ul class="pl-4">
+      {%for project in place.projects%}
+        <li class>{{project}}</li>
+      {%endfor%}
+    </ul>
   </details>
   {%endfor%}
 </div>
@@ -102,33 +111,75 @@ places:
 
 <!-- script for leaflet and osm -->
 <script>
-  let map = L.map("map").setView([48.776238517806114, 9.004865488854207], 11);
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution:
-      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-  }).addTo(map);
+document.addEventListener("DOMContentLoaded", () => {
+  let mapSmall = document.querySelector("#map-small");
+  let mapBig = document.querySelector("#map-big");
+  let map, currentMapElement, zoom;
 
-  const places = document.querySelectorAll(".place");
-  const markers = {};
+  // Initialize the map based on screen size
+  function initializeMap() {
+    if (window.innerWidth >= 1280) {
+      currentMapElement = mapBig;
+      zoom = 11;
+    } else {
+      currentMapElement = mapSmall;
+      zoom = 10;
+    }
 
-  places.forEach((place) => {
-    const dataId = place.getAttribute("data-id");
-    const lat = place.getAttribute("data-lat");
-    const long = place.getAttribute("data-long");
-    const name = place.getAttribute("data-name");
-    const plz = place.getAttribute("data-plz");
+    if (currentMapElement && !map) { // Only initialize the map once
+      map = L.map(currentMapElement).setView([48.77929275581525, 9.017890304113749], zoom);
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      }).addTo(map);
+      
+      const places = document.querySelectorAll(".place");
+      const markers = {};
 
-    // create a unique marker and store it in the markers object using the dataId
-    markers[dataId] = L.marker([lat, long]).addTo(map);
-    markers[dataId].bindPopup(name + "<br/>" + plz).addTo(map);
+      places.forEach((place) => {
+        const dataId = place.getAttribute("data-id");
+        const lat = place.getAttribute("data-lat");
+        const long = place.getAttribute("data-long");
+        const name = place.getAttribute("data-name");
+        const plz = place.getAttribute("data-plz");
 
-    place.addEventListener("click", (evt) => {
-      map.setView([lat, long], 18);
-      markers[dataId].openPopup();
-      setTimeout(() => {
-        markers[dataId].closePopup();
-      }, 5000);
-    });
+        // create a unique marker and store it in the markers object using the dataId
+        markers[dataId] = L.marker([lat, long]).addTo(map);
+        markers[dataId].bindPopup(name + "<br/>" + plz).addTo(map);
+
+        place.addEventListener("click", () => {
+          map.setView([lat, long], 17);
+          markers[dataId].openPopup();
+          setTimeout(() => {
+            markers[dataId].closePopup();
+          }, 5000);
+          if (mapSmall) {
+            const details = document.querySelectorAll("details");
+            details.forEach((detail) => {
+              detail.removeAttribute("open");
+            });
+          }
+        });
+      });
+    }
+
+    if (map) {
+      map.invalidateSize(); // Ensure the map is resized correctly
+    }
+  }
+
+  // Call initializeMap on load
+  initializeMap();
+
+  // Add event listener for resizing the window and re-initializing the map if needed
+  window.addEventListener("resize", () => {
+    if ((window.innerWidth >= 1280 && currentMapElement === mapSmall) ||
+        (window.innerWidth < 1280 && currentMapElement === mapBig)) {
+      // Reinitialize the map if the screen size changes
+      map.remove(); // Remove the old map instance
+      map = null;   // Clear the map variable
+      initializeMap(); // Initialize the map again for the new screen size
+    }
   });
+});
 </script>
