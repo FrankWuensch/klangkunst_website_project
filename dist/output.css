@@ -852,16 +852,12 @@ video {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-\[url\(\'https\:\/\/www\.klangkunstmanufaktur\.de\/background\.png\'\)\] {
-  background-image: url('https://www.klangkunstmanufaktur.de/background.png');
+.bg-\[url\(\'background\.png\'\)\] {
+  background-image: url('background.png');
 }
 
 .bg-\[url\(\'\{\{site\.baseurl\}\}\{\{site\.img\}\}\'\)\] {
   background-image: url('{{site.baseurl}}{{site.img}}');
-}
-
-.bg-\[url\(\'background\.png\'\)\] {
-  background-image: url('background.png');
 }
 
 .bg-cover {

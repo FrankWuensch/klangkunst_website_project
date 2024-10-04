@@ -1,4 +1,4 @@
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP_HOST} ^klangkunstmanufaktur\.de$ [NC]
-RewriteRule ^(.*)$ https://www.klangkunstmanufaktur.de/$1 [R=301,L]
+RewriteRule ?. https://www.klangkunstmanufaktur.de/ [R=301,L]
