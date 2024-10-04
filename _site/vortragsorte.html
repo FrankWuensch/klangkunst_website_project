@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="h-full w-full" lang="de">
   <head>
-    <title>Galerie</title>
+    <title>Vortragsorte</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="referrer" content="no-referrer" />
@@ -186,7 +186,284 @@
       class="relative mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20"
     >
       <div id="content" class="mx-auto w-full px-8 xl:max-w-6xl">
+        <h1>Übersicht Vortragsorte</h1>
+<div id="map-small" class="xl:hidden" style="height: 250px;"></div>
+<div id="map-big" class="max-xl:hidden" style="height: 520px;"></div>
+<!-- only shown in mobile version -->
+<p class="mt-8 text-sm xl:hidden">
+  Auf den Vortragsort klicken, um ihn auf der Karte anzuzeigen.
+</p>
+<div class="mt-4 text-sm xl:hidden">
+  
+  <details class="mb-3">
+    <summary class="place" data-id="0"
+      data-lat="48.77324753293309" data-long="9.164622299829663" data-name="Johanneskirche am Feuersee"
+      data-plz="70176 Stuttgart" id="0">Johanneskirche am Feuersee (70176 Stuttgart)
+    </summary>
+    <ul class="pl-4">
+      
+        <li class>KlangkunstManufaktur Projekt II - 2022</li>
+      
+        <li class>KlangkunstManufaktur Projekt II - 2020</li>
+      
+    </ul>
+  </details>
+  
+  <details class="mb-3">
+    <summary class="place" data-id="1"
+      data-lat="48.82699699258068" data-long="9.125444727108853" data-name="Kath. Kirche St. Johannes"
+      data-plz="70825 Korntal" id="1">Kath. Kirche St. Johannes (70825 Korntal)
+    </summary>
+    <ul class="pl-4">
+      
+        <li class>KlangkunstManufaktur Projekt I - 2024</li>
+      
+        <li class>KlangkunstManufaktur Projekt I - 2023</li>
+      
+        <li class>KlangkunstManufaktur Projekt I - 2022</li>
+      
+        <li class>KlangkunstManufaktur Projekt I - 2019</li>
+      
+        <li class>KlangkunstManufaktur Projekt I - 2018</li>
+      
+    </ul>
+  </details>
+  
+  <details class="mb-3">
+    <summary class="place" data-id="2"
+      data-lat="48.804760798576275" data-long="9.08217660197371" data-name="Lukaskirche"
+      data-plz="70839 Gerlingen" id="2">Lukaskirche (70839 Gerlingen)
+    </summary>
+    <ul class="pl-4">
+      
+        <li class>KlangkunstManufaktur Projekt II - 2019</li>
+      
+        <li class>KlangkunstManufaktur Projekt II - 2018</li>
+      
+    </ul>
+  </details>
+  
+  <details class="mb-3">
+    <summary class="place" data-id="3"
+      data-lat="48.738969160776165" data-long="9.12396964244967" data-name="Michael Bauer Schule"
+      data-plz="70563 Stuttgart" id="3">Michael Bauer Schule (70563 Stuttgart)
+    </summary>
+    <ul class="pl-4">
+      
+        <li class>KlangkunstManufaktur Projekt II - 2023</li>
+      
+    </ul>
+  </details>
+  
+  <details class="mb-3">
+    <summary class="place" data-id="4"
+      data-lat="48.724059883124454" data-long="9.205431560633574" data-name="Nikolaus-Cusanus-Haus"
+      data-plz="70599 Stuttgart-Birkach" id="4">Nikolaus-Cusanus-Haus (70599 Stuttgart-Birkach)
+    </summary>
+    <ul class="pl-4">
+      
+        <li class>KlangkunstManufaktur Projekt II - 2024</li>
+      
+    </ul>
+  </details>
+  
+  <details class="mb-3">
+    <summary class="place" data-id="5"
+      data-lat="48.76921193644937" data-long="8.851121211979958" data-name="Remigiuskirche"
+      data-plz="71263 Weil der Stadt / Merklingen" id="5">Remigiuskirche (71263 Weil der Stadt / Merklingen)
+    </summary>
+    <ul class="pl-4">
+      
+        <li class>KlangkunstManufaktur Projekt II - 2021</li>
+      
+    </ul>
+  </details>
+  
+</div>
+<!-- only shown if screen >= xl:1280px -->
+<p class="mt-12 max-xl:hidden">
+  Auf den Vortragsort klicken, um ihn auf der Karte anzuzeigen.
+</p>
+<table class="mt-8 table-fixed text-nowrap text-left max-xl:hidden">
+  
+  <tr class="mb-4">
+    <th class="place flex items-start pr-24 hover:cursor-pointer" data-id="0"
+      data-lat="48.77324753293309" data-long="9.164622299829663" data-name="Johanneskirche am Feuersee"
+      data-plz="70176 Stuttgart" id="0">
+      Johanneskirche am Feuersee (70176 Stuttgart)
+    </th>
+    <td>
+      <ul class="flex list-none flex-col p-0">
         
+        <li class="list-none">KlangkunstManufaktur Projekt II - 2022</li>
+        
+        <li class="list-none">KlangkunstManufaktur Projekt II - 2020</li>
+        
+      </ul>
+    </td>
+  </tr>
+  
+  <tr class="mb-4">
+    <th class="place flex items-start pr-24 hover:cursor-pointer" data-id="1"
+      data-lat="48.82699699258068" data-long="9.125444727108853" data-name="Kath. Kirche St. Johannes"
+      data-plz="70825 Korntal" id="1">
+      Kath. Kirche St. Johannes (70825 Korntal)
+    </th>
+    <td>
+      <ul class="flex list-none flex-col p-0">
+        
+        <li class="list-none">KlangkunstManufaktur Projekt I - 2024</li>
+        
+        <li class="list-none">KlangkunstManufaktur Projekt I - 2023</li>
+        
+        <li class="list-none">KlangkunstManufaktur Projekt I - 2022</li>
+        
+        <li class="list-none">KlangkunstManufaktur Projekt I - 2019</li>
+        
+        <li class="list-none">KlangkunstManufaktur Projekt I - 2018</li>
+        
+      </ul>
+    </td>
+  </tr>
+  
+  <tr class="mb-4">
+    <th class="place flex items-start pr-24 hover:cursor-pointer" data-id="2"
+      data-lat="48.804760798576275" data-long="9.08217660197371" data-name="Lukaskirche"
+      data-plz="70839 Gerlingen" id="2">
+      Lukaskirche (70839 Gerlingen)
+    </th>
+    <td>
+      <ul class="flex list-none flex-col p-0">
+        
+        <li class="list-none">KlangkunstManufaktur Projekt II - 2019</li>
+        
+        <li class="list-none">KlangkunstManufaktur Projekt II - 2018</li>
+        
+      </ul>
+    </td>
+  </tr>
+  
+  <tr class="mb-4">
+    <th class="place flex items-start pr-24 hover:cursor-pointer" data-id="3"
+      data-lat="48.738969160776165" data-long="9.12396964244967" data-name="Michael Bauer Schule"
+      data-plz="70563 Stuttgart" id="3">
+      Michael Bauer Schule (70563 Stuttgart)
+    </th>
+    <td>
+      <ul class="flex list-none flex-col p-0">
+        
+        <li class="list-none">KlangkunstManufaktur Projekt II - 2023</li>
+        
+      </ul>
+    </td>
+  </tr>
+  
+  <tr class="mb-4">
+    <th class="place flex items-start pr-24 hover:cursor-pointer" data-id="4"
+      data-lat="48.724059883124454" data-long="9.205431560633574" data-name="Nikolaus-Cusanus-Haus"
+      data-plz="70599 Stuttgart-Birkach" id="4">
+      Nikolaus-Cusanus-Haus (70599 Stuttgart-Birkach)
+    </th>
+    <td>
+      <ul class="flex list-none flex-col p-0">
+        
+        <li class="list-none">KlangkunstManufaktur Projekt II - 2024</li>
+        
+      </ul>
+    </td>
+  </tr>
+  
+  <tr class="mb-4">
+    <th class="place flex items-start pr-24 hover:cursor-pointer" data-id="5"
+      data-lat="48.76921193644937" data-long="8.851121211979958" data-name="Remigiuskirche"
+      data-plz="71263 Weil der Stadt / Merklingen" id="5">
+      Remigiuskirche (71263 Weil der Stadt / Merklingen)
+    </th>
+    <td>
+      <ul class="flex list-none flex-col p-0">
+        
+        <li class="list-none">KlangkunstManufaktur Projekt II - 2021</li>
+        
+      </ul>
+    </td>
+  </tr>
+  
+</table>
+
+<!-- script for leaflet and osm -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  let mapSmall = document.querySelector("#map-small");
+  let mapBig = document.querySelector("#map-big");
+  let map, currentMapElement, zoom;
+
+  // Initialize the map based on screen size
+  function initializeMap() {
+    if (window.innerWidth >= 1280) {
+      currentMapElement = mapBig;
+      zoom = 11;
+    } else {
+      currentMapElement = mapSmall;
+      zoom = 10;
+    }
+
+    if (currentMapElement && !map) { // Only initialize the map once
+      map = L.map(currentMapElement).setView([48.77929275581525, 9.017890304113749], zoom);
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      }).addTo(map);
+      
+      const places = document.querySelectorAll(".place");
+      const markers = {};
+
+      places.forEach((place) => {
+        const dataId = place.getAttribute("data-id");
+        const lat = place.getAttribute("data-lat");
+        const long = place.getAttribute("data-long");
+        const name = place.getAttribute("data-name");
+        const plz = place.getAttribute("data-plz");
+
+        // create a unique marker and store it in the markers object using the dataId
+        markers[dataId] = L.marker([lat, long]).addTo(map);
+        markers[dataId].bindPopup(name + "<br/>" + plz).addTo(map);
+
+        place.addEventListener("click", () => {
+          map.setView([lat, long], 17);
+          markers[dataId].openPopup();
+          setTimeout(() => {
+            markers[dataId].closePopup();
+          }, 5000);
+          if (mapSmall) {
+            const details = document.querySelectorAll("details");
+            details.forEach((detail) => {
+              detail.removeAttribute("open");
+            });
+          }
+        });
+      });
+    }
+
+    if (map) {
+      map.invalidateSize(); // Ensure the map is resized correctly
+    }
+  }
+
+  // Call initializeMap on load
+  initializeMap();
+
+  // Add event listener for resizing the window and re-initializing the map if needed
+  window.addEventListener("resize", () => {
+    if ((window.innerWidth >= 1280 && currentMapElement === mapSmall) ||
+        (window.innerWidth < 1280 && currentMapElement === mapBig)) {
+      // Reinitialize the map if the screen size changes
+      map.remove(); // Remove the old map instance
+      map = null;   // Clear the map variable
+      initializeMap(); // Initialize the map again for the new screen size
+    }
+  });
+});
+</script>
       </div>
       <div
         id="wrapper"

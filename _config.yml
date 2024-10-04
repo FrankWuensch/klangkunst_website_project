@@ -13,7 +13,9 @@ navs:
     link: "geschichte.html"
   - text: Dirigent
     link: "dirigent.html"
-  - text: Galerie 
+  - text: Vortragsorte
+    link: "vortragsorte.html"
+  - text: Galerie
 posters:
   - src: "src/plakate/Klangkunst Plakat 2018-I.png"
     title: KlangkunstManufaktur Projekt I - 2018

@@ -1,0 +1,185 @@
+---
+title: Vortragsorte
+layout: default
+title_info_1: Übersicht Vortragsorte
+places:
+  - name: Johanneskirche am Feuersee
+    id: 0
+    positions:
+      - 48.77324753293309
+      - 9.164622299829663
+    plz: 70176 Stuttgart
+    projects:
+      - KlangkunstManufaktur Projekt II - 2022
+      - KlangkunstManufaktur Projekt II - 2020
+
+  - name: Kath. Kirche St. Johannes
+    id: 1
+    positions:
+      - 48.82699699258068
+      - 9.125444727108853
+    plz: 70825 Korntal
+    projects:
+      - KlangkunstManufaktur Projekt I - 2024
+      - KlangkunstManufaktur Projekt I - 2023
+      - KlangkunstManufaktur Projekt I - 2022
+      - KlangkunstManufaktur Projekt I - 2019
+      - KlangkunstManufaktur Projekt I - 2018
+
+  - name: Lukaskirche
+    id: 2
+    positions:
+      - 48.804760798576275
+      - 9.08217660197371
+    plz: 70839 Gerlingen
+    projects:
+      - KlangkunstManufaktur Projekt II - 2019
+      - KlangkunstManufaktur Projekt II - 2018
+
+  - name: Michael Bauer Schule
+    id: 3
+    positions:
+      - 48.738969160776165
+      - 9.12396964244967
+    plz: 70563 Stuttgart
+    projects:
+      - KlangkunstManufaktur Projekt II - 2023
+
+  - name: Nikolaus-Cusanus-Haus
+    id: 4
+    positions:
+      - 48.724059883124454
+      - 9.205431560633574
+    plz: 70599 Stuttgart-Birkach
+    projects:
+      - KlangkunstManufaktur Projekt II - 2024
+
+  - name: Remigiuskirche
+    id: 5
+    positions:
+      - 48.76921193644937
+      - 8.851121211979958
+    plz: 71263 Weil der Stadt / Merklingen
+    projects:
+      - KlangkunstManufaktur Projekt II - 2021
+---
+
+<h1>{{page.title_info_1}}</h1>
+<div id="map-small" class="xl:hidden" style="height: 250px;"></div>
+<div id="map-big" class="max-xl:hidden" style="height: 520px;"></div>
+<!-- only shown in mobile version -->
+<p class="mt-8 text-sm xl:hidden">
+  Auf den Vortragsort klicken, um ihn auf der Karte anzuzeigen.
+</p>
+<div class="mt-4 text-sm xl:hidden">
+  {%for place in page.places%}
+  <details class="mb-3">
+    <summary class="place" data-id="{{place.id}}"
+      data-lat="{{place.positions[0]}}" data-long="{{place.positions[1]}}" data-name="{{place.name}}"
+      data-plz="{{place.plz}}" id="{{place.id}}">{{place.name}} ({{place.plz}})
+    </summary>
+    <ul class="pl-4">
+      {%for project in place.projects%}
+        <li class>{{project}}</li>
+      {%endfor%}
+    </ul>
+  </details>
+  {%endfor%}
+</div>
+<!-- only shown if screen >= xl:1280px -->
+<p class="mt-12 max-xl:hidden">
+  Auf den Vortragsort klicken, um ihn auf der Karte anzuzeigen.
+</p>
+<table class="mt-8 table-fixed text-nowrap text-left max-xl:hidden">
+  {%for place in page.places%}
+  <tr class="mb-4">
+    <th class="place flex items-start pr-24 hover:cursor-pointer" data-id="{{place.id}}"
+      data-lat="{{place.positions[0]}}" data-long="{{place.positions[1]}}" data-name="{{place.name}}"
+      data-plz="{{place.plz}}" id="{{place.id}}">
+      {{place.name}} ({{place.plz}})
+    </th>
+    <td>
+      <ul class="flex list-none flex-col p-0">
+        {%for project in place.projects%}
+        <li class="list-none">{{project}}</li>
+        {%endfor%}
+      </ul>
+    </td>
+  </tr>
+  {%endfor%}
+</table>
+
+<!-- script for leaflet and osm -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  let mapSmall = document.querySelector("#map-small");
+  let mapBig = document.querySelector("#map-big");
+  let map, currentMapElement, zoom;
+
+  // Initialize the map based on screen size
+  function initializeMap() {
+    if (window.innerWidth >= 1280) {
+      currentMapElement = mapBig;
+      zoom = 11;
+    } else {
+      currentMapElement = mapSmall;
+      zoom = 10;
+    }
+
+    if (currentMapElement && !map) { // Only initialize the map once
+      map = L.map(currentMapElement).setView([48.77929275581525, 9.017890304113749], zoom);
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      }).addTo(map);
+      
+      const places = document.querySelectorAll(".place");
+      const markers = {};
+
+      places.forEach((place) => {
+        const dataId = place.getAttribute("data-id");
+        const lat = place.getAttribute("data-lat");
+        const long = place.getAttribute("data-long");
+        const name = place.getAttribute("data-name");
+        const plz = place.getAttribute("data-plz");
+
+        // create a unique marker and store it in the markers object using the dataId
+        markers[dataId] = L.marker([lat, long]).addTo(map);
+        markers[dataId].bindPopup(name + "<br/>" + plz).addTo(map);
+
+        place.addEventListener("click", () => {
+          map.setView([lat, long], 17);
+          markers[dataId].openPopup();
+          setTimeout(() => {
+            markers[dataId].closePopup();
+          }, 5000);
+          if (mapSmall) {
+            const details = document.querySelectorAll("details");
+            details.forEach((detail) => {
+              detail.removeAttribute("open");
+            });
+          }
+        });
+      });
+    }
+
+    if (map) {
+      map.invalidateSize(); // Ensure the map is resized correctly
+    }
+  }
+
+  // Call initializeMap on load
+  initializeMap();
+
+  // Add event listener for resizing the window and re-initializing the map if needed
+  window.addEventListener("resize", () => {
+    if ((window.innerWidth >= 1280 && currentMapElement === mapSmall) ||
+        (window.innerWidth < 1280 && currentMapElement === mapBig)) {
+      // Reinitialize the map if the screen size changes
+      map.remove(); // Remove the old map instance
+      map = null;   // Clear the map variable
+      initializeMap(); // Initialize the map again for the new screen size
+    }
+  });
+});
+</script>
