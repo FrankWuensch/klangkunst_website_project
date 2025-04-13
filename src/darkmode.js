@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const currentTheme = localStorage.theme;
+  // const currentTheme = localStorage.theme;
 
   const menu = document.getElementById("mobile-menu");
   const btn_light = menu.querySelector("#light-mode");
@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const dark_switch = document.querySelector("#dark-mode-btn");
 
   // Set the theme based on the stored value, if available
-  if (currentTheme === "dark") {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
+  // if (currentTheme === "dark") {
+  //   document.documentElement.classList.add("dark");
+  // } else {
+  //   document.documentElement.classList.remove("dark");
+  // }
 
   if (btn_light) {
     btn_light.addEventListener("click", () => {

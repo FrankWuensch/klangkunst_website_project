@@ -1,4 +1,21 @@
 ---
 title: Galerie
 layout: default
+title_info_1: Bildergalerie
 ---
+
+<div class="h-full w-full max-w-6xl">
+    <h1 class="header-second">{{page.title_info_1}}</h1>
+    <div class="flex w-full flex-row flex-wrap gap-x-8 gap-y-12">
+      {%for poster in site.posters reversed%}
+      <div class="flex w-80 flex-col gap-y-4">
+        <p>{{poster.title}}</p>
+        <img
+          class="clickable aspect-[2/3] w-full object-cover dark:bg-black dark:opacity-50"
+          src="{{site.baseurl}}{{poster.src}}"
+          loading="lazy"
+        />
+      </div>
+      {%endfor%}
+    </div>
+  </div>
