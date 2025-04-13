@@ -6,13 +6,11 @@ document.addEventListener("DOMContentLoaded", function() {
     navLinks.forEach(function(navLink) {
         if (navLink.href === actualLink) {
             navLink.classList.add('active');
-            navLink.classList.remove('dark:text-white/40');
         } else {
             navLink.classList.remove("active");
         }
         if (actualLink === homeLink) {
             home.classList.add('active');
-            home.classList.remove('dark:text-white/40');
         }
     });
 });
