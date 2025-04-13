@@ -1,1 +1,2 @@
-npx tailwindcss -o src/output.css --minify
+#!/bin/bash
+npx @tailwindcss/cli -o src/output.css --minify

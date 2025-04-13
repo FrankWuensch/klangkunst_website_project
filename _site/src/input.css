@@ -1,3 +1,4 @@
+@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,7 +27,7 @@ em,
 }
 
 h1 {
-  @apply header-second pb-4 text-xl xl:pb-8 xl:text-2xl;
+  @apply pb-4 text-xl xl:pb-8 xl:text-2xl;
 }
 
 p {
@@ -34,11 +35,11 @@ p {
 }
 
 strong {
-  @apply normal font-black;
+  @apply font-black;
 }
 
 main {
-  @apply normal text-neutral-800 dark:text-neutral-300;
+  @apply text-neutral-800 dark:text-neutral-300;
 }
 
 main a[href] {
