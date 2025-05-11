@@ -327,6 +327,12 @@
   .resize {
     resize: both;
   }
+  .list-inside {
+    list-style-position: inside;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
   .list-none {
     list-style-type: none;
   }
@@ -522,6 +528,9 @@
   .pr-24 {
     padding-right: calc(var(--spacing) * 24);
   }
+  .pb-4 {
+    padding-bottom: calc(var(--spacing) * 4);
+  }
   .pb-12 {
     padding-bottom: calc(var(--spacing) * 12);
   }
@@ -569,6 +578,9 @@
   }
   .whitespace-nowrap {
     white-space: nowrap;
+  }
+  .text-sky-600 {
+    color: var(--color-sky-600);
   }
   .text-stone-700 {
     color: var(--color-stone-700);
@@ -743,6 +755,11 @@
   .xl\:pt-24 {
     @media (width >= 80rem) {
       padding-top: calc(var(--spacing) * 24);
+    }
+  }
+  .xl\:pb-8 {
+    @media (width >= 80rem) {
+      padding-bottom: calc(var(--spacing) * 8);
     }
   }
   .xl\:pb-20 {

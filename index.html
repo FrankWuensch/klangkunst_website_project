@@ -21,13 +21,12 @@ info_1: >
   Am Ende des jeweiligen Projektes gibt es ein Konzert. Wir freuen uns, wenn wir Sie bald als Zuhörer:in bei unserem
   nächsten Konzert begrüßen dürfen.<br /><br />
 title_info_2: Nächstes Konzert
-subtitle_info_2: 25.05.2025 - Kath. Kirche St. Johannes, 70825 Korntal
 ---
 
 <!-- only shown in mobile version -->
 <div class="h-full w-full max-w-6xl xl:hidden">
-  {%if page.subtitle_info_2%}
   <h1 class="header-second">{{page.title_info_2}}</h1>
+  {%if page.subtitle_info_2%}
   <h2>{{page.subtitle_info_2}}</h2>
   {%endif%}
   <div class="mb-8 flex w-full flex-row flex-wrap gap-x-8 gap-y-12">
@@ -47,8 +46,8 @@ subtitle_info_2: 25.05.2025 - Kath. Kirche St. Johannes, 70825 Korntal
 <div class="h-full w-full max-w-6xl max-xl:hidden">
   <h1 class="header-second">{{page.title_info_1}}</h1>
   <p class="mb-8">{{page.info_1}}</p>
-  {%if page.subtitle_info_2%}
   <h1 class="header-second">{{page.title_info_2}}</h1>
+  {%if page.subtitle_info_2%}
   <h2>{{page.subtitle_info_2}}</h2>
   {%endif%}
   <div class="flex w-full flex-row flex-wrap gap-x-8 gap-y-12">
