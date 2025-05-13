@@ -12,7 +12,7 @@
     />
     {%endif%}
     <link href="{{site.baseurl}}favicon.ico" rel="icon" />
-    <!-- <script src="{{site.baseurl}}src/darkmode.js"></script> -->
+    <script src="{{site.baseurl}}src/darkmode.js"></script>
     <link href="{{site.baseurl}}src/fonts.css" rel="stylesheet" />
     <link href="{{site.baseurl}}dist/output.css" rel="stylesheet" />
     <link href="{{site.baseurl}}src/markdown.css" rel="stylesheet" />
@@ -20,7 +20,7 @@
   </head>
 
   <body
-    class="normal relative mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20 bg-gradient-to-r from-[#ffe8c780] from-10% via-orange-100 via-70% to-[#ffe8c7] bg-fixed"
+    class="relative normal mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20 bg-gradient-to-r from-[#ffe8c780] dark:from-neutral-800 from-10% via-orange-100 dark:via-neutral-800 via-70% to-[#ffe8c7] dark:to-neutral-900 bg-fixed"
   >
     {% include menu.html %} {% include header.html %}
     <main

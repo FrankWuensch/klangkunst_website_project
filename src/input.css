@@ -27,7 +27,7 @@ em,
 }
 
 h1 {
-  @apply pb-4 text-xl xl:pb-8 xl:text-2xl;
+  @apply pb-4 text-xl xl:pb-8 xl:text-2xl dark:text-amber-400;
 }
 
 p {
@@ -39,7 +39,7 @@ strong {
 }
 
 main {
-  @apply text-neutral-800;
+  @apply text-neutral-800 dark:text-stone-300;
 }
 
 main a[href] {
@@ -59,7 +59,7 @@ ul > li {
 }
 
 .active {
-  @apply text-stone-800;
+  @apply text-stone-800 dark:text-amber-400/70 dark:hover:text-amber-400;
 }
 
 .inactive {
