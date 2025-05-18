@@ -92,16 +92,16 @@ places:
 <p class="mt-12 max-xl:hidden">
   Auf den Vortragsort klicken, um ihn auf der Karte anzuzeigen.
 </p>
-<table class="mt-8 table-fixed text-nowrap text-left max-xl:hidden">
+<table class="mt-8 text-left table-fixed text-nowrap max-xl:hidden">
   {%for place in page.places%}
   <tr class="mb-4">
-    <th class="place flex items-start pr-24 hover:cursor-pointer" data-id="{{place.id}}"
+    <th class="flex items-start pr-24 place hover:cursor-pointer" data-id="{{place.id}}"
       data-lat="{{place.positions[0]}}" data-long="{{place.positions[1]}}" data-name="{{place.name}}"
       data-plz="{{place.plz}}" id="{{place.id}}">
       {{place.name}} ({{place.plz}})
     </th>
     <td>
-      <ul class="flex list-none flex-col p-0">
+      <ul class="flex flex-col p-0 list-none">
         {%for project in place.projects%}
         <li class="list-none">{{project}}</li>
         {%endfor%}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-full w-full" lang="de">
+<html class="w-full h-full" lang="de">
   <head>
     <title>{{page.title}}</title>
     <meta charset="utf-8" />
@@ -20,25 +20,25 @@
   </head>
 
   <body
-    class="relative normal mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20 bg-gradient-to-r from-[#ffe8c780] dark:from-neutral-800 from-10% via-orange-100 dark:via-neutral-800 via-70% to-[#ffe8c7] dark:to-neutral-900 bg-fixed"
+    class="relative normal mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20 bg-gradient-to-r from-[#ffe8c780] dark:from-neutral-800 from-10% via-[#ffe8c780] dark:via-neutral-800 via-70% to-[#ffe8c7] dark:to-neutral-900 bg-fixed"
   >
     {% include menu.html %} {% include header.html %}
     <main
       id="main-container"
-      class="relative mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20"
+      class="overflow-y-auto relative flex-1 py-10 mx-auto w-full h-full hyphens-auto xl:py-20"
     >
-      <div id="content" class="mx-auto w-full px-8 xl:max-w-6xl">
+      <div id="content" class="px-8 mx-auto w-full xl:max-w-6xl">
         {{content}}
       </div>
       <div
         id="wrapper"
-        class="pointer-events-none fixed inset-0 z-50 flex items-center justify-center"
+        class="flex fixed inset-0 z-50 justify-center items-center pointer-events-none"
       >
         <div
           id="large-image-wrapper"
-          class="relative flex items-center justify-center opacity-0 duration-700 ease-in-out"
+          class="flex relative justify-center items-center opacity-0 duration-700 ease-in-out"
         >
-          <img id="large-image" class="cursor-pointer object-contain" />
+          <img id="large-image" class="object-contain cursor-pointer" />
         </div>
       </div>
     </main>
