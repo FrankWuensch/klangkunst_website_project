@@ -7,9 +7,12 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-orange-100: oklch(95.4% 0.038 75.164);
     --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-sky-600: oklch(58.8% 0.158 241.966);
+    --color-blue-300: oklch(80.9% 0.105 251.813);
+    --color-blue-400: oklch(70.7% 0.165 254.624);
+    --color-blue-600: oklch(54.6% 0.245 262.881);
+    --color-blue-800: oklch(42.4% 0.199 265.638);
     --color-neutral-800: oklch(26.9% 0 0);
     --color-neutral-900: oklch(20.5% 0 0);
     --color-stone-50: oklch(98.5% 0.001 106.423);
@@ -230,6 +233,12 @@
   .z-50 {
     z-index: 50;
   }
+  .-mx-2 {
+    margin-inline: calc(var(--spacing) * -2);
+  }
+  .mx-2 {
+    margin-inline: calc(var(--spacing) * 2);
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -242,6 +251,9 @@
   .mt-12 {
     margin-top: calc(var(--spacing) * 12);
   }
+  .mr-2 {
+    margin-right: calc(var(--spacing) * 2);
+  }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
   }
@@ -253,6 +265,9 @@
   }
   .flex {
     display: flex;
+  }
+  .grid {
+    display: grid;
   }
   .hidden {
     display: none;
@@ -275,6 +290,9 @@
   .h-full {
     height: 100%;
   }
+  .max-h-6 {
+    max-height: calc(var(--spacing) * 6);
+  }
   .max-h-full {
     max-height: 100%;
   }
@@ -289,6 +307,9 @@
   }
   .w-full {
     width: 100%;
+  }
+  .max-w-6 {
+    max-width: calc(var(--spacing) * 6);
   }
   .max-w-6xl {
     max-width: var(--container-6xl);
@@ -332,6 +353,12 @@
   .list-none {
     list-style-type: none;
   }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-rows-2 {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
   .flex-col {
     flex-direction: column;
   }
@@ -356,8 +383,20 @@
   .justify-end {
     justify-content: flex-end;
   }
+  .gap-x-2 {
+    column-gap: calc(var(--spacing) * 2);
+  }
+  .gap-x-6 {
+    column-gap: calc(var(--spacing) * 6);
+  }
   .gap-x-8 {
     column-gap: calc(var(--spacing) * 8);
+  }
+  .gap-y-1 {
+    row-gap: calc(var(--spacing) * 1);
+  }
+  .gap-y-2 {
+    row-gap: calc(var(--spacing) * 2);
   }
   .gap-y-4 {
     row-gap: calc(var(--spacing) * 4);
@@ -453,11 +492,6 @@
     --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-via-stops);
   }
-  .via-orange-100 {
-    --tw-gradient-via: var(--color-orange-100);
-    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-via-stops);
-  }
   .via-70\% {
     --tw-gradient-via-position: 70%;
   }
@@ -468,6 +502,9 @@
   .bg-fixed {
     background-attachment: fixed;
   }
+  .fill-blue-400 {
+    fill: var(--color-blue-400);
+  }
   .object-contain {
     object-fit: contain;
   }
@@ -477,11 +514,20 @@
   .p-0 {
     padding: calc(var(--spacing) * 0);
   }
+  .p-8 {
+    padding: calc(var(--spacing) * 8);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
   .px-12 {
     padding-inline: calc(var(--spacing) * 12);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
   }
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
@@ -497,6 +543,9 @@
   }
   .pt-16 {
     padding-top: calc(var(--spacing) * 16);
+  }
+  .pr-2 {
+    padding-right: calc(var(--spacing) * 2);
   }
   .pr-24 {
     padding-right: calc(var(--spacing) * 24);
@@ -587,6 +636,9 @@
   }
   .underline {
     text-decoration-line: underline;
+  }
+  .underline-offset-4 {
+    text-underline-offset: 4px;
   }
   .opacity-0 {
     opacity: 0%;
@@ -792,6 +844,16 @@
     @media (prefers-color-scheme: dark) {
       --tw-gradient-to: var(--color-neutral-900);
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+    }
+  }
+  .dark\:fill-blue-600 {
+    @media (prefers-color-scheme: dark) {
+      fill: var(--color-blue-600);
+    }
+  }
+  .dark\:fill-blue-800 {
+    @media (prefers-color-scheme: dark) {
+      fill: var(--color-blue-800);
     }
   }
   .dark\:text-amber-400\/70 {

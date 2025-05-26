@@ -12,5 +12,13 @@
       <div>{{element.name}}</div>
     </a>
     {%endfor%}
+    <div class="flex flex-col gap-y-1 max-xl:hidden">
+      <div>Folge uns</div>
+      <div class="flex flex-row gap-x-6">
+        {%for ref in site.references%}
+          <a href="{{site.baseurl}}{{ref.link}}" class="flex flex-row gap-x-2 hover:underline hover:underline-offset-4" target="_blank">{{ref.name}} {{ref.icon}}</a>
+        {%endfor%}
+      </div>
+    </div>
   </div>
 </footer>
