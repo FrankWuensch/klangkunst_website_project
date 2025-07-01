@@ -128,8 +128,12 @@ document.addEventListener("DOMContentLoaded", () => {
       zoom = 10;
     }
 
-    if (currentMapElement && !map) { // Only initialize the map once
-      map = L.map(currentMapElement).setView([48.77929275581525, 9.017890304113749], zoom);
+    if (currentMapElement && !map) {
+      map = L.map(currentMapElement, {
+      zoomSnap: 0.1,
+      zoomDelta: 0.1
+    }).setView([48.77929275581525, 9.017890304113749], zoom);
+
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -137,6 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       const places = document.querySelectorAll(".place");
       const markers = {};
+      const bounds = L.latLngBounds([]);
 
       places.forEach((place) => {
         const dataId = place.getAttribute("data-id");
@@ -148,6 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // create a unique marker and store it in the markers object using the dataId
         markers[dataId] = L.marker([lat, long]).addTo(map);
         markers[dataId].bindPopup(name + "<br/>" + plz).addTo(map);
+
+        bounds.extend([parseFloat(lat), parseFloat(long)]);
 
         place.addEventListener("click", () => {
           map.setView([lat, long], 17);
@@ -164,11 +171,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
 
-      const bounds = L.latLngBounds([]);
-
       if (!bounds.isEmpty) {
         try {
-          map.fitBounds(bounds, { padding: [8, 8] });
+          map.fitBounds(bounds, { padding: [30, 30] });
         } catch (e) {
           alert("Error: " + e.message);
         }
