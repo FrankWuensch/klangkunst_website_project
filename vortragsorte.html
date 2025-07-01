@@ -163,6 +163,18 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       });
+
+      const bounds = L.latLngBounds([]);
+
+      if (!bounds.isEmpty) {
+        try {
+          map.fitBounds(bounds, { padding: [8, 8] });
+        } catch (e) {
+          alert("Error: " + e.message);
+        }
+      } else {
+        map.setView([48.646834, 9.451205], 13);
+      }
     }
 
     if (map) {
