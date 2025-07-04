@@ -358,6 +358,12 @@
   .resize {
     resize: both;
   }
+  .list-inside {
+    list-style-position: inside;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
   .list-none {
     list-style-type: none;
   }
@@ -373,8 +379,14 @@
   .items-center {
     align-items: center;
   }
+  .items-end {
+    align-items: flex-end;
+  }
   .items-start {
     align-items: flex-start;
+  }
+  .justify-around {
+    justify-content: space-around;
   }
   .justify-between {
     justify-content: space-between;
@@ -543,8 +555,14 @@
   .pt-16 {
     padding-top: calc(var(--spacing) * 16);
   }
+  .pr-8 {
+    padding-right: calc(var(--spacing) * 8);
+  }
   .pr-24 {
     padding-right: calc(var(--spacing) * 24);
+  }
+  .pb-4 {
+    padding-bottom: calc(var(--spacing) * 4);
   }
   .pb-12 {
     padding-bottom: calc(var(--spacing) * 12);
@@ -554,6 +572,9 @@
   }
   .text-center {
     text-align: center;
+  }
+  .text-end {
+    text-align: end;
   }
   .text-left {
     text-align: left;
@@ -593,6 +614,9 @@
   }
   .whitespace-nowrap {
     white-space: nowrap;
+  }
+  .text-neutral-800 {
+    color: var(--color-neutral-800);
   }
   .text-sky-600 {
     color: var(--color-sky-600);
@@ -762,9 +786,20 @@
       padding-top: calc(var(--spacing) * 24);
     }
   }
+  .xl\:pb-8 {
+    @media (width >= 80rem) {
+      padding-bottom: calc(var(--spacing) * 8);
+    }
+  }
   .xl\:pb-20 {
     @media (width >= 80rem) {
       padding-bottom: calc(var(--spacing) * 20);
+    }
+  }
+  .xl\:text-2xl {
+    @media (width >= 80rem) {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
     }
   }
   .xl\:text-sm {
@@ -830,14 +865,12 @@
       fill: var(--color-blue-800);
     }
   }
-  .dark\:text-sky-300 {
+  .dark\:text-amber-400\/70 {
     @media (prefers-color-scheme: dark) {
-      color: var(--color-sky-300);
-    }
-  }
-  .dark\:text-sky-600 {
-    @media (prefers-color-scheme: dark) {
-      color: var(--color-sky-600);
+      color: color-mix(in srgb, oklch(82.8% 0.189 84.429) 70%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, var(--color-amber-400) 70%, transparent);
+      }
     }
   }
   .dark\:text-stone-300 {
