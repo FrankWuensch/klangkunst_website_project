@@ -1,11 +1,10 @@
-title: Klangkunst Manufaktur e.V.
+title: KlangkunstManufaktur e.V.
 email: 
-description:
+description: "Orchester KlangkunstManufaktur Stuttgart e.V."
 baseurl: ""
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.klangkunstmanufaktur.de" # the base hostname & protocol for your site, e.g. http://example.com
 nav_title_1: Klangkunst
 nav_title_2: Manufaktur
-img: "background.png"
 navs:
   - text: Über uns
     link: "/"
