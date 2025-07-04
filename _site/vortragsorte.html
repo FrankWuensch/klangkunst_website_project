@@ -155,8 +155,8 @@
     >
       <div id="content" class="px-8 mx-auto w-full xl:max-w-6xl">
         <h1 class="header-second">Übersicht Vortragsorte</h1>
-<div id="map-small" class="xl:hidden dark:brightness-75" style="height: 250px;"></div>
-<div id="map-big" class="max-xl:hidden dark:brightness-75" style="height: 520px;"></div>
+<div id="map-small" class="xl:hidden dark:brightness-75" style="height: 50vh;"></div>
+<div id="map-big" class="max-xl:hidden dark:brightness-75" style="height: 40vh;"></div>
 <!-- only shown in mobile version -->
 <p class="mt-8 text-sm xl:hidden">
   Auf den Vortragsort klicken, um ihn auf der Karte anzuzeigen.
@@ -372,9 +372,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let mapSmall = document.querySelector("#map-small");
   let mapBig = document.querySelector("#map-big");
   let map, currentMapElement, zoom;
+  const bounds = L.latLngBounds([]);
 
   // Initialize the map based on screen size
-  function initializeMap() {
+  function initializeMap() {    
     if (window.innerWidth >= 1280) {
       currentMapElement = mapBig;
       zoom = 11;
@@ -385,9 +386,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (currentMapElement && !map) {
       map = L.map(currentMapElement, {
-      zoomSnap: 0.1,
-      zoomDelta: 0.1
-    }).setView([48.77929275581525, 9.017890304113749], zoom);
+        zoomSnap: 0.1,
+        zoomDelta: 0.1
+      }).setView([48.77929275581525, 9.017890304113749], zoom);
 
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
@@ -396,7 +397,6 @@ document.addEventListener("DOMContentLoaded", () => {
       
       const places = document.querySelectorAll(".place");
       const markers = {};
-      const bounds = L.latLngBounds([]);
 
       places.forEach((place) => {
         const dataId = place.getAttribute("data-id");
@@ -455,6 +455,47 @@ document.addEventListener("DOMContentLoaded", () => {
       initializeMap(); // Initialize the map again for the new screen size
     }
   });
+
+  // Custom Leaflet control for Reset View
+  const resetControl = L.Control.extend({
+    options: {
+      position: "topleft"
+    },
+
+    onAdd: function () {
+      // Create the container that mimics Leaflet's zoom control group
+      const div = L.DomUtil.create("div", "leaflet-control-zoom leaflet-bar");
+
+      // Create the reset button
+      const container = L.DomUtil.create("a", "leaflet-bar-part", div);
+      container.href = "#";
+      container.title = "Reset view";
+      container.textAlign = "center";
+      container.innerHTML = `
+        <div class="flex justify-center items-center p-1.5 w-full h-full">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-sky-600 dark:text-sky-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+            <path d="M12 3a9 9 0 1 1-5.657 2"/>
+            <path d="M3 4.5h4v4"/>
+          </svg>
+        </div>
+      `;
+
+      // Match styling and behavior
+      L.DomEvent.on(container, "click", L.DomEvent.stopPropagation)
+                .on(container, "click", L.DomEvent.preventDefault)
+                .on(container, "click", () => {
+                  if (bounds) {
+                    map.fitBounds(bounds, { padding: [40, 40] });
+                  }
+                });
+
+      // Return the full control div (not just the link)
+      return div;
+    }
+  });
+
+  // Add the reset control to the map
+  map.addControl(new resetControl());
 });
 </script>
       </div>
