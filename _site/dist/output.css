@@ -250,9 +250,6 @@
       max-width: 96rem;
     }
   }
-  .m-4 {
-    margin: calc(var(--spacing) * 4);
-  }
   .mx-2 {
     margin-inline: calc(var(--spacing) * 2);
   }
@@ -836,6 +833,11 @@
   .dark\:text-sky-300 {
     @media (prefers-color-scheme: dark) {
       color: var(--color-sky-300);
+    }
+  }
+  .dark\:text-sky-600 {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-sky-600);
     }
   }
   .dark\:text-stone-300 {
