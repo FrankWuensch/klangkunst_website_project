@@ -42,9 +42,11 @@ posters:
     title: KlangkunstManufaktur Projekt II - 2024
   - src: "src/plakate/Klangkunst Plakat 2025-I.png"
     title: KlangkunstManufaktur Projekt I - 2025
-actual_poster:
   - src: "src/plakate/Klangkunst Plakat 2025-II.png"
     title: KlangkunstManufaktur Projekt II - 2025
+# actual_poster:
+#  - src: ""
+#    title: 
 footer_elements:
   - name: Impressum
     link: "impressum.html"
