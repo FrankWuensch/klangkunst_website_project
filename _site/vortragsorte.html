@@ -4,7 +4,7 @@
     <title>Vortragsorte</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="referrer" content="no-referrer" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     
     <link href="favicon.ico" rel="icon" />
     <script src="src/darkmode.js"></script>
@@ -26,7 +26,7 @@
   </head>
 
   <body
-    class="flex overflow-hidden relative pt-16 pb-12 mx-auto w-full h-full duration-700 ease-in-out normal xl:pb-20 xl:pt-24"
+    class="relative flex mx-auto pt-16 xl:pt-24 pb-12 xl:pb-20 w-full h-full overflow-hidden duration-700 ease-in-out normal"
   >
     <!-- only shown in mobile version -->
 <span
@@ -151,17 +151,17 @@
 
     <main
       id="main-container"
-      class="relative normal mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20 bg-gradient-to-r from-[#ffe8c780] dark:from-neutral-800 from-10% via-[#ffe8c780] dark:via-neutral-800 via-70% to-[#ffe8c7] dark:to-neutral-900 bg-fixed"
+      class="relative flex-1 bg-gradient-to-r from-[#ffe8c780] from-10% dark:from-neutral-800 via-[#ffe8c780] via-70% dark:via-neutral-800 to-[#ffe8c7] dark:to-neutral-900 bg-fixed mx-auto py-10 xl:py-20 w-full h-full overflow-y-auto hyphens-auto normal"
     >
-      <div id="content" class="px-8 mx-auto w-full xl:max-w-6xl">
+      <div id="content" class="mx-auto px-8 w-full xl:max-w-6xl">
         <h1 class="header-second">Übersicht Vortragsorte</h1>
 <div id="map-small" class="xl:hidden dark:brightness-75" style="height: 50vh;"></div>
 <div id="map-big" class="max-xl:hidden dark:brightness-75" style="height: 40vh;"></div>
 <!-- only shown in mobile version -->
-<p class="mt-8 text-sm xl:hidden">
+<p class="xl:hidden mt-8 text-sm">
   Auf den Vortragsort klicken, um ihn auf der Karte anzuzeigen.
 </p>
-<div class="mt-4 text-sm xl:hidden">
+<div class="xl:hidden mt-4 text-sm">
   
   <details class="mb-3">
     <summary class="place" data-id="0"
@@ -253,13 +253,13 @@
   
 </div>
 <!-- only shown if screen >= xl:1280px -->
-<p class="mt-12 max-xl:hidden">
+<p class="max-xl:hidden mt-12">
   Auf den Vortragsort klicken, um ihn auf der Karte anzuzeigen.
 </p>
-<table class="mt-8 text-left table-fixed text-nowrap max-xl:hidden">
+<table class="max-xl:hidden mt-8 text-left text-nowrap table-fixed">
   
   <tr class="mb-4">
-    <th class="flex items-start pr-24 place hover:cursor-pointer" data-id="0"
+    <th class="flex items-start pr-24 hover:cursor-pointer place" data-id="0"
       data-lat="48.77324753293309" data-long="9.164622299829663" data-name="Johanneskirche am Feuersee"
       data-plz="70176 Stuttgart" id="0">
       Johanneskirche am Feuersee (70176 Stuttgart)
@@ -276,7 +276,7 @@
   </tr>
   
   <tr class="mb-4">
-    <th class="flex items-start pr-24 place hover:cursor-pointer" data-id="1"
+    <th class="flex items-start pr-24 hover:cursor-pointer place" data-id="1"
       data-lat="48.82699699258068" data-long="9.125444727108853" data-name="Kath. Kirche St. Johannes"
       data-plz="70825 Korntal" id="1">
       Kath. Kirche St. Johannes (70825 Korntal)
@@ -301,7 +301,7 @@
   </tr>
   
   <tr class="mb-4">
-    <th class="flex items-start pr-24 place hover:cursor-pointer" data-id="2"
+    <th class="flex items-start pr-24 hover:cursor-pointer place" data-id="2"
       data-lat="48.804760798576275" data-long="9.08217660197371" data-name="Lukaskirche"
       data-plz="70839 Gerlingen" id="2">
       Lukaskirche (70839 Gerlingen)
@@ -318,7 +318,7 @@
   </tr>
   
   <tr class="mb-4">
-    <th class="flex items-start pr-24 place hover:cursor-pointer" data-id="3"
+    <th class="flex items-start pr-24 hover:cursor-pointer place" data-id="3"
       data-lat="48.738969160776165" data-long="9.12396964244967" data-name="Michael Bauer Schule"
       data-plz="70563 Stuttgart" id="3">
       Michael Bauer Schule (70563 Stuttgart)
@@ -335,7 +335,7 @@
   </tr>
   
   <tr class="mb-4">
-    <th class="flex items-start pr-24 place hover:cursor-pointer" data-id="4"
+    <th class="flex items-start pr-24 hover:cursor-pointer place" data-id="4"
       data-lat="48.724059883124454" data-long="9.205431560633574" data-name="Nikolaus-Cusanus-Haus"
       data-plz="70599 Stuttgart-Birkach" id="4">
       Nikolaus-Cusanus-Haus (70599 Stuttgart-Birkach)
@@ -350,7 +350,7 @@
   </tr>
   
   <tr class="mb-4">
-    <th class="flex items-start pr-24 place hover:cursor-pointer" data-id="5"
+    <th class="flex items-start pr-24 hover:cursor-pointer place" data-id="5"
       data-lat="48.76921193644937" data-long="8.851121211979958" data-name="Remigiuskirche"
       data-plz="71263 Weil der Stadt / Merklingen" id="5">
       Remigiuskirche (71263 Weil der Stadt / Merklingen)
@@ -375,7 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const bounds = L.latLngBounds([]);
 
   // Initialize the map based on screen size
-  function initializeMap() {    
+  function initializeMap() {
     if (window.innerWidth >= 1280) {
       currentMapElement = mapBig;
       zoom = 11;
@@ -394,7 +394,7 @@ document.addEventListener("DOMContentLoaded", () => {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       }).addTo(map);
-      
+
       const places = document.querySelectorAll(".place");
       const markers = {};
 
@@ -498,18 +498,19 @@ document.addEventListener("DOMContentLoaded", () => {
   map.addControl(new resetControl());
 });
 </script>
+
       </div>
       <div
         id="wrapper"
-        class="flex fixed inset-0 z-50 justify-center items-center pointer-events-none"
+        class="z-50 fixed inset-0 flex justify-center items-center pointer-events-none"
       >
         <div
           id="large-image-wrapper"
-          class="flex relative justify-center items-center opacity-0 duration-700 ease-in-out"
+          class="relative flex justify-center items-center opacity-0 duration-700 ease-in-out"
         >
           <img id="large-image" class="object-cover cursor-pointer" />
           <div
-            class="absolute top-0 left-0 w-full h-full pointer-events-none"
+            class="top-0 left-0 absolute w-full h-full pointer-events-none"
           ></div>
         </div>
       </div>

@@ -4,7 +4,7 @@
     <title>Geschichte</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="referrer" content="no-referrer" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     
     <link href="favicon.ico" rel="icon" />
     <script src="src/darkmode.js"></script>
@@ -26,7 +26,7 @@
   </head>
 
   <body
-    class="flex overflow-hidden relative pt-16 pb-12 mx-auto w-full h-full duration-700 ease-in-out normal xl:pb-20 xl:pt-24"
+    class="relative flex mx-auto pt-16 xl:pt-24 pb-12 xl:pb-20 w-full h-full overflow-hidden duration-700 ease-in-out normal"
   >
     <!-- only shown in mobile version -->
 <span
@@ -151,9 +151,9 @@
 
     <main
       id="main-container"
-      class="relative normal mx-auto h-full w-full flex-1 overflow-y-auto hyphens-auto py-10 xl:py-20 bg-gradient-to-r from-[#ffe8c780] dark:from-neutral-800 from-10% via-[#ffe8c780] dark:via-neutral-800 via-70% to-[#ffe8c7] dark:to-neutral-900 bg-fixed"
+      class="relative flex-1 bg-gradient-to-r from-[#ffe8c780] from-10% dark:from-neutral-800 via-[#ffe8c780] via-70% dark:via-neutral-800 to-[#ffe8c7] dark:to-neutral-900 bg-fixed mx-auto py-10 xl:py-20 w-full h-full overflow-y-auto hyphens-auto normal"
     >
-      <div id="content" class="px-8 mx-auto w-full xl:max-w-6xl">
+      <div id="content" class="mx-auto px-8 w-full xl:max-w-6xl">
         <div class="w-full max-w-6xl h-full">
   <h1 class="header-second">Bisherige Konzerte</h1>
   <div class="flex flex-row flex-wrap gap-x-8 gap-y-12 w-full">
@@ -290,15 +290,15 @@
       </div>
       <div
         id="wrapper"
-        class="flex fixed inset-0 z-50 justify-center items-center pointer-events-none"
+        class="z-50 fixed inset-0 flex justify-center items-center pointer-events-none"
       >
         <div
           id="large-image-wrapper"
-          class="flex relative justify-center items-center opacity-0 duration-700 ease-in-out"
+          class="relative flex justify-center items-center opacity-0 duration-700 ease-in-out"
         >
           <img id="large-image" class="object-cover cursor-pointer" />
           <div
-            class="absolute top-0 left-0 w-full h-full pointer-events-none"
+            class="top-0 left-0 absolute w-full h-full pointer-events-none"
           ></div>
         </div>
       </div>

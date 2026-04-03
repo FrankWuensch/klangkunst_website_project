@@ -70,10 +70,10 @@ places:
 <div id="map-small" class="xl:hidden dark:brightness-75" style="height: 50vh;"></div>
 <div id="map-big" class="max-xl:hidden dark:brightness-75" style="height: 40vh;"></div>
 <!-- only shown in mobile version -->
-<p class="mt-8 text-sm xl:hidden">
+<p class="xl:hidden mt-8 text-sm">
   Auf den Vortragsort klicken, um ihn auf der Karte anzuzeigen.
 </p>
-<div class="mt-4 text-sm xl:hidden">
+<div class="xl:hidden mt-4 text-sm">
   {%for place in page.places%}
   <details class="mb-3">
     <summary class="place" data-id="{{place.id}}"
@@ -89,13 +89,13 @@ places:
   {%endfor%}
 </div>
 <!-- only shown if screen >= xl:1280px -->
-<p class="mt-12 max-xl:hidden">
+<p class="max-xl:hidden mt-12">
   Auf den Vortragsort klicken, um ihn auf der Karte anzuzeigen.
 </p>
-<table class="mt-8 text-left table-fixed text-nowrap max-xl:hidden">
+<table class="max-xl:hidden mt-8 text-left text-nowrap table-fixed">
   {%for place in page.places%}
   <tr class="mb-4">
-    <th class="flex items-start pr-24 place hover:cursor-pointer" data-id="{{place.id}}"
+    <th class="flex items-start pr-24 hover:cursor-pointer place" data-id="{{place.id}}"
       data-lat="{{place.positions[0]}}" data-long="{{place.positions[1]}}" data-name="{{place.name}}"
       data-plz="{{place.plz}}" id="{{place.id}}">
       {{place.name}} ({{place.plz}})
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const bounds = L.latLngBounds([]);
 
   // Initialize the map based on screen size
-  function initializeMap() {    
+  function initializeMap() {
     if (window.innerWidth >= 1280) {
       currentMapElement = mapBig;
       zoom = 11;
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       }).addTo(map);
-      
+
       const places = document.querySelectorAll(".place");
       const markers = {};
 
