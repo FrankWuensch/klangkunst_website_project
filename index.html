@@ -26,7 +26,7 @@ title_info_2: Nächstes Konzert
 <!-- only shown in mobile version -->
 <div class="w-full max-w-6xl h-full xl:hidden">
   {%if site.actual_poster[0].title%}
-  <h1 class="header-second">{{page.title_info_2}}</h1>
+  <h1>{{page.title_info_2}}</h1>
   <div class="flex flex-row flex-wrap gap-x-8 gap-y-12 mb-8 w-full">
     {%if site.actual_poster[0].src and site.actual_poster[0].title%}
     <div class="flex flex-col gap-y-4 w-80">
@@ -37,16 +37,16 @@ title_info_2: Nächstes Konzert
     {%endif%}
   </div>
   {%endif%}
-  <h1 class="header-second">{{page.title_info_1}}</h1>
+  <h1>{{page.title_info_1}}</h1>
   <p>{{page.info_1}}</p>
 </div>
 
 <!-- only shown if screen >= xl:1280px -->
 <div class="w-full max-w-6xl h-full max-xl:hidden">
-  <h1 class="header-second">{{page.title_info_1}}</h1>
+  <h1>{{page.title_info_1}}</h1>
   <p class="mb-8">{{page.info_1}}</p>
   {%if site.actual_poster[0].title%}
-  <h1 class="header-second">{{page.title_info_2}}</h1>
+  <h1>{{page.title_info_2}}</h1>
   <div class="flex flex-row flex-wrap gap-x-8 gap-y-12 w-full">
     {%if site.actual_poster[0].src and site.actual_poster[0].title%}
     <div class="flex flex-col gap-y-4 w-80">

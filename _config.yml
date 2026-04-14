@@ -1,5 +1,5 @@
 title: KlangkunstManufaktur e.V.
-email: 
+email:
 description: "Orchester KlangkunstManufaktur Stuttgart e.V."
 baseurl: ""
 url: "https://www.klangkunstmanufaktur.de" # the base hostname & protocol for your site, e.g. http://example.com
@@ -44,9 +44,9 @@ posters:
     title: KlangkunstManufaktur Projekt I - 2025
   - src: "src/plakate/Klangkunst Plakat 2025-II.png"
     title: KlangkunstManufaktur Projekt II - 2025
-# actual_poster:
-#  - src: ""
-#    title: 
+actual_poster:
+  - src: "src/plakate/Klangkunst Plakat 2026-I.png"
+    title: "KlangkunstManufaktur Projekt I - 2026"
 footer_elements:
   - name: Impressum
     link: "impressum.html"
