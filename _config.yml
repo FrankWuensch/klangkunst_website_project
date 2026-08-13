@@ -47,8 +47,8 @@ posters:
   - src: "src/plakate/Klangkunst Plakat 2026-I.png"
     title: "KlangkunstManufaktur Projekt I - 2026"
 actual_poster:
-  # - src: "src/plakate/Klangkunst Plakat 2026-I.png"
-    # title: "KlangkunstManufaktur Projekt I - 2026"
+  - src: "src/plakate/Klangkunst Plakat 2026-II.png"
+    title: "KlangkunstManufaktur Projekt II - 2026"
 footer_elements:
   - name: Impressum
     link: "impressum.html"
